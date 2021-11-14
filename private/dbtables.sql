@@ -1,6 +1,6 @@
 create table if not exists accounts(
     id int unsigned primary key auto_increment,
-    profile_photo varchar(255) not null default default.png,
+    profile_photo varchar(255) not null default 'default.png',
     username varchar(255) not null,
     email varchar(255) not null,
     mobile int not null,
@@ -8,46 +8,43 @@ create table if not exists accounts(
     vkey varchar(255) not null,
     access_key varchar(255) not null,
     otp int not null default 0,
-    user_type varchar(255) not null default `student`,
+    user_type varchar(255) not null default 'student',
     institution varchar(255) not null,
-    work_experience json not null default `{years : 0}`,
-    priority varchar(255) not null default `normal`,
+    work_experience json not null default '{years : 0}',
+    priority varchar(255) not null default 'normal',
     descrition varchar(255),
     updated_datetime datetime not null default CURRENT_TIMESTAMP,
     created_datetime datetime not null default CURRENT_TIMESTAMP
 );
---priority--
--- 0 : admin
--- 1 : normal
--- 2 : mentor
+
 create table if not exists posts(
     id int unsigned primary key auto_increment,
     user_id int unsigned,
-    title varchar not null,
-    tags json not null,
-    description text not null,
-    status varchar not null default `open`,
+    title varchar(255),
+    tags json,
+    description text,
+    status varchar(255) not null default 'open',
     answers int unsigned not null default 0, 
     updated_datetime datetime not null default CURRENT_TIMESTAMP,
     created_datetime datetime not null default CURRENT_TIMESTAMP,
-    foreign key (user_id) refrences accounts(id)
+    foreign key (user_id) references accounts(id)
 );
 
 create table if not exists post_answers(
-    id int unsigned primary key auto_increment
+    id int unsigned primary key auto_increment,
     post_id int unsigned,
     user_id int unsigned,
-    description text not null,
+    description text,
     upvotes int default 0,
     shares int unsigned default 0,
     likes int unsigned default 0,
     unlinke int unsigned default 0, 
-    foreign key (user_id) refrences accounts(id),
-    foreign key (post_id) refrences posts(id)
+    foreign key (user_id) references accounts(id),
+    foreign key (post_id) references posts(id)
 );
 
 create table if not exists tags_posts(
-    id int unsigned primary key auto_increment
+    id int unsigned primary key auto_increment,
     tag_name varchar(255) not null,
     related_posts json not null,
     posts_count int not null default 0,
@@ -56,13 +53,13 @@ create table if not exists tags_posts(
 );
 
 create table if not exists contribution_users(
-    id int unsigned primary key auto_increment
+    id int unsigned primary key auto_increment,
     user_id int unsigned,   
     posts_count int not null default 0,
     comments_count int not null default 0,
     updated_datetime datetime not null default CURRENT_TIMESTAMP,
     create_datetime datetime not null default CURRENT_TIMESTAMP,
-    foreign key (user_id) refrences accounts(id)
+    foreign key (user_id) references accounts(id)
 );
 
 create table if not exists comments(
@@ -75,11 +72,10 @@ create table if not exists comments(
     unlinke int unsigned default 0, 
     updated_datetime datetime not null default CURRENT_TIMESTAMP,
     create_datetime datetime not null default CURRENT_TIMESTAMP,
-    foreign key (user_id) refrences accounts(id),
-    foreign key (parent_comment) refrences comments(id)
+    foreign key (user_id) references accounts(id),
+    foreign key (parent_comment) references comments(id)
 );
 
---add product id for refrence that payment is done for which product
 create table if not exists payment_logs(
     id int unsigned primary key auto_increment,
     payer_id int unsigned,   
@@ -98,8 +94,8 @@ create table if not exists payment_logs(
     tax int unsigned not null,
     updated_datetime datetime not null default CURRENT_TIMESTAMP,
     create_datetime datetime not null default CURRENT_TIMESTAMP,
-    foreign key (payer_id) refrences accounts(id),
-    foreign key (reciever_id) refrences accounts(id)
+    foreign key (payer_id) references accounts(id),
+    foreign key (reciever_id) references accounts(id)
 );
 
 create table if not exists roadmaps(
@@ -124,7 +120,7 @@ create table if not exists mentor_quality(
     membership_plan varchar(255) default 'free', 
     updated_datetime datetime not null default CURRENT_TIMESTAMP,
     create_datetime datetime not null default CURRENT_TIMESTAMP,
-    foreign key (user_id) refrences accounts(id)
+    foreign key (user_id) references accounts(id)
 );
 
 create table if not exists mentor_content(
@@ -137,7 +133,7 @@ create table if not exists mentor_content(
     content text not null,
     updated_datetime datetime not null default CURRENT_TIMESTAMP,
     create_datetime datetime not null default CURRENT_TIMESTAMP,
-    foreign key (user_id) refrences accounts(id)
+    foreign key (user_id) references accounts(id)
 );
 
 create table if not exists mentor_content_reviews(
@@ -151,8 +147,8 @@ create table if not exists mentor_content_reviews(
     status varchar(255) not null default 'under review',
     updated_datetime datetime not null default CURRENT_TIMESTAMP,
     create_datetime datetime not null default CURRENT_TIMESTAMP,
-    foreign key (user_id) refrences accounts(id),
-    foreign key (parent_comment) refrences mentor_content_reviews(id)
+    foreign key (user_id) references accounts(id),
+    foreign key (parent_comment) references mentor_content_reviews(id)
 );
 
 create table if not exists user_history(
@@ -161,7 +157,7 @@ create table if not exists user_history(
     action varchar(255) not null,
     updated_datetime datetime not null default CURRENT_TIMESTAMP,
     create_datetime datetime not null default CURRENT_TIMESTAMP,
-    foreign key (user_id) refrences accounts(id)
+    foreign key (user_id) references accounts(id)
 );
 
 create table if not exists notification_history(
@@ -171,20 +167,19 @@ create table if not exists notification_history(
     type int not null,
     updated_datetime datetime not null default CURRENT_TIMESTAMP,
     create_datetime datetime not null default CURRENT_TIMESTAMP,
-    foreign key (user_id) refrences accounts(id)
+    foreign key (user_id) references accounts(id)
 );
 
 create table if not exists email_history(
     id int unsigned primary key auto_increment,
-    to varchar(255) not null,
-    from varchar(255) not null,
+    email_to varchar(255) not null,
+    email_from varchar(255) not null,
     subject varchar(255) not null,
     content text not null,
     content_type varchar(255) not null,
     status varchar(255) not null default 'delivered',
     updated_datetime datetime not null default CURRENT_TIMESTAMP,
-    create_datetime datetime not null default CURRENT_TIMESTAMP,
-    foreign key (user_id) refrences accounts(id)
+    create_datetime datetime not null default CURRENT_TIMESTAMP
 );
 
 create table if not exists roadmaps_popularity_location(
@@ -195,11 +190,5 @@ create table if not exists roadmaps_popularity_location(
     clicks varchar(255) not null default 1,
     updated_datetime datetime not null default CURRENT_TIMESTAMP,
     create_datetime datetime not null default CURRENT_TIMESTAMP,
-    foreign key (field_id) refrences roadmaps(id)
+    foreign key (field_id) references roadmaps(id)
 );
-
-
-
-
-
-
