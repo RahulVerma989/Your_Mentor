@@ -1,0 +1,21 @@
+{
+  "name": "yourmentor",
+  "version": "12.18.3",
+  "description": "\"A web application for Mentoring.\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "YourMentor"
+  },
+  "keywords": [
+    "\"JustPay\""
+  ],
+  "author": "\"justpay\",",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
