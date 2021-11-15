@@ -2,7 +2,7 @@ import React from "react"
 
 class App extends React.Component {
   state = {
-    name: "JOHN DOE"
+    name: "RAHUL VERMA"
   }
 
   componentDidMount() {
@@ -13,7 +13,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1>Hello {this.state.name}!</h1>
+      <h1>mera naam {this.state.name} hea!</h1>
     )
   }
 }
