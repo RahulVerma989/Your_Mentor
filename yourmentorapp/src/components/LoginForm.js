@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { ReactDOM } from 'react';
 import { Form, Field } from "@progress/kendo-react-form";
 import styled from 'styled-components';
-// import countries from "./countries";
+// import countries from "./countries"; not required for us.
 
 const emailValidator = (value) => (
     new RegExp(/\S+@\S+\.\S+/).test(value) ? "" : "Please enter a valid email."
