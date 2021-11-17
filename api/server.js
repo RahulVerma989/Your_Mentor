@@ -1,5 +1,3 @@
-// api/server.js
-
 const express = require("express")
 const app = express()
 const router = express.Router();
@@ -10,8 +8,6 @@ app.get("/", function(req, res) {
 
 // login page
 router.get('/login',(req,res)=>res.send('Login'));
-// register page
-router.get('/register',(req,res)=>res.send('Register'));
 
 app.listen(3001, () => {
   console.log("app listening on port 3001")
