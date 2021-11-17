@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Lato;
+    height: 97vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    background-color: #ece9e9;
+  }
+  /* #4A4E69 */
+/* ----------- LOgin Form --------- */
+
+.login {
+  height: 97vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ece9e9;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    min-width: 100px;
+    min-height: 400px;
+    padding: 20px 40px 40px 40px;
+    border-radius: 6px;
+    justify-content: center;
+    /* align-items: center; */
+    box-shadow: 0px 8px 36px rgb(156, 154, 154);
+    background-color: #fefefe;
+  }
+  
+  form > h1 {
+    display: flex;
+    justify-content: center;
+    font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 2em;
+    font-weight: lighter;
+    margin-top: 0.25em;
+    color: #222;
+    letter-spacing: 2px;
+  }
+  
+  .info {
+    padding-bottom: 1em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+  
+  label {
+    margin-bottom: 0.5em;
+    color: #444;
+    font-weight: lighter;
+  }
+  
+  input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  input, select {
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #d6d1d5;
+    margin-top: 5px;
+  }
+  select {
+    display: block;
+    width: 100%;
+    height: 35px;
+  }
+  input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+    margin-top: 2em;
+    margin-right: 10px;
+  }
+  
+  button {
+    min-width: 100%;
+    cursor: pointer;
+    margin-right: 0.25em;
+    margin-top: 0.5em;
+    padding: 	0.938em;
+    border: none;
+    border-radius: 4px;
+    background-color: #22223B;
+    color: #fefefe;
+  }
+  button:hover {
+    background-color: #4A4E69;
+    color: #fefefe;
+  }
+  
+  .error {
+    color:#db2269;
+    font-size: 0.5em;
+    display: relative;
+  }
+  
+  .submit {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+/* ----------- LOgin Form --------- */
+/* ------ Navigation */
+a {
+  text-decoration: none;
+ }
+ li {
+  list-style: none;
+ }
+
+ /* NAVBAR STYLING STARTS */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #3199fa;
+  color: #fff;
+ }
+ .nav-links a {
+  color: #fff;
+ }
+ /* LOGO */
+ .logo {
+  font-size: 32px;
+ }
+ /* NAVBAR MENU */
+ .menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+ }
+ .menu li:hover {
+  background-color: #3fa8ee;
+  border-radius: 5px;
+  transition: 0.3s ease;
+ }
+ .menu li {
+  padding: 5px 14px;
+ }
+ /* DROPDOWN MENU */
+ .services {
+  position: relative; 
+ }
+ .dropdown {
+  background-color: #3199fa;
+  padding: 1em 0;
+  position: absolute; /*WITH RESPECT TO PARENT*/
+  display: none;
+  border-radius: 8px;
+  top: 35px;
+ }
+ .dropdown li + li {
+  margin-top: 10px;
+ }
+ .dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+ }
+ .dropdown li:hover {
+  background-color: #3fa8ee;
+ }
+ .services:hover .dropdown {
+  display: block;
+ }
+
+ /*RESPONSIVE NAVBAR MENU STARTS*/
+
+ /* CHECKBOX HACK */
+input[type=checkbox]{
+  display: none;
+ } 
+ /*HAMBURGER MENU*/
+ .hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+ }
+ /* APPLYING MEDIA QUERIES */
+ @media (max-width: 768px) {
+ .menu { 
+  display:none;
+  position: absolute;
+  background-color:#3199fa;
+  right: 0;
+  left: 0;
+  text-align: center;
+  padding: 16px 0;
+ }
+ .menu li:hover {
+  display: inline-block;
+  background-color:#3fa8ee;
+  transition: 0.3s ease;
+ }
+ .menu li + li {
+  margin-top: 12px;
+ }
+ input[type=checkbox]:checked ~ .menu{
+  display: block;
+ }
+ .hamburger {
+  display: block;
+ }
+ .dropdown {
+  left: 50%;
+  top: 30px;
+  transform: translateX(35%);
+ }
+ .dropdown li:hover {
+  background-color: #3fa8ee;
+ }
+ }
+/* ------ Navigation */
