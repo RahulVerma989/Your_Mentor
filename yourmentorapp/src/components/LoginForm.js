@@ -1,17 +1,21 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { ReactDOM } from 'react';
+import { React,useEffect,ReactDOM } from 'react';
+import {GoogleLogin} from "react-google-login";
+import {Helmet} from "react-helmet";
 import { Form, Field } from "@progress/kendo-react-form";
 import styled from 'styled-components';
 // import countries from "./countries"; not required for us.
 
-const emailValidator = (value) => (
-    new RegExp(/\S+@\S+\.\S+/).test(value) ? "" : "Please enter a valid email."
-);
-const requiredValidator = (value) => {
-    return value ? "" : "This field is required";
+// const emailValidator = (value) => (
+//     new RegExp(/\S+@\S+\.\S+/).test(value) ? "" : "Please enter a valid email."
+// );
+// const requiredValidator = (value) => {
+//     return value ? "" : "This field is required";
+// }
+
+const responseGoogle = (response) => {
+  console.log(response);
 }
-  
+
 function LoginForm() {
     const [email, setEmail] = React.useState("");
     const [password, setPassword] = React.useState("");
@@ -19,49 +23,55 @@ function LoginForm() {
     const [acceptedTerms, setAcceptedTerms] = React.useState(false);
     
     const handleSubmit = (data,event) => {
+      event.preventDefault();
         console.log(`
           Email: ${data.email}
           Password: ${data.password}
-          Accepted Terms: ${data.acceptedTerms}
+          acceptedTerms: ${data.acceptedTerms}
           `);
-    
-        event.preventDefault();
     }
     
     return (
-        <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => {handleSubmit({'email':email,'password':password,'acceptedTerms':acceptedTerms},e)}}> 
       <h1>Create Account</h1>
-
-      <label>
-        Email:
+        <div>
+          <div id='googleButton'>
+          <GoogleLogin
+            clientId="1016584848800-h5qthn2equndp7jar5bi1mdhaeure72f.apps.googleusercontent.com"
+            buttonText="Login"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            cookiePolicy={'single_host_origin'}
+          />
+          </div>
+        </div>
         <input
           name="email"
           type="email"
+          placeholder="Email"
           value={email}
           onChange={e => setEmail(e.target.value)}
           required />
-      </label>
 
-      <label>
-        Password:
         <input
           name="password"
           type="password"
+          placeholder = "Password"
           value={password}
           onChange={e => setPassword(e.target.value)}
           required />
-      </label>
 
       <label>
         <input
           name="acceptedTerms"
           type="checkbox"
-          onChange={e => setAcceptedTerms(e.target.value)}
+          onChange={e => setAcceptedTerms(e.target.checked)}
           required />
-        I accept the terms of service
+           I accept the terms of service of your mentor
       </label>
 
       <button>Submit</button>
+      
     </form>
     )
 }

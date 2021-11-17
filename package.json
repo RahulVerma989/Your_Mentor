@@ -1,1 +1,1 @@
-{"name":"converted","version":"1.0.0","description":"","author":"","license":"ISC","dependencies":{"@progress/kendo-react-form":"^4.10.0","cors":"2.8.5","styled-components":"^5.3.3","yarn":"^1.22.17"}}
+{"name":"converted","version":"1.0.0","description":"","author":"","license":"ISC","dependencies":{"@progress/kendo-react-form":"^4.10.0","cors":"2.8.5","react":"^17.0.0","react-google-login":"^5.2.2","react-helmet":"^6.1.0","styled-components":"^5.3.3","yarn":"^1.22.17"}}
