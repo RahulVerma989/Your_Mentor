@@ -14,6 +14,9 @@ app.get("/", (req, res) => {
 app.get('/login',(req,res) => {
   res.sendFile(path.join(__dirname, '../public/views/Loginform.html'));
 });
+app.get('/Pagenotfound',(req,res) => {
+  res.sendFile(path.join(__dirname, '../public/views/pagenotfound.html'));
+});
 
 app.listen(3001, () => {
   console.log("app listening on port 3001")
