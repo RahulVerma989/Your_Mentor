@@ -1,17 +1,12 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-body {
+#NotFoundSection
+{
     background-image: url('images/page-not-found.svg');
     font-family: 'Montserrat';
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    color: rgb(56, 56, 56);
-    
+    color: rgb(56, 56, 56); 
 }
 
 .wrapper {
@@ -41,6 +36,3 @@ body {
     cursor: pointer;
 }
 .btn:hover {background: rgb(132, 37, 255) ;}
-/* .copyRights {
-    /* margin-top: 60px; */
-/* } */
