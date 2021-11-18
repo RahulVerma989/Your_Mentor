@@ -1,19 +1,20 @@
 const express = require("express");
 const path = require('path');
 const app = express();
-const router = express.Router();
+app.use('/css',express.static(path.join(__dirname,'../public/assets/css')));
+app.use('/js',express.static(path.join(__dirname,'../public/assets/js')));
+app.use('/images',express.static(path.join(__dirname,'../public/assets/images')));
+app.use('/views',express.static(path.join(__dirname,'../public/views')));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, '../front-end/views/index.html'));
+    res.sendFile(path.join(__dirname, '../public/views/index.html'));
 });
 
 // login page
-router.get('/login',(req,res) => {
-  res.sendFile(path.join(__dirname, '../front-end/views/Loginform.html'));
+app.get('/login',(req,res) => {
+  res.sendFile(path.join(__dirname, '../public/views/Loginform.html'));
 });
 
 app.listen(3001, () => {
   console.log("app listening on port 3001")
 })
-
-module.exports = router;
