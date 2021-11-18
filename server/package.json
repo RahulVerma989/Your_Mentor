@@ -1,0 +1,23 @@
+{
+  "name": "yourmentor",
+  "version": "12.18.3",
+  "description": "\"A web application for Mentoring.\"",
+  "main": "index.js",
+  "scripts": {
+    "start":"node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "YourMentor"
+  },
+  "keywords": [
+    "\"JustPay\""
+  ],
+  "author": "\"justpay\",",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15"
+  }
+}
