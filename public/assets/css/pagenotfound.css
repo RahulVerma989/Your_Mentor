@@ -6,7 +6,6 @@
 body {
     background-image: url('images/page-not-found.svg');
     font-family: 'Montserrat';
-    height: 125vh;
     display: flex;
     justify-content: center;
     align-items: center;
