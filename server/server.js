@@ -16,8 +16,4 @@ app.listen(3001, () => {
 //   res.send({"name": "Jane Doe"}) // Should be json format
 // })
 
-const cors = require("cors")
-
-app.use(cors())
-
 module.exports = router;
