@@ -2,7 +2,6 @@ const express = require("express");
 const fs = require("fs");
 var bodyParser = require("body-parser");
 const path = require('path');
-const { log } = require("console");
 const app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -65,7 +64,7 @@ app.post('/fetch-page',(req,res)=>{
   }
   else
   {
-    res.redirect('/');
+    res.sendFile(path.join(__dirname, '../public/views/index.html'));
   }
   
   
