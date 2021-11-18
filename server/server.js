@@ -7,7 +7,7 @@ app.use('/images',express.static(path.join(__dirname,'../public/assets/images'))
 app.use('/views',express.static(path.join(__dirname,'../public/views')));
 
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/views/index.html'));
+  res.sendFile(path.join(__dirname, '../public/views/index.html'));
 });
 
 // login page
