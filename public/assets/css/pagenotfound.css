@@ -8,6 +8,16 @@
     flex-direction: column;
     color: rgb(56, 56, 56); 
 }
+#NotFoundSection img 
+{
+    display:block;
+    position:relative;
+    margin:auto;
+    max-width:600px;
+    max-height:400px;
+    width:inherit;
+    height:auto;
+}
 
 .wrapper {
     display: flex;

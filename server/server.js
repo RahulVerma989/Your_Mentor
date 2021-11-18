@@ -26,17 +26,10 @@ app.get('/Pagenotfound',(req,res) => {
 
 function PageNotFoundData(){
   const pageNotfound = "../public/views/page-not-found.html";
+  // console.log(fs.existsSync(path.join(__dirname, pageNotfound)));
   if(fs.existsSync(path.join(__dirname, pageNotfound)))
   {
-    fs.readFile(path.join(__dirname, pageNotfound),{encoding:'utf8',flag:'r'},(error,data) => {
-      if(error){
-        return "Page Not Found";
-      }
-      else
-      {
-        return data;
-      }
-    })
+    return fs.readFileSync(path.join(__dirname, pageNotfound),{encoding:'utf8',flag:'r'});
   }else{
     return "Page Not Found";
   }
@@ -51,7 +44,7 @@ app.post('/fetch-page',(req,res)=>{
     const FilePath = "../public/views/"+req.body.page+".html";
     if(fs.existsSync(path.join(__dirname, FilePath)))
     {
-          data = fs.readFile(path.join(__dirname, FilePath),{encoding:'utf8',flag:'r'}, (error,data) => {
+          fs.readFile(path.join(__dirname, FilePath),{encoding:'utf8',flag:'r'}, (error,data) => {
           if(error){
             res.send(PageNotFoundData());
           }
@@ -61,7 +54,7 @@ app.post('/fetch-page',(req,res)=>{
         });
     }
     else{    
-      console.log('does not exists!!');
+      // console.log('does not exists!!');
       res.send(PageNotFoundData());
     }
   }
