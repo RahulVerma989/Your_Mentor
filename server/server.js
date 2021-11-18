@@ -20,6 +20,9 @@ app.get("/", (req, res) => {
 app.get('/login',(req,res) => {
   res.sendFile(path.join(__dirname, '../public/views/Loginform.html'));
 });
+app.get('/Pagenotfound',(req,res) => {
+  res.sendFile(path.join(__dirname, '../public/views/pagenotfound.html'));
+});
 
 function PageNotFoundData(){
   const pageNotfound = "../public/views/page-not-found.html";
