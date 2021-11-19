@@ -32,7 +32,7 @@ body {
   right:0px;
   padding:10px;
   z-index:20;
-  box-shadow: -8px 3px 9px 13px #dedcdc;
+  box-shadow: -8px 3px 9px 13px rgba(0,0,0,0.1);
   background-color:white;
 }
 #NavBar .fa-bars
@@ -227,6 +227,72 @@ body {
   display:block;
   position:relative;
   min-height:100vh;
+}
+
+#Loading 
+{
+  display:block;
+  position:fixed;
+  width:100vw;
+  height:100vh;
+  top:0px;
+  left:0px;
+  background-color:rgba(0,0,0,0.2);
+  text-align:center;
+  z-index:25;
+}
+#Loading #loading-elements
+{
+  display:inline-block;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  margin:auto;
+}
+#Loading #loading-elements b 
+{
+  display:inline-block;
+  position:relative;
+  padding:3px;
+  border-radius:100%;
+  margin:3px;
+  top:0px;
+  color:white;
+  animation: loading-animation 1s infinite alternate;
+  animation-delay:0.2s;
+}
+#Loading #loading-elements b::before,
+#Loading #loading-elements b::after
+{
+  content:'';
+  display:inline-block;
+  position:absolute;
+  top:0px;
+  padding:3px;
+  border-radius:100%;
+  color:white;
+  animation: loading-animation 1s infinite alternate;
+}
+#Loading #loading-elements b::before
+{
+  left:-10px;
+  animation-delay:0s;
+}
+#Loading #loading-elements b::after
+{
+  right:-10px;
+  animation-delay:0.4s;
+}
+
+@keyframes loading-animation {
+    0%{
+        background-color:#ff7bd7;
+      }
+    100%
+    {
+      background-color:white;
+    }
 }
 
   /* Login Form  */
