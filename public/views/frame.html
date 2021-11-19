@@ -107,9 +107,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
 
-$('.fetch-page').on('click',function(){
-    var page = $(this).attr('fetch-page');
-    console.log(page);
+const fetchPage = async (page) => {
     $.ajax({
         type:"POST",
         url:"/fetch-page",
@@ -120,6 +118,13 @@ $('.fetch-page').on('click',function(){
             $('#Page').append(data);
         }
     });
+}
+fetchPage('/');
+
+$('.fetch-page').on('click',function(){
+    var page = $(this).attr('fetch-page');
+    console.log(page);
+    fetchPage(page);    
 });
 
 $(window).resize(function(){
@@ -148,6 +153,14 @@ $('#NavBar .fa-bars').on('click',function(){
         $('#NavBar ul').css('display','none');
     }
 });
+
+$('#NavBar ul li a').on('click', function(){
+    if($('#NavBar .fa-bars').css('display') != 'none')
+    {
+        $('#NavBar ul').css('display','none');
+    }
+});
+
 </script>
 </body>
 </html>
