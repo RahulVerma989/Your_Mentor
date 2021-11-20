@@ -13,7 +13,7 @@ html{
 }
 
 a{
-    color:#FF0042;
+    color:#000000;
     font-weight: bolder;
     text-decoration: none;
 }
@@ -36,27 +36,35 @@ h1{
     margin-top:20px;
 }
 
+.subforum a {
+    color: #000000;
+}
+
 .subforum-title{
-    background-color:#292B2E;
+    background-color:#F7F9F9;
     padding: 5px;
     border-radius: 5px;
     margin:4px;
+    color: #000000;
 }
 
 .subforum-row{
     display: grid;
     grid-template-columns: 7% 60% 13% 20%;
+    color: #000000;
 }
 
 .subforum-column{
     padding: 10px;
     margin:4px;
     border-radius: 5px;
-    background-color:#111314;
+    background-color:#F7F9F9;
+    color: #000000;
 }
 
 .subforum-description *{
     margin-block: 0;
+    color: #000000;
 }
 
 .center{
@@ -112,6 +120,7 @@ h1{
 
     .subforum-icon i{
         font-size: 35px;
+        color: #000000;
     }
 
     html{
@@ -120,6 +129,7 @@ h1{
 
     h1{
         font-size: 16px;
+        color:#000000;
     }
 
   }
@@ -221,38 +231,56 @@ header{
 
   /* Search Box styles */
 .search-box{
-    border: solid 1px #52057b;
-    margin-top: 20px;
-    padding: 40px;
+    /* border: 2px #b7b5b8; */
+    /* margin-top: 5px; */
+    margin: 5px auto;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+    padding: 5px;
     /* display:flex; */
     justify-content: center;
-    box-shadow:1px 2px 3px #52057b;
-    width: auto;
+    background-color: #fff;
+    box-shadow:1px 2px 3px #aca9ad;
+    width: inherit;
+    max-width: 820px;
 }
 
 .search-box select{
-    padding: 10px;
+    padding: 5px 10px;
     width: auto;
+    height: auto;
 }
 
 .search-box input{
     padding: 10px;
+    display: block;
+    position: relative;
     width: auto;
+    min-width: 200px;
+    /* height: auto; */
 }
-
+.search-box .change {
+    display: grid;
+    justify-content: center;
+    position: relative;
+    grid-template-columns: 120px auto 50px;
+}
 .search-box button{
-    padding: 10px;
+    padding: 5px 10px;
     background-color:#fff;
-    color:#000000;
-    width: auto;
+    color:#cc1461;
+    width: inherit;
+    height: auto;
 }
-
+/* 
 .search-box button i {
-    width: 10px;
-}
+    max-width: 100px;
+} */
 
 .search-box button:hover{
-    background-color: #000000;
+    background-color: #c01548;
     color: #fff;
     box-shadow: 1px 2px 3px #fff;
     width: auto;
@@ -309,6 +337,7 @@ footer{
 
 .table-head .subjects{
     flex: 70%;
+    color: #000000;
 }
 
 .table-head .replies{
@@ -328,7 +357,8 @@ footer{
 .table-row .status, .table-row .subjects, .table-row .replies, .table-row .last-reply{
     padding: 5px;
     margin: 2px;
-    background-color: #131415;
+    background-color: #F7F9F9;
+    color: #000000;
 }
 
 .table-row .status{
@@ -354,10 +384,11 @@ footer{
     margin-block: 20px;
     font-weight: lighter;
     font-size: 24px;
+    background-color: #F7F9F9;
 }
 
 .navigate a{
-    color: #fff;
+    color: #000000;
 }
 
 .navigate a:hover{
@@ -370,10 +401,11 @@ footer{
 .pagination{
     padding: 20px;
     font-size: 15px;
+    color: #000000;
 }
 
 .pagination a{
-    color: #fff;
+    color: #000000;
     margin-inline: 5px;
     padding: 5px 10px;
     border: solid 0.5px #fff;
@@ -384,7 +416,7 @@ footer{
 }
 
 .note{
-    background-color:#111314;
+    background-color:#504c50;
     padding: 20px;
     display: block;
 }
