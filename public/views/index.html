@@ -1,5 +1,78 @@
-<section class="Intro">
-    <div class="container"></div>
+<div class="Intro">
+    <div class="landing">
+        <div class="landingtext">
+        <h3>Find Your <span>Goal</span></h3>
+        <h5>Achieve your destination</h5>
+        </div>
+        <div class="btn"><a href="#">Learn More</a></div>
+    </div>
     <!-- <img src="images/process.svg" alt="Process"> -->
-    <object data="images/main_svg.svg" width="300" height="400"></object>
+    <object data="images/main_svg.svg" ></object>
+</div>
+<!-- Now lets make cards  -->
+<section class="features">
+    <h2>Our Features & Services</h2>
+    <div class="card-section">
+    <div class="card">
+        <img src="images/undraw_teacher_-35-j2.svg" alt="Mentoring" style="width:100%">
+        <!-- <h1>John Doe</h1> -->
+        <p class="title">Mentoring</p>
+        <!-- <p>Paid srvice</p> -->
+        <p><div class="cardbtn"><a href="#">Join here</a></div></p>
+    </div>
+    <div class="card">
+        <img src="images/undraw_navigator_a479.svg" alt="John" style="width:100%">
+        <!-- <h1>John Doe</h1> -->
+        <p class="title">Career Roadmaps</p>
+        <!-- <p>Free resources</p> -->
+        <p><div class="cardbtn"><a href="#">Join here</a></div></p>
+    </div>
+    <div class="card">
+        <img src="images/undraw_online_discussion_-5-wgl.svg" alt="John" style="width:80%">
+        <!-- <h3>John Doe</h3> -->
+        <p class="title">Community forums</p>
+        <!-- <p>Free service</p> -->
+        <p><div class="cardbtn"><a href="#">Join here</a></div></p>
+    </div>
+    </div>
+</section>
+<!--  Now lets Exolain the Fetaures   -->
+<section>
+<h1>Choose Your Goal </h1>
+<div class="preferences">
+    <div class="choicefrom">
+    <form onSubmit={handleSubmit}>
+        <h1>find Your Roadmap</h1>
+        <label>
+        Email:
+        <input
+            name="email"
+            type="email"
+            value=""
+            placeholder="username"
+            required />
+        </label>
+        <label>
+        Password:
+        <input
+            name="password"
+            type="password"
+            value=""
+            placeholder="password"
+            required />
+        </label>
+        <label>
+        <input
+            name="acceptedTerms"
+            type="checkbox"
+            required />
+        I accept the terms of service
+        </label>
+        <button>Submit</button>
+    </form>
+    </div>
+    <div class="prefersvg">
+    <img src="images/undraw_online_resume_re_ru7s.svg" alt="preferences svg" height="400px" width="600px">
+    </div>
+</div>
 </section>
