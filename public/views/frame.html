@@ -48,10 +48,161 @@
         <li><a class='fetch-page' fetch-page='mentoring'>Mentoring</a></li>
         <li><a class='fetch-page' fetch-page='forum'>forum</a></li>
         <li><a class='fetch-page' fetch-page='login'>Login</a></li>
+        <li><a class='fetch-page' fetch-page='post'>Posts</a></li>
         <li><a class='fetch-page' fetch-page='account' id='account'><img src='/images/default-user.png' alt='User Name'/></a></li>
     </ul>
 
     <b class='fas fa-bars'></b>
+</div>
+
+<div id='aim-popup'>
+        <span class='fas fa-times'></span>
+    <div id='fields-container'>
+        <h3>Tell us what do you want to become</h3>
+        <div id='fields'>            
+            <div class='field-departments'>
+                <div class='field-department-name'>
+                    <p>IT</p>
+                    <b class='fas fa-caret-down'></b>
+                </div>
+                <div class='department-fields-container'>
+                    <div class='alphabet-field-section'>
+                        <h4>A</h4>
+                        <hr/>
+                        <div class='fields-selection'>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class='department-fields-container'>
+                    <div class='alphabet-field-section'>
+                        <h4>A</h4>
+                        <hr/>
+                        <div class='fields-selection'>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='field-departments'>
+
+                <div class='field-department-name'>
+                    <p>IT</p>
+                    <b class='fas fa-caret-down'></b>
+                </div>
+                <div class='department-fields-container'>
+                    <div class='alphabet-field-section'>
+                        <h4>A</h4>
+                        <hr/>
+                        <div class='fields-selection'>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class='department-fields-container'>
+                    <div class='alphabet-field-section'>
+                        <h4>A</h4>
+                        <hr/>
+                        <div class='fields-selection'>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                            <span>
+                                <input type='radio' name='options' value='android-developer'>
+                                <label for='android-developer'>Android Developer</label>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div id='Page' class='FullWidthContainer'></div>
@@ -167,6 +318,47 @@ $('#NavBar ul li a').on('click', function(){
     if($('#NavBar .fa-bars').css('display') != 'none')
     {
         $('#NavBar ul').css('display','none');
+    }
+});
+
+$('#fields').on('click','.field-departments',function(){
+    var arrow = $(this).children('.field-department-name').children('b');
+    var fields = $(this).children('.department-fields-container');
+    if(arrow.hasClass('fa-caret-down'))
+    {
+        arrow.removeClass('fa-caret-down');
+        arrow.addClass('fa-caret-up');        
+        fields.css('display','block');
+    }
+    else
+    {
+        arrow.removeClass('fa-caret-up');
+        arrow.addClass('fa-caret-down');
+        fields.css('display','none');
+    }
+
+});
+
+$('#fields .field-departments .department-fields-container .alphabet-field-section .fields-selection span input[type=radio]').on('change',function(){
+    var value = $(this).val();
+    var newname = value.split('-'); //array
+    var finalname = "";
+    for(let i = 0; i < newname.length; i++)
+    {
+        finalname += newname[i][0].toUpperCase()+newname[i].slice(1);
+        if(i < newname.length-1)
+        {
+            finalname += ' ';
+        }        
+    }
+    $('#fields-container h3').html(`You want to become an "`+finalname+`"`);
+    $('#fields-container h3').append(`<a href='/road-map/`+value+`'>Road Map <b>😄</b></a>`);
+});
+
+$('#aim-popup').on('click','.fa-times',function(){
+    if($('#aim-popup').css('display') != 'none')
+    {
+        $('#aim-popup').css('display','none');
     }
 });
 
