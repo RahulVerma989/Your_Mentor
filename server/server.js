@@ -16,14 +16,6 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '../public/views/frame.html'));
 });
 
-// login page
-app.get('/login',(req,res) => {
-  res.sendFile(path.join(__dirname, '../public/views/Loginform.html'));
-});
-app.get('/Pagenotfound',(req,res) => {
-  res.sendFile(path.join(__dirname, '../public/views/pagenotfound.html'));
-});
-
 function PageNotFoundData(){
   const pageNotfound = "../public/views/page-not-found.html";
   // console.log(fs.existsSync(path.join(__dirname, pageNotfound)));
@@ -36,7 +28,7 @@ function PageNotFoundData(){
   
 }
 
-app.post('/fetch-page',(req,res)=>{
+app.post('/fetch-page',async (req,res)=>{
   //read request file if available and send its content as a result
   const home = ['/','index','home'];
   if(home.indexOf(req.body.page) == -1)
@@ -44,7 +36,7 @@ app.post('/fetch-page',(req,res)=>{
     const FilePath = "../public/views/"+req.body.page+".html";
     if(fs.existsSync(path.join(__dirname, FilePath)))
     {
-          fs.readFile(path.join(__dirname, FilePath),{encoding:'utf8',flag:'r'}, (error,data) => {
+          fs.readFile(path.join(__dirname, FilePath),{encoding:'utf8',flag:'r'},(error,data) => {
           if(error){
             res.send(PageNotFoundData());
           }
@@ -64,6 +56,12 @@ app.post('/fetch-page',(req,res)=>{
   }
   
   
+});
+
+app.post('/road-maps-api/:apikey',async (req,res)=>{
+  
+  json = JSON.parse(req);
+  console.log(json);
 });
 
 app.listen(3001, () => {
