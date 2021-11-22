@@ -139,7 +139,7 @@ body {
 
 #aim-popup
 {
-  display:block;
+  display:none;
   position:fixed;
   width:100vw;
   height:100vh;
@@ -513,110 +513,108 @@ body {
     }
 }
 
-  /* Login Form  */
-.login {
-  height: 97vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #ece9e9;
+/* Login Starts*/
+.login
+{
+  display:block;
+  position:absolute;
+  width:300px;
+  height:auto;
+  border-radius:5px;
+  padding:20px;
+  text-align:center;
+  transition:0.3s ease;
+  margin:auto;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  box-shadow: 5px 10px 10px 10px rgba(0,0,0,0.2);
 }
-
-form {
-    display: flex;
-    flex-direction: column;
-    width: 400px;
-    min-width: 100px;
-    min-height: 400px;
-    padding: 20px 40px 40px 40px;
-    border-radius: 6px;
-    justify-content: center;
-    box-shadow: 0px 8px 36px rgb(156, 154, 154);
-    background-color: #fefefe;
-  }
-  
-  form > h1 {
-    display: flex;
-    justify-content: center;
-    font-family: "Segoe UI", "Ubuntu", "Roboto", "Open Sans", "Helvetica Neue", sans-serif;
-    font-size: 2em;
-    font-weight: lighter;
-    margin-top: 0.25em;
-    color: #222;
-    letter-spacing: 2px;
-  }
-  
-  .info {
-    padding-bottom: 1em;
-    padding-left: 0.5em;
-    padding-right: 0.5em;
-  }
-  
-  label {
-    margin-bottom: 0.5em;
-    color: #444;
-    font-weight: lighter;
-  }
-  
-  input {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
-    width: 100%;
-  }
-  input, select {
-    padding: 10px 10px;
-    border-radius: 5px;
-    border: 1px solid #d6d1d5;
-    margin-top: 5px;
-  }
-  select {
-    display: block;
-    width: 100%;
-    height: 35px;
-  }
-  input[type="checkbox"] {
-    display: inline-block;
-    width: auto;
-    margin-top: 2em;
-    margin-right: 10px;
-  }
-  
-  button {
-    min-width: 100%;
-    cursor: pointer;
-    margin-right: 0.25em;
-    margin-top: 0.5em;
-    padding: 	0.938em;
-    border: none;
-    border-radius: 4px;
-    background-color: #22223B;
-    color: #fefefe;
-  }
-  button:hover {
-    background-color: #4A4E69;
-    color: #fefefe;
-  }
-  
-  .error {
-    color:#db2269;
-    font-size: 0.5em;
-    display: relative;
-  }
-  
-  .submit {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-  }
-a {
-  text-decoration: none;
- }
- li {
-  list-style: none;
- }
+.login h2 
+{
+  display:block;
+  position:reltaive;
+  padding:10px 0px;
+  font-size:30px;
+  font-weight:400;
+  letter-spacing:1px;
+  user-select:none;
+}
+.login .social-login
+{
+  display:block;
+  position:relative;
+  margin:10px;
+  border-radius:5px;
+  padding:5px;
+  background-color:#FBFCFC;
+}
+.login .social-login b 
+{
+  display:inline-block;
+  position:relative;
+  padding:15px;
+  border-radius:100%;
+  background-color: white;
+  cursor:pointer;
+  user-select:none;
+  margin:10px;
+  transition:0.3s ease;
+}
+.login .social-login b:hover,
+.login .social-login b:focus
+{
+  box-shadow: 2px 5px 10px rgba(0,0,0,0.2);
+}
+.login input 
+{
+  display:block;
+  position:relative;
+  border-radius: 5px;
+  padding:10px;
+  font-size:13px;
+  width:-webkit-fill-available;
+  color:black;
+  letter-spacing:1px;
+  outline:0px solid #FBFCFC;
+  border-width:0px;
+  margin:15px auto;
+  transition:0.3s ease;
+}
+.login input:valid
+{
+  outline:3px solid #D5F5E3;
+}
+.login input:invalid
+{
+  outline:3px solid #FADBD8;
+}
+.login p 
+{
+  display:block;
+  position: relative;
+  padding:5px;
+  font-size:11px;
+  font-weight:500;
+  text-align:center;
+  margin:10px auto;
+  width:-webkit-fill-available;
+  transition:0.3s ease;
+}
+.login input[type=submit]
+{
+  outline-width:0px;
+  background-color:#F7F9F9;
+  font-weight:600;
+  cursor: pointer;
+  transition:0.3s ease;
+}
+.login input[type=submit]:hover,
+.login input[type=submit]:focus 
+{
+  background-color: #F4F6F7;
+}
+/* Login Ends  */
 
 /* ------ Navigation */
 @media screen and (min-width:600px) {
@@ -912,7 +910,7 @@ section h1 {
 /* } */
 section h2{
   color: #db2269;
-  font-size: 4vw;
+  font-size: 40px;
   text-align: center;
 }
 .card-section {

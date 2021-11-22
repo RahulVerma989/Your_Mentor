@@ -45,11 +45,11 @@
     
     <ul>
         <li><a class='fetch-page' fetch-page='/'>Home</a></li>
-        <li><a class='fetch-page' fetch-page='mentoring'>Mentoring</a></li>
-        <li><a class='fetch-page' fetch-page='forum'>forum</a></li>
-        <li><a class='fetch-page' fetch-page='login'>Login</a></li>
-        <li><a class='fetch-page' fetch-page='post'>Posts</a></li>
-        <li><a class='fetch-page' fetch-page='account' id='account'><img src='/images/default-user.png' alt='User Name'/></a></li>
+        <li><a class='fetch-page' fetch-page='/mentoring'>Mentoring</a></li>
+        <li><a class='fetch-page' fetch-page='/forum'>forum</a></li>
+        <li><a class='fetch-page' fetch-page='/login'>Login</a></li>
+        <li><a class='fetch-page' fetch-page='/post'>Posts</a></li>
+        <li><a class='fetch-page' fetch-page='/account' id='account'><img src='/images/default-user.png' alt='User Name'/></a></li>
     </ul>
 
     <b class='fas fa-bars'></b>
@@ -275,16 +275,39 @@ const fetchPage = async (page) => {
         },
         success:function(data){
             $('#Page').empty();
+            page = page[0].toUpperCase()+page.slice(1)            
+            $('title').html('Your Mentor - '+page);
             $('#Page').append(data);
         }
     });
 }
-fetchPage('/');
+var autoloadpage = window.location.pathname.split("/")[1];
+if(autoloadpage == "")
+{
+    fetchPage("/");
+}
+else
+{
+    fetchPage(autoloadpage);
+}
 
 $('.fetch-page').on('click',function(){
-    var page = $(this).attr('fetch-page');
-    console.log(page);
-    fetchPage(page);    
+    var url = $(this).attr('fetch-page');
+    var pagename = url.split("/")[1];
+    if(pagename == "")
+    {
+        //if it was a home page           
+        window.history.pushState("",pagename,url);
+        $('title').html('Your Mentor');
+        fetchPage('/');
+    }
+    else
+    {
+        pagename = pagename[0].toUpperCase()+pagename.slice(1);
+        window.history.pushState("",pagename,url);
+        $('title').html('Your Mentor - '+pagename);
+        fetchPage(pagename);
+    }
 });
 
 $(window).resize(function(){

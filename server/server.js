@@ -13,6 +13,10 @@ app.use('/favicon',express.static(path.join(__dirname,'../public/assets/favicon'
 app.use('/views',express.static(path.join(__dirname,'../public/views')));
 
 app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/views/frame.html'));
+});
+
+app.get("/:page", (req, res) => {
     res.sendFile(path.join(__dirname, '../public/views/frame.html'));
 });
 
@@ -33,7 +37,7 @@ app.post('/fetch-page',async (req,res)=>{
   const home = ['/','index','home'];
   if(home.indexOf(req.body.page) == -1)
   {
-    const FilePath = "../public/views/"+req.body.page+".html";
+    const FilePath = "../public/views/"+req.body.page.toLowerCase()+".html";
     if(fs.existsSync(path.join(__dirname, FilePath)))
     {
           fs.readFile(path.join(__dirname, FilePath),{encoding:'utf8',flag:'r'},(error,data) => {
@@ -59,7 +63,7 @@ app.post('/fetch-page',async (req,res)=>{
 });
 
 app.post('/road-maps-api/:apikey',async (req,res)=>{
-  
+
   json = JSON.parse(req);
   console.log(json);
 });
