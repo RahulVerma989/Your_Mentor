@@ -35,14 +35,14 @@ const SendEmail = async (SendTo,EmailSubject,ContentType = 'text',Content) => {
     transporter.sendMail(mailOptions, (error,info) => {
         if(error){
           console.log(error);
-          LogEmail(SendTo,process.env.EMAIL_FROM,EmailSubject,Content,ContentType,error);
+         LogEmail(SendTo,process.env.EMAIL_FROM,EmailSubject,Content,ContentType,error);
         }
         else{
             console.log('Email Sent!\n');
             // console.log(info.response);
 
             //log in the database
-            LogEmail(SendTo,process.env.EMAIL_FROM,EmailSubject,Content,ContentType,'delivered');
+        LogEmail(SendTo,process.env.EMAIL_FROM,EmailSubject,Content,ContentType,'delivered');
         }
     });
     

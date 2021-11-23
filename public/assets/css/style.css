@@ -547,15 +547,16 @@ body {
   margin:10px;
   border-radius:5px;
   padding:5px;
-  background-color:#FBFCFC;
+  background-color:white;
 }
 .login .social-login b 
 {
   display:inline-block;
   position:relative;
-  padding:15px;
+  padding:8px;
+  font-size:20px;
   border-radius:100%;
-  background-color: white;
+  background-color: #F113E7;
   cursor:pointer;
   user-select:none;
   margin:10px;
@@ -613,6 +614,17 @@ body {
 .login input[type=submit]:focus 
 {
   background-color: #F4F6F7;
+}
+.login input[type=submit]:disabled
+{
+  color:#566573;
+  background-color:#ECF0F1;
+}
+.success{
+  background-color:#58D68D;
+}
+.failure{
+  background-color:#db2269;
 }
 /* Login Ends  */
 

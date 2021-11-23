@@ -291,7 +291,7 @@ else
     fetchPage(autoloadpage);
 }
 
-$('.fetch-page').on('click',function(){
+$('body').on('click','.fetch-page',function(){
     var url = $(this).attr('fetch-page');
     var pagename = url.split("/")[1];
     if(pagename == "")

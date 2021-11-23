@@ -6,10 +6,10 @@
     <input type="email" name="email" placeholder='Email' required/>
     <input type="text" name="username" placeholder='Username' required/>
     <input type="password" name="password" placeholder='password' required/>
-    <input type="cpassword" name="cpassword" placeholder='confirm password' required/>
-    <p class='notification'>some notification</p>
+    <input type="password" name="cpassword" placeholder='confirm password' required/>
+    <p class='notification'></p>
     <input type="submit" value="Register"/>
-    <p>to login <a href='/login'>click here</a></p>
+    <p>to login <a class='fetch-page' fetch-page='/login'>click here</a></p>
   </form>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -23,4 +23,226 @@
             console.log('Image URL: ' + profile.getImageUrl());
             console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     }
+    $('form').on('submit',function(e){
+        e.preventDefault();
+        const StatusElement = $('form .notification');
+        const submit = $('form input[type=submit]');
+        const submitValue = submit.val();
+        submit.attr('disabled','disabled');
+        var fromdata = "";
+
+        if(submitValue == 'Register')
+        {
+            if($('form input[name=password]').val() === $('form input[name=cpassword]').val())
+            {
+                const email = $('form input[name=email]').val();
+                const pass = $('form input[name=password]').val();
+                const username = $('form input[name=username]').val();
+
+                formdata =  "email="+email+"&username="+username+"&password="+pass;  
+
+                $.ajax({
+                    type:"POST",
+                    url:"/user",
+                    cache:false,
+                    data:formdata,
+                    beforeSend:function(){
+                        submit.val('Checking...');
+                    },
+                    success:function(data){
+                        if(data)
+                        {
+                            //console.log(data);
+                            switch(data.code)
+                            {
+                                case 0:{
+                                    ShowStatus(StatusElement,data.description,"failure");
+                                    setTimeout(function(){                            
+                                        submit.attr('disabled',false);
+                                        submit.val(submitValue);
+                                    },5000);
+                                }break;
+                                case 1:{
+                                    ShowStatus(StatusElement,data.description,"success");
+                                    //make the otp page
+                                    $('form h2').html('Account Verification');
+                                    $('form .social-login').remove();
+                                    username.attr('disabled','disabled');
+                                    email.attr('disabled','disabled');
+                                    pass.remove();
+                                    $('form input[name=cpassword]').remove();
+                                    $('form p:last-child').remove();
+                                    setTimeout(function(){
+                                        $('form').append("<p>to resend OTP <a class='post-request' post-request='new-otp'>click here</a></p>");
+                                    },1000*60);
+                                    $('<input type="text" name="otp" placeholder="OTP" required/>').insertBefore($('form p.notification'));
+                                    submit.val('Verify');
+                                }break;
+                            }
+
+                        }
+                    },
+                    error:function(request, status, error){
+                        ShowStatus(StatusElement,request.responseText,"failure");
+                        submit.val(submitValue);
+                        submit.attr('disabled',false);
+                    }
+                });
+            }
+            else
+            {
+                ShowStatus(StatusElement,"passwords don't match","failure");
+            }
+        }
+        else
+        if(submitValue == 'Verify')
+        {
+            var otp = $('form input[name=otp]').val();
+            const email = $('form input[name=email]').val();
+
+            if(otp.length)
+            {
+                formdata = "email="+email+"&otp-verify="+otp;
+                $.ajax({
+                        type:"POST",
+                        url:"/user",
+                        cache:false,
+                        data:formdata,
+                        beforeSend:function(){
+                            submit.val('Checking...');
+                        },
+                        success:function(data){
+                            if(data)
+                            {
+                                switch(data.code)
+                                {
+                                    case 0:{
+                                        ShowStatus(StatusElement,data.description,"failure");
+                                        setTimeout(function(){                            
+                                            submit.attr('disabled',false);
+                                            submit.val(submitValue);
+                                        },5000);
+                                    }break;
+                                    case 1:{
+                                        ShowStatus(StatusElement,data.description,"success");
+                                        submit.val('Redirecting...');
+                                        window.location.href = '/';
+                                    }break;
+                                }
+                            }
+                        },
+                        error:function(request, status, error){
+                            ShowStatus(StatusElement,request.responseText,"failure");
+                            submit.val(submitValue);
+                            submit.attr('disabled',false);
+                        }
+                });
+            }
+            else
+            {
+                ShowStatus(StatusElement,"Please enter your OTP","failure");
+            }
+            
+        }
+        
+    });
+
+    function ShowStatus(element,message,type)
+    {
+        element.html(message);
+        switch(type)
+        {
+            case "success":{
+                if(!element.hasClass('success'))
+                {
+                    element.addClass('success');
+                }
+                if(element.hasClass('failure'))
+                {
+                    element.removeClass('failure');
+                }
+                if(element.hasClass('general'))
+                {
+                    element.removeClass('general');
+                }
+            }break;
+            case "failure":{
+                if(!element.hasClass('failure'))
+                {
+                    element.addClass('failure');
+                }
+                if(element.hasClass('success'))
+                {
+                    element.removeClass('success');
+                }
+                if(element.hasClass('general'))
+                {
+                    element.removeClass('general');
+                }
+            }break;
+            case "general":{
+                if(!element.hasClass('general'))
+                {
+                    element.addClass('general');
+                }
+                if(element.hasClass('success'))
+                {
+                    element.removeClass('success');
+                }
+                if(element.hasClass('failure'))
+                {
+                    element.removeClass('failure');
+                }
+            }break;
+        }
+        element.show();
+
+        setTimeout(function(){
+            element.hide();
+        },2000);
+
+    }
+
+    $('form').on('click','.post-request',function(){
+        var request = $(this).attr('post-request');
+        const parent = $(this).parent();
+        const parentContent =  parent.html();
+        const form = parent.parent();
+        const email = form.children('input[name=email]').val();
+        const StatusElement = form.children('.notification');
+
+        $.ajax({
+            type:"POST",
+            url:"/user",
+            data:"email="+email+"&post-request="+request,
+            cache:false,
+            beforeSend:function(){
+                parent.remove();
+                ShowStatus(StatusElement,"Requesting...","general");
+            },
+            success:function(data){
+                if(data)
+                {
+                    switch(data.code)
+                    {
+                        case 0:{                            
+                            ShowStatus(StatusElement,data.description,"failure");
+                        }break;
+                        case 1:{                            
+                            ShowStatus(StatusElement,data.description,"success");
+                        }break;
+                    }
+                }
+                setTimeout(function(){
+                    ShowStatus(StatusElement,data.description,"general");                   
+                },2000);
+                setTimeout(function(){
+                   form.append(parentContent);
+                },1000*60);
+            },
+            error:function(request, status, error){
+                ShowStatus(StatusElement,request.responseText,"failure");
+            }
+        });
+    });
 </script>
