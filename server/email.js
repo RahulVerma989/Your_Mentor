@@ -10,7 +10,7 @@ var transporter = nodemailer.createTransport({
 });
 
 
-const SendEmail = async (SendTo,EmailSubject,ContentType = 'text',Content) => {
+const SendEmail = async (SendTo,EmailSubject,ContentType = 'text',Content,callback) => {
     var mailOptions;
 
     if(ContentType == 'text')
@@ -35,14 +35,36 @@ const SendEmail = async (SendTo,EmailSubject,ContentType = 'text',Content) => {
     transporter.sendMail(mailOptions, (error,info) => {
         if(error){
           console.log(error);
-         LogEmail(SendTo,process.env.EMAIL_FROM,EmailSubject,Content,ContentType,error);
+         LogEmail(SendTo,process.env.EMAIL_FROM,EmailSubject,Content,ContentType,error,(error,result)=>{
+             if(error)
+             {
+                //  console.log(error);
+                 callback(error,null);
+             }
+             else
+             {
+                //  console.log(result);
+                 callback(null,result);
+             }
+         });
         }
         else{
             console.log('Email Sent!\n');
             // console.log(info.response);
 
             //log in the database
-        LogEmail(SendTo,process.env.EMAIL_FROM,EmailSubject,Content,ContentType,'delivered');
+            LogEmail(SendTo,process.env.EMAIL_FROM,EmailSubject,Content,ContentType,'delivered',(error,result)=>{
+                if(error)
+                {
+                   //  console.log(error);
+                   callback(error,null);
+                }
+                else
+                {
+                   //  console.log(result);
+                    callback(null,result);
+                }
+            });
         }
     });
     

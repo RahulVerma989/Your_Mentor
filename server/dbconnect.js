@@ -1,10 +1,10 @@
 const mysql = require("mysql");
 require('dotenv').config({ path: '../../private/config.env'});
 const db = mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
-    database: process.env.DATABASE_NAME,
+    host: process.env.DATABASE_HOST || "localhost",
+    user: process.env.DATABASE_USER || "root",
+    password: process.env.DATABASE_PASSWORD || "",
+    database: process.env.DATABASE_NAME || "your_mentor",
     multipleStatements: true
 });
 db.connect((error) => {

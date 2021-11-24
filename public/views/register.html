@@ -35,9 +35,12 @@
         {
             if($('form input[name=password]').val() === $('form input[name=cpassword]').val())
             {
-                const email = $('form input[name=email]').val();
-                const pass = $('form input[name=password]').val();
-                const username = $('form input[name=username]').val();
+                const emailElement = $('form input[name=email]');
+                const email = emailElement.val();
+                const passElement = $('form input[name=password]');
+                const pass = passElement.val();
+                const usernameElement = $('form input[name=username]');
+                const username = usernameElement.val();
 
                 formdata =  "email="+email+"&username="+username+"&password="+pass;  
 
@@ -67,9 +70,9 @@
                                     //make the otp page
                                     $('form h2').html('Account Verification');
                                     $('form .social-login').remove();
-                                    username.attr('disabled','disabled');
-                                    email.attr('disabled','disabled');
-                                    pass.remove();
+                                    usernameElement.attr('disabled','disabled');
+                                    emailElement.attr('disabled','disabled');
+                                    passElement.remove();
                                     $('form input[name=cpassword]').remove();
                                     $('form p:last-child').remove();
                                     setTimeout(function(){
@@ -77,6 +80,7 @@
                                     },1000*60);
                                     $('<input type="text" name="otp" placeholder="OTP" required/>').insertBefore($('form p.notification'));
                                     submit.val('Verify');
+                                    submit.attr('disabled',false);
                                 }break;
                             }
 
@@ -102,7 +106,7 @@
 
             if(otp.length)
             {
-                formdata = "email="+email+"&otp-verify="+otp;
+                formdata = "email="+email+"&otpVerify="+otp;
                 $.ajax({
                         type:"POST",
                         url:"/user",

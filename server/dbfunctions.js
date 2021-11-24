@@ -2,8 +2,8 @@ const db = require('./dbconnect.js');
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 
-const HashIt = async (password) => {
-    const hashed = await bcrypt.hash(password);
+const HashIt = async (password,saltRounds = 10) => {
+    const hashed = await bcrypt.hash(password,saltRounds);
     return hashed;
 }
 
@@ -12,18 +12,11 @@ const compareIt = async (password,hashedPassword) => {
     return bool;
 }
 
-const otpGenerate = async (digit = 6) => {
-    const otp = crypto.randomBytes(digit,(error,buffer)=>{
-        if(error)
-        {
-            return "1234";
-        }
-        return buffer.toString(hex);
-    });
-    return otp;
+const otpGenerate = async (bytes = 3) => {
+    return crypto.randomBytes(bytes).toString('hex');
 }
 
-const DateTime = (addyears=0,addmonths=0,adddays=0,addhours=0,addminuts=0,addseconds=0) => {
+const DateTime = async (addyears=0,addmonths=0,adddays=0,addhours=0,addminuts=0,addseconds=0) => {
 
     let date_ob = new Date();
 
@@ -49,7 +42,7 @@ const DateTime = (addyears=0,addmonths=0,adddays=0,addhours=0,addminuts=0,addsec
     return year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
 };
 
-const UpdateTable = async (table_name,key_value_pairs_in_json,target_row_query) => {
+const UpdateTable = async (table_name,key_value_pairs_in_json,target_row_query, callback) => {
     var obj = JSON.parse(key_value_pairs_in_json);
     var keys = Object.keys(obj);
     var update = "";
@@ -58,73 +51,102 @@ const UpdateTable = async (table_name,key_value_pairs_in_json,target_row_query) 
         update += keys[i]+' = '+obj[keys[i]];
     }
     
-        var query = "update "+table_name+" set "+update+" where "+target_row_query;
+    var query = "update "+table_name+" set "+update+" where "+target_row_query;
     db.query(query, (error,result) => {
         if(error){ 
-            throw error;
+            callback(error,null);
         }else{
-           return result; 
+           callback(null,result); 
         }
     });
 };
 
-const InsertDataInTable = async (table_name,column_names,column_values) => {
+const InsertDataInTable = async (table_name,column_names,column_values, callback) => {
     const query = "insert into "+table_name+" ("+column_names+") values ("+column_values+")";
     
-    return db.query(query, (error,result) => {
+    db.query(query, (error,result) => {
         if(error){
-            throw error;
+            callback(error,null);
         }
         else
         {
-            return result;
+            callback(null,result);
         }
     });
 };
 
-const AnyDbQuery = async (AnyQuery) => {
-    return db.query(AnyQuery, (error,result) => {
+function AnyDbQuery(AnyQuery,callback){
+    db.query(AnyQuery, (error,result) => {
         if(error){ 
-            throw error;
+            callback(err,null);
         }
         else
         {            
-            return result;
+            callback(null,result);
         }
     });
 };
 
-const LogEmail = async (to,from,subject,content,content_type,status) => {
-    return InsertDataInTable("email_history","id,email_to,email_from,subject,content,content_type,status,updated_datetime,create_datetime","'','"+to+"','"+from+"','"+subject+"','"+content+"','"+content_type+"','"+status+"','"+DateTime()+"','"+DateTime()+"'");
-};
-
-const Register = async (email,username,password) => {
-    password = HashIt(password);
-    const vkey = HashIt(password+email);
-    const accesskey = HashIt(password+email+username+DateTime());
-    const otp = otpGenerate();
-    const usertype = "student";
-    const priority = "owner";
-    // first check if user is already registered or not
-    var result = await AnyDbQuery("select username from accounts where email='"+email+"'");
-    
-    if(row = JSON.parse(JSON.stringify(result[0])))
-    {
-        return 0;   //already registered
-    }
-    else
-    {
-        result = await InsertDataInTable("accounts","id,profile_photo,username,email,password,vkey,access_key,otp,user_type,priority,descrition,otp_expiry,updated_datetime,created_datetime","'','','"+username+"','"+email+"','"+password+"','"+vkey+"','"+accesskey+"','"+otp+"','"+usertype+"','"+priority+"','','"+DateTime()+"','"+DateTime()+"','"+DateTime()+"'");
-        if(JSON.parse(JSON.stringify(result[0])).affectedRows)
+const LogEmail = async (to,from,subject,content,content_type,status, callback) => {
+    InsertDataInTable("email_history","id,email_to,email_from,subject,content,content_type,status,updated_datetime,create_datetime","'','"+to+"','"+from+"','"+subject+"','"+content+"','"+content_type+"','"+status+"','"+DateTime()+"','"+DateTime()+"'", (error,result)=>{
+        if(error)
         {
-            return 1;   //registered
+            callback(error,null);
         }
         else
         {
-            return 2;   //unable to register
+            callback(null,result);
         }
-    }
-    
+    });
+};
+
+const Register = async (email,username,password, callback) => {
+    password = await HashIt(password,10);
+    const vkey = await HashIt(password+email,10);
+    const accesskey = await HashIt(password+email+username+DateTime(),10);
+    const otp = await otpGenerate(3);
+    const usertype = "student";
+    const priority = "owner";
+    const datetime = await DateTime(0,0,0,0,0,0);
+    const otpexpiry = await DateTime(0,0,0,0,15,0);
+    // first check if user is already registered or not
+    AnyDbQuery("select username from accounts where email='"+email+"'",(error,result)=>{
+        // console.log(result['_fields'].length);
+        if(error)
+        {
+            callback(error,null);  
+        }
+        else
+        {
+            console.log(result);
+            if(result.length)
+            {
+                callback(null,0); //already registered
+            }
+            else
+            {
+                InsertDataInTable("accounts","id,profile_photo,username,email,password,vkey,access_key,otp,user_type,priority,description,otp_expiry,updated_datetime,created_datetime","'','default.png','"+username+"','"+email+"','"+password+"','"+vkey+"','"+accesskey+"','"+otp+"','"+usertype+"','"+priority+"','','"+otpexpiry+"','"+datetime+"','"+datetime+"'",(error,result)=>{
+                    // console.log(result['_index'] >= 0);
+                    if(error)
+                    {
+                        callback(error,null);
+                    }
+                    else
+                    {
+                        // console.log(result);
+                        if(result.affectedRows)
+                        {
+                            callback(null,1);   //registered
+                        }
+                        else
+                        {
+                            callback(null,2);   //unable to register
+                        }
+                    }                    
+                });
+            }
+        }
+    });   
     
 }
 

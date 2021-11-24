@@ -3,9 +3,9 @@ const mysql = require("mysql");
 require('dotenv').config({ path: '../../private/config.env'});
 
 var db = mysql.createConnection({
-    host: process.env.DATABASE_HOST,
-    user: process.env.DATABASE_USER,
-    password: process.env.DATABASE_PASSWORD,
+    host: process.env.DATABASE_HOST || "localhost",
+    user: process.env.DATABASE_USER || "root",
+    password: process.env.DATABASE_PASSWORD || "",
     multipleStatements: true
 });
 //check if mysql server is running or not
@@ -19,14 +19,14 @@ db.connect((error) => {
         console.log("Checking database...");
 
         //try to create the database if doesnot exists
-        const sql = "CREATE DATABASE IF NOT EXISTS "+process.env.DATABASE_NAME
+        const sql = "CREATE DATABASE IF NOT EXISTS "+"your_mentor"
         db.query(sql, (error,rows)=>{
             if(error){
         
                 //database may exists
                 console.log('Database '+process.env.DATABASE_NAME+' may exists!\n');
                 console.log('Error: '+error);
-                CheckTables();
+                // CheckTables();
             }
             if(rows){
             
@@ -47,10 +47,10 @@ db.connect((error) => {
 
 const CheckTables = async () => {
     var db = mysql.createConnection({
-        host: process.env.DATABASE_HOST,
-        user: process.env.DATABASE_USER,
-        password: process.env.DATABASE_PASSWORD,
-        database: process.env.DATABASE_NAME,
+        host: process.env.DATABASE_HOST || "localhost",
+        user: process.env.DATABASE_USER || "root",
+        password: process.env.DATABASE_PASSWORD || "",
+        database: process.env.DATABASE_NAME || "your_mentor",
         multipleStatements: true
     });
     //create tables if not exists
