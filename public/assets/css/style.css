@@ -925,15 +925,18 @@ section h2{
   font-size: 40px;
   text-align: center;
 }
-.card-section {
-  margin: 60px 0 60px 0;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  position:relative;
-  flex-direction: row;
-  justify-content: space-around;
+@media screen and (min-width:800px)
+{
+  .card-section {
+    margin: 60px 0 60px 0;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    position:relative;
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
-@media screen and (min-width:600px) {
+@media screen and (max-width:800px) {
   .card-section{
     display: grid;
     grid-template-rows: auto auto auto;
@@ -944,7 +947,7 @@ section h2{
   display:inline-block;
   position:relative;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  width:300px;
+  /* width:300px; */
   min-width:250px;
   margin:5px;
   height: 300px;
