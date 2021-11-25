@@ -1,0 +1,229 @@
+{
+    "add":{
+        "department":{
+            "name": "IT", 
+            "designation":{
+                "name":"Java Developer",
+                "roadmap":[
+                    {
+                        "name":"Leran the Java fundamentals",
+                        "branch":[
+                            {
+                                "name":"Basic syntax",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Data types & variables",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Conditionals Statements",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Functions",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Loops",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Exception handling",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Data Structures",
+                                "branch":[{
+                                    "name":"Array, Strings, stack, queue, linked list, trees, graphs etc."
+                                }]
+                            },
+                            {
+                                "name":"OOPs, interfaces, Classes",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Packages",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Working with files and APIs",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Getting Deeper",
+                        "branch":[
+                            {
+                                "name":"Memory management",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Collection Frameworks",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Serialization",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Networking & sockets",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Generics",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Streams",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"How JVM works",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Garbage collecton",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Basic of threads",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Build tools",
+                        "branch":
+                        [
+                            {
+                                "name":"Gradle",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Maven",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"ANT",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Web Frameworks",
+                        "branch":
+                        [
+                            {
+                                "name":"Spring",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Spring boot",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Play framework",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Spark",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"ORM",
+                        "branch":
+                        [
+                            {
+                                "name":"JPA",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Spring data JPA",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Hibernate",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Ebean",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"JDBC",
+                        "branch":
+                        [
+                            {
+                                "name":"JDBI3",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"JDBC Template",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Testing Your App",
+                        "branch":
+                        [
+                            {
+                                "name":"Unit Testiong",
+                                "branch":[
+                                    {
+                                        "name":"JUnit",
+                                        "branch":[{}]
+                                    },
+                                    {
+                                        "name":"TestNG",
+                                        "branch":[{}]
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Integration testing",
+                                "branch":[
+                                    {
+                                        "name":"Rest Assured",
+                                        "branch":[{}]
+                                    },
+                                    {
+                                        "name":"JMeter",
+                                        "branch":[{}]
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Mockito",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Behaviour testing",
+                                "branch":[
+                                    {
+                                        "name":"Cucumber-JVM",
+                                        "branch":[{}]
+                                    },
+                                    {
+                                        "name":"Cukes",
+                                        "branch":[{}]
+                                    },
+                                    {
+                                        "name":"JBehave",
+                                        "branch":[{}]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }       
+        }      
+    }
+}

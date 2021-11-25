@@ -1,0 +1,102 @@
+{
+    "add":{
+        "department":{
+            "name": "IT", 
+            "designation":{
+                "name":"React Frontend developer",
+                "roadmap":[
+                    {
+                        "name":"Fundamental topics",
+                        "branch":[
+                            {
+                                "name":"HTML & CSS",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Create React App",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"JSX",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Components",
+                                "branch":
+                                [
+                                    {
+                                        "name":"Functional Components",
+                                        "branch":[]
+                                    },
+                                    {
+                                        "name":"Class Components",
+                                        "branch":[]
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Props vs State",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Conditional Rendering",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Component Life cycle",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Lists and Keys",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Coposition vs Inhertance",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Basic Hooks",
+                                "branch":[
+                                    {
+                                        "name":"useState",
+                                        "branch":[]
+                                    },
+                                    {
+                                        "name":"useEffect",
+                                        "branch":[]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Advanced Topics",
+                        "branch":[
+                            {
+                                "name":"first-sub-skill-name",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"second-sub-skill-name",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"second-main-skill-name",
+                        "branch":[
+                            {
+                                "name":"first-sub-skill-name",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"second-sub-skill-name",
+                                "branch":[{}]
+                            }
+                        ]
+                    }
+                ]
+            }       
+        }      
+    }
+}

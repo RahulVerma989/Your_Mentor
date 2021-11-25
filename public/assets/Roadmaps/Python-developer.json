@@ -1,0 +1,198 @@
+{
+    "add":{
+        "department":{
+            "name": "IT", 
+            "designation":{
+                "name":"Python Developer",
+                "roadmap":[
+                    {
+                        "name":"Learn the Python Basics",
+                        "branch":[
+                            {
+                                "name":"Basic syntax",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"variables and data types",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Conditional Statements",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"type Casting & Exceptions",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"functions",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"List, Tuples, Sets, Dictionaries",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Data Structures and Algorithms",
+                        "branch":[
+                            {
+                                "name":"Array and Linked lists",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"heap, stacks and Queues",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Hash Tables",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Binary search trees",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Recursion",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Sorting Algorithms",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Advanced topics",
+                        "branch":[
+                            {
+                                "name":"OOPS",
+                                "branch":[
+                                    {
+                                        "name":"Methods, Dunder",
+                                        "branch":""
+                                    },
+                                    {
+                                        "name":"Classes",
+                                        "branch":""
+                                    },
+                                    {
+                                        "name":"Inheritance",
+                                        "branch":""
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Regular Expressions",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Decorators",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Lambdas",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Iterators",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Modules",
+                                "branch":[
+                                    {
+                                        "name":"Bultin",
+                                        "branch":""
+                                    },
+                                    {
+                                        "name":"Custom",
+                                        "branch":""
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Version Control Systems",
+                        "branch":[
+                            {
+                                "name":"Basic Git usage",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Repo Hosting Service",
+                        "branch":[
+                            {
+                                "name":"Github",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Gitlab",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Bitbucket",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Package Managers",
+                        "branch":[
+                            {
+                                "name":"PypI",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Pip",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Learn a Framework",
+                        "branch":[
+                            {
+                                "name":"Django",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Flask",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Pyramid",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Testing Your Apps",
+                        "branch":[
+                            {
+                                "name":"Pytest",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"pyUnit / unittest",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"nose",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"doctest",
+                                "branch":[{}]
+                            }
+                        ]
+                    }
+                ]
+            }       
+        }      
+    }
+}
