@@ -5,8 +5,8 @@ const path = require('path');
 const app = express();
 require('dotenv').config({ path: '../../private/config.env'});
 // require('./dbcreate.js');
-// const dbfunctions = require('./dbfunctions');
-// const SendEmail = require('./email.js');
+//const dbfunctions = require('./dbfunctions');
+//const SendEmail = require('./email.js');
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
