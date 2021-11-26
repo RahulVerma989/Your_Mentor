@@ -7,9 +7,17 @@ const HashIt = async (password,saltRounds = 10) => {
     return hashed;
 }
 
-const compareIt = async (password,hashedPassword) => {
-    const bool = await bcrypt.compare(password,hashedPassword);
-    return bool;
+const compareIt = async (password,hashedPassword,callback) => {
+    bcrypt.compare(password,hashedPassword,(error,result)=>{
+        if(error)
+        {
+            callback(error,null);
+        }    
+        else
+        {
+            callback(null,result);
+        }
+    });
 }
 
 const otpGenerate = async (bytes = 3) => {
@@ -43,13 +51,14 @@ const DateTime = async (addyears=0,addmonths=0,adddays=0,addhours=0,addminuts=0,
 };
 
 const UpdateTable = async (table_name,key_value_pairs_in_json,target_row_query, callback) => {
-    var obj = JSON.parse(key_value_pairs_in_json);
+    var obj = JSON.parse(JSON.stringify(key_value_pairs_in_json));
     var keys = Object.keys(obj);
     var update = "";
     for(var i =0; i < keys.length; i++){
         if(i > 1) update += ", ";
         update += keys[i]+' = '+obj[keys[i]];
     }
+    // console.log(update);
     
     var query = "update "+table_name+" set "+update+" where "+target_row_query;
     db.query(query, (error,result) => {
@@ -61,7 +70,7 @@ const UpdateTable = async (table_name,key_value_pairs_in_json,target_row_query, 
     });
 };
 
-const InsertDataInTable = async (table_name,column_names,column_values, callback) => {
+function InsertDataInTable(table_name,column_names,column_values, callback){
     const query = "insert into "+table_name+" ("+column_names+") values ("+column_values+")";
     
     db.query(query, (error,result) => {
@@ -81,13 +90,13 @@ function AnyDbQuery(AnyQuery,callback){
             callback(err,null);
         }
         else
-        {            
-            callback(null,result);
+        {               
+            callback(null,result);    
         }
     });
 };
 
-const LogEmail = async (to,from,subject,content,content_type,status, callback) => {
+function LogEmail(to,from,subject,content,content_type,status, callback){
     InsertDataInTable("email_history","id,email_to,email_from,subject,content,content_type,status,updated_datetime,create_datetime","'','"+to+"','"+from+"','"+subject+"','"+content+"','"+content_type+"','"+status+"','"+DateTime()+"','"+DateTime()+"'", (error,result)=>{
         if(error)
         {
@@ -101,6 +110,7 @@ const LogEmail = async (to,from,subject,content,content_type,status, callback) =
 };
 
 const Register = async (email,username,password, callback) => {
+    // console.log("inside register");
     password = await HashIt(password,10);
     const vkey = await HashIt(password+email,10);
     const accesskey = await HashIt(password+email+username+DateTime(),10);
@@ -111,22 +121,22 @@ const Register = async (email,username,password, callback) => {
     const otpexpiry = await DateTime(0,0,0,0,15,0);
     // first check if user is already registered or not
     AnyDbQuery("select username from accounts where email='"+email+"'",(error,result)=>{
-        // console.log(result['_fields'].length);
+        // console.log("searching user...");
         if(error)
         {
-            callback(error,null);  
+            callback(error,null); 
+            console.log("Error : "+error); 
         }
         else
         {
-            console.log(result);
-            if(result.length)
+            // console.log(Object.values(JSON.parse(JSON.stringify(result))).length);
+            if(Object.values(JSON.parse(JSON.stringify(result))).length)
             {
                 callback(null,0); //already registered
             }
             else
             {
                 InsertDataInTable("accounts","id,profile_photo,username,email,password,vkey,access_key,otp,user_type,priority,description,otp_expiry,updated_datetime,created_datetime","'','default.png','"+username+"','"+email+"','"+password+"','"+vkey+"','"+accesskey+"','"+otp+"','"+usertype+"','"+priority+"','','"+otpexpiry+"','"+datetime+"','"+datetime+"'",(error,result)=>{
-                    // console.log(result['_index'] >= 0);
                     if(error)
                     {
                         callback(error,null);

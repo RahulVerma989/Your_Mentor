@@ -1,0 +1,120 @@
+<div id='owner-account'>
+<h1>Owner account</h1>
+    <form id='roadmaps' action="" method="POST" enctype="multipart/form-data">
+        <h3>Upload New Roadmaps</h3>
+        <input type='file' name='files' multiple='multiple' required/>
+        <p class='notification'></p>
+        <input type='submit' value='Upload'>
+    </form>
+</div>
+<script>
+$('#owner-account').on('submit','#roadmaps',function(e){
+    e.preventDefault();
+    var submit = $('#roadmaps input[type=submit]');
+    var filesTag = $('#roadmaps input[type=file]');
+    var files = filesTag.prop('files');
+    var notify = $('#roadmaps .notification');
+    var formData = new FormData($('#roadmaps')[0]);
+    var error = 0;
+    var filesArray = [];
+    for(var i = 0; i < files.length; i++)
+    {
+        if(files[i]['type'].split("/")[1] != "json")
+        {
+            notify.html("file must be of type JSON");
+            error = 1;
+            break;
+        }
+    }
+
+    if(!error)
+    {         
+        $.ajax({
+            type:"POST",
+            url:"/roadmaps_api",
+            cache:false,
+            processData: false,
+            contentType: false,
+            data:formData,
+            beforeSend:function(){
+                submit.attr("disabled","disabled");
+                notify.html("Sending...");
+            },
+            success:function(data){
+                if(data)
+                {
+                    switch(data.code)
+                    {
+                        case 0:{
+                            ShowStatus(notify,data.description,"failure");
+                        }break;
+                        case 1:{
+                            ShowStatus(notify,data.description,"success");
+                        }break;
+                    }
+                    submit.attr("disabled",false);
+                }
+            },
+            error:function(request, status, error){
+                ShowStatus(StatusElement,request.responseText,"failure");
+                submit.attr('disabled',false);
+            }
+        });
+    }
+});
+
+function ShowStatus(element,message,type)
+{
+    element.html(message);
+    switch(type)
+    {
+        case "success":{
+            if(!element.hasClass('success'))
+            {
+                element.addClass('success');
+            }
+            if(element.hasClass('failure'))
+            {
+                element.removeClass('failure');
+            }
+            if(element.hasClass('general'))
+            {
+                element.removeClass('general');
+            }
+        }break;
+        case "failure":{
+            if(!element.hasClass('failure'))
+            {
+                element.addClass('failure');
+            }
+            if(element.hasClass('success'))
+            {
+                element.removeClass('success');
+            }
+            if(element.hasClass('general'))
+            {
+                element.removeClass('general');
+            }
+        }break;
+        case "general":{
+            if(!element.hasClass('general'))
+            {
+                element.addClass('general');
+            }
+            if(element.hasClass('success'))
+            {
+                element.removeClass('success');
+            }
+            if(element.hasClass('failure'))
+            {
+                element.removeClass('failure');
+            }
+        }break;
+    }
+    element.show();
+    setTimeout(function(){
+        element.hide();
+    },2000);
+}
+
+</script>

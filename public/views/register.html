@@ -59,7 +59,8 @@
                             switch(data.code)
                             {
                                 case 0:{
-                                    ShowStatus(StatusElement,data.description,"failure");
+                                    ShowStatus(StatusElement,data.description,"failure");                                    
+                                    submit.val("Wait for 5s");
                                     setTimeout(function(){                            
                                         submit.attr('disabled',false);
                                         submit.val(submitValue);

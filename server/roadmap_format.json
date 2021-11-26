@@ -44,9 +44,9 @@
             "current-name":"current-department-name",
             "new-name":"new-department-name"
         },
-        "skill":{
-            "current-name":"current-skill-name",
-            "new-name":"new-skill-name"
+        "roadmap":{
+            "designation-name":"designation-name",
+            "new-roadmap":"new-roadmap"
         }
     },
     "delete":{
@@ -58,8 +58,8 @@
             "name":"designation-name-to-delete",
             "delete-all":"bool"
         },
-        "skill":{
-            "name":"skill-name-to delete",
+        "roadmap":{
+            "name":"designation-name",
             "delete-all":"bool"
         }
     },
