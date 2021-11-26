@@ -1,60 +1,72 @@
 {
     "add":{
         "department":{
-            "name": "Mechatronics", 
+            "name": "IT", 
             "designation":{
-                "name":"Robotics",
+                "name":"Blockchain Developer",
                 "roadmap":[
                     {
-                        "name":"Resources",
+                        "name":"Web Development",
                         "branch":[
                             {
-                                "name":"Blogs",
+                                "name":"Learn Basic Web Development",
                                 "branch":[{}]
                             },
                             {
-                                "name":"Forum",
+                                "name":"HTML,CSS,JAVASCRIPT",
                                 "branch":[{}]
                             },
                             {
-                                "name":"Twitter",
+                                "name":"General Development Skills",
                                 "branch":[{}]
                             }
                             
                         ]
                     },
                     {
-                        "name":"Starter Kit",
+                        "name":"Learn the Basics",
                         "branch":[
                             {
-                                "name":"Cretiles",
+                                "name":"Blockchain",
                                 "branch":[{}]
                             },
                             {
-                                "name":"Ready made",
+                                "name":"Learn Basics of Distributed Ledger",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Bitcoin Paper",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Elliptic Curve Cryptography",
                                 "branch":[{}]
                             }
                             
                         ]
                     },
                     {
-                        "name":"Basic tutorials",
+                        "name":"Ethereum",
                         "branch":
                         [
                             {
-                                "name":"Components",
+                                "name":"EVMs",
                                 "branch":[{}]
                             },
                             {
-                                "name":"Microcontroller",
+                                "name":"Ethereum Networks",
                                 "branch":[{}]
                             },
                             {
-                                "name":"Introduction to arduino",
+                                "name":"Learn About Wallets,address,gas,private and public keys",
                                 "branch":[{}]
                             },
                             {
-                                "name":"Arduino Examples",
+                                "name":"Ethereum Transcation",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Ethereum Clients/Nodes",
                                 "branch":[{}]
                             }
                            
@@ -62,61 +74,50 @@
                         ]
                     },
                     {
-                        "name":"Software Enviroment",
+                        "name":"Build Tools",
                         "branch":
                         [
                             {
-                                "name":"Installation",
+                                "name":"Solidity",
+                                "branch":[{}]
+                            }
+                           
+                           
+                        ]
+                    },
+                    {
+                        "name":"smart Contracts",
+                        "branch":
+                        [
+                            {
+                                "name":"Basics of smart contracts",
                                 "branch":[{}]
                             },
                             {
-                                "name":"Libraries",
+                                "name":"Ethereum high level languages",
                                 "branch":[{}]
                             },
                             {
-                                "name":"Programming Language",
+                                "name":"Life cycle of smar contracts",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Compiling,Testing and deploying smart contracts",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Interacting with deployed smart contracts",
                                 "branch":[{}]
                             }
                            
                         ]
                     },
                     {
-                        "name":"Testing sensors",
+                        "name":"Package managers",
                         "branch":
                         [
                             {
-                                "name":"Ultrasonic",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"LiDAR",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"Infrared",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"Motion",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"GPS",
-                                "branch":[{}]
-                            }
-                           
-                        ]
-                    },
-                    {
-                        "name":"Debug process",
-                        "branch":
-                        [
-                            {
-                                "name":"Component",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"Circuit Tracing",
+                                "name":"NPM",
                                 "branch":[{}]
                             }
                             
@@ -124,66 +125,36 @@
                     },
                 
                     {   
-                        "name":"Tool",
+                        "name":"IDE's",
                         "branch":[
                             {
-                                "name":"Arduino",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"Autocad",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"Sensor module",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"Raspberry pi",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"Online simulators",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"PCB Express",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"Microcontrollers and their IDE",
+                                "name":"Remix IDE",
                                 "branch":[{}]
                             }
+                           
                             
                         ]
                     },
                     {   
-                        "name":"Areas",
+                        "name":"Frameworks",
                         "branch":[
                             {
-                                "name":"IoT",
+                                "name":"Truffle",
                                 "branch":[{}]
                             },
                             {
-                                "name":"Automobile",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"Home Appliences",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"Wearable",
+                                "name":"Solidity and Ganache",
                                 "branch":[{}]
                             }
+                           
                             
                         ]
                     },
                     {   
-                        "name":"Unit Testiong",
+                        "name":"INFURA",
                         "branch":[
                             {
-                                "name":"Quality Control Technique",
+                                "name":"MainNet",
                                 "branch":[{}]
                             },
                             {
