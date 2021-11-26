@@ -1,0 +1,191 @@
+{
+    "add":{
+        "department":{
+            "name": "IT", 
+            "designation":{
+                "name":"Robotics",
+                "roadmap":[
+                    {
+                        "name":"Resources",
+                        "branch":[
+                            {
+                                "name":"Blogs",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Forum",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Twitter",
+                                "branch":[{}]
+                            }
+                            
+                        ]
+                    },
+                    {
+                        "name":"Starter kit",
+                        "branch":[
+                            {
+                                "name":"Cretiles",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Readymade",
+                                "branch":[{}]
+                            }
+                            
+                           
+                        ]
+                    },
+                    {
+                        "name":"Basic Tutorial",
+                        "branch":
+                        [
+                            {
+                                "name":"Components",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Microcontroller",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Introduction to arduino",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Arduino Examples",
+                                "branch":[{}]
+                            }
+                            
+                            
+                        ]
+                    },
+                    {
+                        "name":"Software Enviroment",
+                        "branch":
+                        [
+                            {
+                                "name":"Installation",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Libraries",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"programming language",
+                                "branch":[{}]
+                            }
+                            
+                        ]
+                    },
+                    {
+                        "name":"Testing Sensors",
+                        "branch":
+                        [
+                            {
+                                "name":"Ultrasonic",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"LiDAR",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Infrared",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Motion",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"GPS",
+                                "branch":[{}]
+                            }
+                            
+                        ]
+                    },
+                    {
+                        "name":"Debug Process",
+                        "branch":
+                        [
+                            {
+                                "name":"component testing",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Circuit Tracing",
+                                "branch":[{}]
+                            }
+                           
+                        ]
+                    },
+                    {
+                        "name":"Tools",
+                        "branch":
+                        [
+                            {
+                                "name":"Arduino",
+                                "branch":[
+                                    {
+                                        "name":"Autocad",
+                                        "branch":[{}]
+                                    },
+                                    {
+                                        "name":"Sensor Module",
+                                        "branch":[{}]
+                                    },
+                                    {
+                                        "name":"Raspberry pi",
+                                        "branch":[{}]
+                                    },
+                                    {
+                                        "name":"Online simulator",
+                                        "branch":[{}]
+                                    },
+                                    {
+                                        "name":"PCB Express",
+                                        "branch":[{}]
+                                    },
+                                    {
+                                        "name":"Microcontrollers and their IDE",
+                                        "branch":[{}]
+                                    }
+                                ]
+                                {
+                                    "name":"Areas",
+                                    "branch":
+                                    [
+                                        {
+                                            "name":"Iot",
+                                            "branch":[{}]
+                                        },
+                                        {
+                                            "name":"Automobile",
+                                            "branch":[{}]
+                                        },
+                                        {
+                                            "name":"Home Applience",
+                                            "branch":[{}]
+                                        },
+                                        {
+                                            "name":"Wearable",
+                                            "branch":[{}]
+                                        }   
+                                       
+                                       
+                                    ]
+                                }
+                                
+                            
+                            }
+                        ]
+                    }
+                ]
+            }       
+        }      
+    }
+}
