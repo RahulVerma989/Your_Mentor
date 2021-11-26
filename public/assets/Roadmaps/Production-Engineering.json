@@ -1,0 +1,59 @@
+{
+    "add":{
+        "department":{
+            "name": "Mechanical engineering", 
+            "designation":{
+                "name":"Production Engineering",
+                "roadmap":[
+                    {
+                        "name":"Bachelor's in Mechanical Engineering",
+                        "branch":[{}]
+                    },
+                    {
+                        "name":"Field Study",
+                        "branch":[
+                            {
+                                "name":"Study about production field",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Certifications in Mech. engineering Courses",
+                        "branch":[
+                            {
+                                "name":"AutoCad",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"MATLAB Simulators",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Projects on Basic Mechanical Products",
+                        "branch":[
+                            {
+                                "name":"Basic Projects on Designing",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Projects on Mechanical Simulations",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Apply for Internships",
+                        "branch":[{}]
+                    },
+                    {
+                        "name":"ready for job Now",
+                        "branch":[{}]
+                    }
+                ]
+            }       
+        }      
+    }
+}
