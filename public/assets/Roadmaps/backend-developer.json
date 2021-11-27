@@ -1,0 +1,440 @@
+{
+    "add":{
+        "department":{
+            "name": "IT", 
+            "designation":{
+                "name":"Backend developer",
+                "roadmap":[
+                    {
+                        "name":"Internet basics",
+                        "branch":[
+                            {
+                                "name":"How does the internet works",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"What is HTTP",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"How browser works",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"DNS",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"What is domain name",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"What is Hosting",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Basic frontend Knowledge",
+                        "branch":[
+                            {
+                                "name":"HTML",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"CSS",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"JavaScript",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"OS and General Knowledge",
+                        "branch":[
+                            {
+                                "name":"Terminal Usage",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"How os work in general",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Process management",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Threads and concurrency",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Basic terminal commands",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Memory management",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"I/O Management",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Interprocess communication",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"POSIX basics",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Basic Networking concepts",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Learn a Language",
+                        "branch":[
+                            {
+                                "name":"Java/C#/Rust/PHP/JavaScript/Go/Ruby",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Version Control systems",
+                        "branch":[
+                            {
+                                "name":"Basics of Git",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Github",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Learn a Relational Database",
+                        "branch":[
+                            {
+                                "name":"Postgre sql",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Mysql",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"MariaDB",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"MS SQL",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Oracle",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"NoSql database",
+                        "branch":[
+                            {
+                                "name":"MongoDB",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"CouchDB",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"DynamoDB",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"More about Database",
+                        "branch":[
+                            {
+                                "name":"ORMs",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"ACID",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Transactions",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"N+1 Problem",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"data Replicant",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Sharding startegies",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"CAP Theorem",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Learn about APIs",
+                        "branch":[
+                            {
+                                "name":"REST",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Json",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Authentication",
+                                "branch":[
+                                    {
+                                        "name":"JWT"
+                                    },
+                                    {
+                                        "name":"OAuth"
+                                    },
+                                    {
+                                        "name":"Basic Authentication"
+                                    },
+                                    {
+                                        "name":"Token Authentication"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"SOAP",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Open API Spec and swagger",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"HATEOAS",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Coaching",
+                        "branch":[
+                            {
+                                "name":"CDN",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Server side",
+                                "branch":[
+                                    {
+                                        "name":"Redis"
+                                    },
+                                    {
+                                        "name":"Memcached"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Client side"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Web security knowledge",
+                        "branch":[
+                            {
+                                "name":"HAshing Algos",
+                                "branch":[
+                                    {
+                                        "name":"MD5 and why not to use it",
+                                        "branch":[{}]
+                                    },
+                                    {
+                                        "name":"SHA Family",
+                                        "branch":[{}]
+                                    },
+                                    {
+                                        "name":"scrypt",
+                                        "branch":[{}]
+                                    },
+                                    {
+                                        "name":"bcrypt",
+                                        "branch":[{}]
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"HTTPS",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Content security Policy",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Cors",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"SSL/LTS",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"OASP Scurity risks"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Testing",
+                        "branch":[
+                            {
+                                "name":"Integration testing",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Unit testing",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Functional testing",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"CI/CD"
+                    },
+                    {
+                        "name":"Design and dev priciples",
+                        "branch":[
+                            {
+                                "name":"SOLID",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"KISS",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"YAGNI",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"DRY",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Architectural Patterns",
+                        "branch":[
+                            {
+                                "name":"Monolithic apps",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Microservices",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"SOA",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Serverless",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Message Brokers",
+                        "branch":[
+                            {
+                                "name":"Kafka",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"RabbitMQ",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Containerization v Virtualization",
+                        "branch":[
+                            {
+                                "name":"Docker",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"GraphQl",
+                        "branch":[
+                            {
+                                "name":"Relay Modern",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Apollo",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Web Servers",
+                        "branch":[
+                            {
+                                "name":"Nginx",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Apache",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Build for scale",
+                        "branch":[
+                            {
+                                "name":"Migration strategies",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Horizontal vs Vertical Scaling",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Building a observability in mind",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Keep learning"
+                    }
+               ]
+            }       
+        }      
+    }
+}
