@@ -9,24 +9,19 @@
                         "name":"Data",
                         "branch":[
                             {
-                                "name":"Sources",
-                                "branch":[{}]
+                                "name":"Sources"
                             },
                             {
-                                "name":"Cleaning",
-                                "branch":[{}]
+                                "name":"Cleaning"
                             },
                             {
-                                "name":"Scraping",
-                                "branch":[{}]
+                                "name":"Scraping"
                             },
                             {
-                                "name":"Visualising",
-                                "branch":[{}]
+                                "name":"Visualising"
                             },
                             {
-                                "name":"Simulate",
-                                "branch":[{}]
+                                "name":"Simulate"
                             }
                             
                         ]
@@ -35,32 +30,25 @@
                         "name":"Algorithm",
                         "branch":[
                             {
-                                "name":"Perfomance score",
-                                "branch":[{}]
+                                "name":"Perfomance score"
                             },
                             {
-                                "name":"Correctless",
-                                "branch":[{}]
+                                "name":"Correctless"
                             },
                             {
-                                "name":"Imbalance",
-                                "branch":[{}]
+                                "name":"Imbalance"
                             },
                             {
-                                "name":"Train",
-                                "branch":[{}]
+                                "name":"Train"
                             },
                             {
-                                "name":"Intuition",
-                                "branch":[{}]
+                                "name":"Intuition"
                             },
                             {
-                                "name":"Study Papers",
-                                "branch":[{}]
+                                "name":"Study Papers"
                             },
                             {
-                                "name":"Perfomance with the bad daa",
-                                "branch":[{}]
+                                "name":"Perfomance with the bad daa"
                             }
                            
                         ]
@@ -70,12 +58,10 @@
                         "branch":
                         [
                             {
-                                "name":"How to generate reports",
-                                "branch":[{}]
+                                "name":"How to generate reports"
                             },
                             {
-                                "name":"Record the Evidance",
-                                "branch":[{}]
+                                "name":"Record the Evidance"
                             }
                             
                         ]
@@ -85,24 +71,19 @@
                         "branch":
                         [
                             {
-                                "name":"Separate for QA",
-                                "branch":[{}]
+                                "name":"Separate for QA"
                             },
                             {
-                                "name":"Deploy Process",
-                                "branch":[{}]
+                                "name":"Deploy Process"
                             },
                             {
-                                "name":"Get Data",
-                                "branch":[{}]
+                                "name":"Get Data"
                             },
                             {
-                                "name":"Refresh Data",
-                                "branch":[{}]
+                                "name":"Refresh Data"
                             },
                             {
-                                "name":"Connect to data source",
-                                "branch":[{}]
+                                "name":"Connect to data source"
                             }
                         ]
                     },
@@ -111,32 +92,25 @@
                         "branch":
                         [
                             {
-                                "name":"New",
-                                "branch":[{}]
+                                "name":"New"
                             },
                             {
-                                "name":"Learning",
-                                "branch":[{}]
+                                "name":"Learning"
                             },
                             {
-                                "name":"Statistical",
-                                "branch":[{}]
+                                "name":"Statistical"
                             },
                             {
-                                "name":"Static",
-                                "branch":[{}]
+                                "name":"Static"
                             },
                             {
-                                "name":"Document Test",
-                                "branch":[{}]
+                                "name":"Document Test"
                             },
                             {
-                                "name":"Extremes",
-                                "branch":[{}]
+                                "name":"Extremes"
                             },
                             {
-                                "name":"Regression",
-                                "branch":[{}]
+                                "name":"Regression"
                             }
                         ]
                     },
@@ -145,16 +119,13 @@
                         "branch":
                         [
                             {
-                                "name":"Anaconda",
-                                "branch":[{}]
+                                "name":"Anaconda"
                             },
                             {
-                                "name":"Scikit",
-                                "branch":[{}]
+                                "name":"Scikit"
                             },
                             {
-                                "name":"Tensorflow",
-                                "branch":[{}]
+                                "name":"Tensorflow"
                             }
                         ]
                     },
@@ -166,12 +137,10 @@
                                 "name":"Unit Testiong",
                                 "branch":[
                                     {
-                                        "name":"JUnit",
-                                        "branch":[{}]
+                                        "name":"JUnit"
                                     },
                                     {
-                                        "name":"TestNG",
-                                        "branch":[{}]
+                                        "name":"TestNG"
                                     }
                                 ]
                             

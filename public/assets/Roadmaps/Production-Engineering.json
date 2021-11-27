@@ -6,15 +6,13 @@
                 "name":"Production Engineering",
                 "roadmap":[
                     {
-                        "name":"Bachelor's in Mechanical Engineering",
-                        "branch":[{}]
+                        "name":"Bachelor's in Mechanical Engineering"
                     },
                     {
                         "name":"Field Study",
                         "branch":[
                             {
-                                "name":"Study about production field",
-                                "branch":[{}]
+                                "name":"Study about production field"
                             }
                         ]
                     },
@@ -22,12 +20,10 @@
                         "name":"Certifications in Mech. engineering Courses",
                         "branch":[
                             {
-                                "name":"AutoCad",
-                                "branch":[{}]
+                                "name":"AutoCad"
                             },
                             {
-                                "name":"MATLAB Simulators",
-                                "branch":[{}]
+                                "name":"MATLAB Simulators"
                             }
                         ]
                     },
@@ -35,22 +31,18 @@
                         "name":"Projects on Basic Mechanical Products",
                         "branch":[
                             {
-                                "name":"Basic Projects on Designing",
-                                "branch":[{}]
+                                "name":"Basic Projects on Designing"
                             },
                             {
-                                "name":"Projects on Mechanical Simulations",
-                                "branch":[{}]
+                                "name":"Projects on Mechanical Simulations"
                             }
                         ]
                     },
                     {
-                        "name":"Apply for Internships",
-                        "branch":[{}]
+                        "name":"Apply for Internships"
                     },
                     {
-                        "name":"ready for job Now",
-                        "branch":[{}]
+                        "name":"ready for job Now"
                     }
                 ]
             }       

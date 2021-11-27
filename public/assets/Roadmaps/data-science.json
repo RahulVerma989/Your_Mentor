@@ -12,28 +12,22 @@
                         "branch":
                         [
                             {
-                                "name":"SQL scripting",
-                                "branch":[{}]
+                                "name":"SQL scripting"
                             },
                             {
-                                "name":"Conditional,list comprehension",
-                                "branch":[{}]
+                                "name":"Conditional,list comprehension"
                             },
                             {
-                                "name":"OOPS",
-                                "branch":[{}]
+                                "name":"OOPS"
                             },
                             {
-                                "name":"Working with external libraries",
-                                "branch":[{}]
+                                "name":"Working with external libraries"
                             },
                             {
-                                "name":"Fundamental algorithm",
-                                "branch":[{}]
+                                "name":"Fundamental algorithm"
                             },
                             {
-                                "name":"Advanced-Functional programming",
-                                "branch":[{}]
+                                "name":"Advanced-Functional programming"
                             }
                         ]
                     },
@@ -41,24 +35,19 @@
                         "name":"Data Extraction and Wrangling",
                         "branch":[
                             {
-                                "name":"Scripting- extracting data from websites,APIs,DBs",
-                                "branch":[{}]
+                                "name":"Scripting- extracting data from websites,APIs,DBs"
                             },
                             {
-                                "name":"Data formating",
-                                "branch":[{}]
+                                "name":"Data formating"
                             },
                             {
-                                "name":"Libraries - Pandas and NumPy",
-                                "branch":[{}]
+                                "name":"Libraries - Pandas and NumPy"
                             },
                             {
-                                "name":"Data transformation - joining,slicing,indexing",
-                                "branch":[{}]
+                                "name":"Data transformation - joining,slicing,indexing"
                             },
                             {
-                                "name":"Handling missing values",
-                                "branch":[{}]
+                                "name":"Handling missing values"
                             }
                             
                         ]
@@ -68,32 +57,25 @@
                         "branch":
                         [
                             {
-                                "name":"Defining business",
-                                "branch":[{}]
+                                "name":"Defining business"
                             },
                             {
-                                "name":"Studying data distribution",
-                                "branch":[{}]
+                                "name":"Studying data distribution"
                             },
                             {
-                                "name":"Univariate and multivariate analysis",
-                                "branch":[{}]
+                                "name":"Univariate and multivariate analysis"
                             },
                             {
-                                "name":"Data Visualization",
-                                "branch":[{}]
+                                "name":"Data Visualization"
                             },
                             {
-                                "name":"Building dashboards",
-                                "branch":[{}]
+                                "name":"Building dashboards"
                             },
                             {
-                                "name":"Writing concise and insightful reports",
-                                "branch":[{}]
+                                "name":"Writing concise and insightful reports"
                             },
                             {
-                                "name":"Business cumen",
-                                "branch":[{}]
+                                "name":"Business cumen"
                             }
                             
                             
@@ -104,28 +86,22 @@
                         "branch":
                         [
                             {
-                                "name":"Strong programming skills",
-                                "branch":[{}]
+                                "name":"Strong programming skills"
                             },
                             {
-                                "name":"Working with CLI",
-                                "branch":[{}]
+                                "name":"Working with CLI"
                             },
                             {
-                                "name":"Building ETL pipelines",
-                                "branch":[{}]
+                                "name":"Building ETL pipelines"
                             },
                             {
-                                "name":"Cloud Services",
-                                "branch":[{}]
+                                "name":"Cloud Services"
                             },
                             {
-                                "name":"Algorithms",
-                                "branch":[{}]
+                                "name":"Algorithms"
                             },
                             {
-                                "name":"Deploying ML models in production",
-                                "branch":[{}]
+                                "name":"Deploying ML models in production"
                             }
                         ]
                     },
@@ -134,36 +110,28 @@
                         "branch":
                         [
                             {
-                                "name":"Descriptive - mean,median,mode,std etc",
-                                "branch":[{}]
+                                "name":"Descriptive - mean,median,mode,std etc"
                             },
                             {
-                                "name":"Inferential",
-                                "branch":[{}]
+                                "name":"Inferential"
                             },
                             {
-                                "name":"Experiment Design",
-                                "branch":[{}]
+                                "name":"Experiment Design"
                             },
                             {
-                                "name":"Probability",
-                                "branch":[{}]
+                                "name":"Probability"
                             },
                             {
-                                "name":"ANOVA,Chi-Square test",
-                                "branch":[{}]
+                                "name":"ANOVA,Chi-Square test"
                             },
                             {
-                                "name":"Sampling,data distribution,t-tests",
-                                "branch":[{}]
+                                "name":"Sampling,data distribution,t-tests"
                             },
                             {
-                                "name":"Linear Algebra",
-                                "branch":[{}]
+                                "name":"Linear Algebra"
                             },
                             {
-                                "name":"Single and multivariate calculus",
-                                "branch":[{}]
+                                "name":"Single and multivariate calculus"
                             }
                         ]
                     },
@@ -172,32 +140,25 @@
                         "branch":
                         [
                             {
-                                "name":"Supervised",
-                                "branch":[{}]
+                                "name":"Supervised"
                             },
                             {
-                                "name":"Unsupervised",
-                                "branch":[{}]
+                                "name":"Unsupervised"
                             },
                             {
-                                "name":"Reinforcement learning",
-                                "branch":[{}]
+                                "name":"Reinforcement learning"
                             },
                             {
-                                "name":"Performance metrics",
-                                "branch":[{}]
+                                "name":"Performance metrics"
                             },
                             {
-                                "name":"Hyperparameter tuning",
-                                "branch":[{}]
+                                "name":"Hyperparameter tuning"
                             },
                             {
-                                "name":"Statistical ML",
-                                "branch":[{}]
+                                "name":"Statistical ML"
                             },
                             {
-                                "name":"Ensemble Models",
-                                "branch":[{}]
+                                "name":"Ensemble Models"
                             }
                         ]
                     }

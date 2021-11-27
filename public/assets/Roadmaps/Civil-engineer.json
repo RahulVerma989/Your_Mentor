@@ -12,20 +12,16 @@
                                 "name":"PSU Exams",
                                 "branch":[
                                     {
-                                        "name":"SSCJEE",
-                                        "branch":[]
+                                        "name":"SSCJEE"
                                     },
                                     {
-                                        "name":"ISRO Exam",
-                                        "branch":[]
+                                        "name":"ISRO Exam"
                                     },
                                     {
-                                        "name":"BARC exam",
-                                        "branch":[]
+                                        "name":"BARC exam"
                                     },
                                     {
-                                        "name":"DRDO exam",
-                                        "branch":[]
+                                        "name":"DRDO exam"
                                     }
                                 ]
                             },
@@ -33,12 +29,10 @@
                                 "name":"Engineering Competitve exams",
                                 "branch":[
                                     {
-                                        "name":"GATE exam",
-                                        "branch":[]
+                                        "name":"GATE exam"
                                     },
                                     {
-                                        "name":"IES exam",
-                                        "branch":[]
+                                        "name":"IES exam"
                                     }
                                 ]
                             }
@@ -54,12 +48,10 @@
                                         "name":"MNC's exam",
                                         "branch":[
                                             {
-                                                "name":"L&T's exam",
-                                                "branch":[]
+                                                "name":"L&T's exam"
                                             },
                                             {
-                                                "name":"DLF's exam",
-                                                "branch":[]
+                                                "name":"DLF's exam"
                                             }
                                         ]
                                     }
@@ -68,8 +60,7 @@
                             {
                                 "name":"PHD",
                                 "branch":[{
-                                    "name":"Become a Professor",
-                                    "branch":[]
+                                    "name":"Become a Professor"
                                 }]
                             }
                         ]

@@ -9,40 +9,31 @@
                         "name":"Learn the basics of Golang",
                         "branch":[
                             {
-                                "name":"Basic Syntax",
-                                "branch":[{}]
+                                "name":"Basic Syntax"
                             },
                             {
-                                "name":"Variables and declaration",
-                                "branch":[{}]
+                                "name":"Variables and declaration"
                             },
                             {
-                                "name":"Data types",
-                                "branch":[{}]
+                                "name":"Data types"
                             },
                             {
-                                "name":"Loops",
-                                "branch":[{}]
+                                "name":"Loops"
                             },
                             {
-                                "name":"Conditional Statements",
-                                "branch":[{}]
+                                "name":"Conditional Statements"
                             },
                             {
-                                "name":"Functions",
-                                "branch":[{}]
+                                "name":"Functions"
                             },
                             {
-                                "name":"Package import & Exports",
-                                "branch":[{}]
+                                "name":"Package import & Exports"
                             },
                             {
-                                "name":"Array",
-                                "branch":[{}]
+                                "name":"Array"
                             },
                             {
-                                "name":"Structs etc.",
-                                "branch":[{}]
+                                "name":"Structs etc."
                             }
                         ]
                     },
@@ -50,32 +41,25 @@
                         "name":"Going Deeper",
                         "branch":[
                             {
-                                "name":"Types, Tyes Assertions and Switches",
-                                "branch":[{}]
+                                "name":"Types, Tyes Assertions and Switches"
                             },
                             {
-                                "name":"Interfaces",
-                                "branch":[{}]
+                                "name":"Interfaces"
                             },
                             {
-                                "name":"Goroutines",
-                                "branch":[{}]
+                                "name":"Goroutines"
                             },
                             {
-                                "name":"Buffer",
-                                "branch":[{}]
+                                "name":"Buffer"
                             },
                             {
-                                "name":"Mutex",
-                                "branch":[{}]
+                                "name":"Mutex"
                             },
                             {
-                                "name":"Go Modules",
-                                "branch":[{}]
+                                "name":"Go Modules"
                             },
                             {
-                                "name":"Marshalling & Unmarshalling JSON",
-                                "branch":[{}]
+                                "name":"Marshalling & Unmarshalling JSON"
                             }
                         ]
                     },
@@ -83,12 +67,10 @@
                         "name":"Building CLIs",
                         "branch":[
                             {
-                                "name":"Cobra",
-                                "branch":[{}]
+                                "name":"Cobra"
                             },
                             {
-                                "name":"urfave/cli",
-                                "branch":[{}]
+                                "name":"urfave/cli"
                             }
                         ]
                     },
@@ -96,8 +78,7 @@
                         "name":"ORMs",
                         "branch":[
                             {
-                                "name":"GORM",
-                                "branch":[{}]
+                                "name":"GORM"
                             }
                         ]
                     },
@@ -105,28 +86,22 @@
                         "name":"Web Frameworks",
                         "branch":[
                             {
-                                "name":"Beego",
-                                "branch":[{}]
+                                "name":"Beego"
                             },
                             {
-                                "name":"Gin",
-                                "branch":[{}]
+                                "name":"Gin"
                             },
                             {
-                                "name":"Revel",
-                                "branch":[{}]
+                                "name":"Revel"
                             },
                             {
-                                "name":"Echo",
-                                "branch":[{}]
+                                "name":"Echo"
                             },
                             {
-                                "name":"Gorilla",
-                                "branch":[{}]
+                                "name":"Gorilla"
                             },
                             {
-                                "name":"Buffalo",
-                                "branch":[{}]
+                                "name":"Buffalo"
                             }
                         ]
                     },
@@ -134,12 +109,10 @@
                         "name":"Real time communication",
                         "branch":[
                             {
-                                "name":"Melody",
-                                "branch":[{}]
+                                "name":"Melody"
                             },
                             {
-                                "name":"Cntrifugo",
-                                "branch":[{}]
+                                "name":"Cntrifugo"
                             }
                         ]
                     },
@@ -183,16 +156,13 @@
                         "name":"Tools for Microservices",
                         "branch":[
                             {
-                                "name":"Watermill",
-                                "branch":[{}]
+                                "name":"Watermill"
                             },
                             {
-                                "name":"Protocol Buffers",
-                                "branch":[{}]
+                                "name":"Protocol Buffers"
                             },
                             {
-                                "name":"rpcx etc.",
-                                "branch":[{}]
+                                "name":"rpcx etc."
                             }
                         ]
                     }

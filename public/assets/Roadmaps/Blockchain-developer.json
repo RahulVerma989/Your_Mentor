@@ -9,38 +9,30 @@
                         "name":"Web Development",
                         "branch":[
                             {
-                                "name":"Learn Basic Web Development",
-                                "branch":[{}]
+                                "name":"Learn Basic Web Development"
                             },
                             {
-                                "name":"HTML,CSS,JAVASCRIPT",
-                                "branch":[{}]
+                                "name":"HTML,CSS,JAVASCRIPT"
                             },
                             {
-                                "name":"General Development Skills",
-                                "branch":[{}]
+                                "name":"General Development Skills"
                             }
-                            
                         ]
                     },
                     {
                         "name":"Learn the Basics",
                         "branch":[
                             {
-                                "name":"Blockchain",
-                                "branch":[{}]
+                                "name":"Blockchain"
                             },
                             {
-                                "name":"Learn Basics of Distributed Ledger",
-                                "branch":[{}]
+                                "name":"Learn Basics of Distributed Ledger"
                             },
                             {
-                                "name":"Bitcoin Paper",
-                                "branch":[{}]
+                                "name":"Bitcoin Paper"
                             },
                             {
-                                "name":"Elliptic Curve Cryptography",
-                                "branch":[{}]
+                                "name":"Elliptic Curve Cryptography"
                             }
                             
                         ]
@@ -50,24 +42,19 @@
                         "branch":
                         [
                             {
-                                "name":"EVMs",
-                                "branch":[{}]
+                                "name":"EVMs"
                             },
                             {
-                                "name":"Ethereum Networks",
-                                "branch":[{}]
+                                "name":"Ethereum Networks"
                             },
                             {
-                                "name":"Learn About Wallets,address,gas,private and public keys",
-                                "branch":[{}]
+                                "name":"Learn About Wallets,address,gas,private and public keys"
                             },
                             {
-                                "name":"Ethereum Transcation",
-                                "branch":[{}]
+                                "name":"Ethereum Transcation"
                             },
                             {
-                                "name":"Ethereum Clients/Nodes",
-                                "branch":[{}]
+                                "name":"Ethereum Clients/Nodes"
                             }
                            
                             
@@ -78,11 +65,8 @@
                         "branch":
                         [
                             {
-                                "name":"Solidity",
-                                "branch":[{}]
+                                "name":"Solidity"
                             }
-                           
-                           
                         ]
                     },
                     {
@@ -90,26 +74,20 @@
                         "branch":
                         [
                             {
-                                "name":"Basics of smart contracts",
-                                "branch":[{}]
+                                "name":"Basics of smart contracts"
                             },
                             {
-                                "name":"Ethereum high level languages",
-                                "branch":[{}]
+                                "name":"Ethereum high level languages"
                             },
                             {
-                                "name":"Life cycle of smar contracts",
-                                "branch":[{}]
+                                "name":"Life cycle of smar contracts"
                             },
                             {
-                                "name":"Compiling,Testing and deploying smart contracts",
-                                "branch":[{}]
+                                "name":"Compiling,Testing and deploying smart contracts"
                             },
                             {
-                                "name":"Interacting with deployed smart contracts",
-                                "branch":[{}]
+                                "name":"Interacting with deployed smart contracts"
                             }
-                           
                         ]
                     },
                     {
@@ -117,8 +95,7 @@
                         "branch":
                         [
                             {
-                                "name":"NPM",
-                                "branch":[{}]
+                                "name":"NPM"
                             }
                             
                         ]
@@ -128,38 +105,29 @@
                         "name":"IDE's",
                         "branch":[
                             {
-                                "name":"Remix IDE",
-                                "branch":[{}]
+                                "name":"Remix IDE"
                             }
-                           
-                            
                         ]
                     },
                     {   
                         "name":"Frameworks",
                         "branch":[
                             {
-                                "name":"Truffle",
-                                "branch":[{}]
+                                "name":"Truffle"
                             },
                             {
-                                "name":"Solidity and Ganache",
-                                "branch":[{}]
+                                "name":"Solidity and Ganache"
                             }
-                           
-                            
                         ]
                     },
                     {   
                         "name":"INFURA",
                         "branch":[
                             {
-                                "name":"MainNet",
-                                "branch":[{}]
+                                "name":"MainNet"
                             },
                             {
-                                "name":"Hardware lifecycle",
-                                "branch":[{}]
+                                "name":"Hardware lifecycle"
                             }
                         ]
                     }
