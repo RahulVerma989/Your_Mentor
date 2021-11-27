@@ -1,63 +1,98 @@
 const fs = require('fs');
-const dbfunctions = require('./dbfunctions');
-const path = require('path');
+const dbfunctions = require('./dbfunctions.js');
 
-const LearnRoadmap = async (roadmap_json_file_path,callback)=>{
-    fs.readFile(path.resolve(__dirname,roadmap_json_file_path),(error,result)=>{
+function LearnRoadmap(roadmap_directory_name,callback){
+    // console.log(roadmap_directory_name);
+    fs.readdir(roadmap_directory_name,(error,result)=>{
         if(error)
         {
             callback(error,null);
         }
         else
         {
-            var roadmap_json = JSON.parse(result);
-            const roadmap_actions_keys = Object.keys(roadmap_json); 
-            const roadmap_actions_count = roadmap_actions_keys.length;
-            for(var i = 0; i < roadmap_actions_count; i++)
-            {
-                switch(roadmap_actions_keys[i])
-                {
-                    case 'add':{
-                        const department_name = roadmap_json['add']['department']['name'];
-                        const designation_name = roadmap_json['add']['department']['designation']['name'];
-                        const designation_roadmap = roadmap_json['add']['department']['designation']['roadmap'];
-                        RoadmapCreation(department_name,designation_name,designation_roadmap,(error,result)=>{
+            //for each roadmaps files
+            // console.log(result);
+            result.forEach(roadmap_json_file=>{
+                // console.log(roadmap_directory_name+roadmap_json_file);
+                fs.readFile(roadmap_directory_name+roadmap_json_file,(error,result)=>{
+                    if(error)
+                    {
+                        callback(error,null);
+                    }
+                    else
+                    {
+                        var roadmap_json = JSON.parse(result);
+                        const roadmap_actions_keys = Object.keys(roadmap_json); 
+                        const roadmap_actions_count = roadmap_actions_keys.length;
+                        for(var i = 0; i < roadmap_actions_count; i++)
+                        {
+                            switch(roadmap_actions_keys[i])
+                            {
+                                case 'add':{
+                                    var department_name = roadmap_json['add']['department']['name'];
+                                    var designation_name = roadmap_json['add']['department']['designation']['name'];
+                                    designation_name = designation_name.split(" ");
+                                    var designation_name_string = "";
+                                    designation_name.forEach((word,index)=>{
+                                        designation_name_string += word[0].toUpperCase() + word.slice(1);
+                                        if(index < designation_name.length - 1)
+                                        {
+                                            designation_name_string += " ";
+                                        }
+                                    });
+                                    const designation_roadmap = JSON.stringify(roadmap_json['add']['department']['designation']['roadmap']);
+                                    // console.log(designation_roadmap);
+                                   RoadmapCreation(department_name,designation_name_string,designation_roadmap,(error,result)=>{
+                                        if(error)
+                                        {
+                                            callback(error,null);
+                                        }
+                                        else
+                                        {
+                                            callback(null, result);
+                                        }
+                                    });
+                                }break;
+                                case 'update':{
+                                    UpdateRoadmap(roadmap_json['update'],(error,result)=>{
+                                        if(error)
+                                        {
+                                            callback(error,null);
+                                        }
+                                        else
+                                        {
+                                            callback(null,result);
+                                        }
+                                    });
+                                }break;
+                                case 'delete':{
+                                    DeteteInRoadmaps(roadmap_json['delete'],(error,result)=>{
+                                        if(error)
+                                        {
+                                            callback(error,null);
+                                        }
+                                        else
+                                        {
+                                            callback(null,result);
+                                        }
+                                    });
+                                }break;
+                            }
+                        }
+                        //move the file from this directory to roadmaps directory
+                        fs.rename(roadmap_directory_name+roadmap_json_file,"public/assets/roadmaps/"+roadmap_json_file,(error,result)=>{
                             if(error)
                             {
-                                callback(error,null);
+                                console.log(error);
                             }
                             else
                             {
-                                callback(null, result);
+                                console.log('roadmap archived!');
                             }
                         });
-                    }break;
-                    case 'update':{
-                        UpdateRoadmap(roadmap_json['update'],(error,result)=>{
-                            if(error)
-                            {
-                                callback(error,null);
-                            }
-                            else
-                            {
-                                callback(null,result);
-                            }
-                        });
-                    }break;
-                    case 'delete':{
-                        DeteteInRoadmaps(roadmap_json['delete'],(error,result)=>{
-                            if(error)
-                            {
-                                callback(error,null);
-                            }
-                            else
-                            {
-                                callback(null,result);
-                            }
-                        });
-                    }break;
-                }
-            }
+                    }
+                });
+            });
         }
     });
 }
@@ -70,34 +105,108 @@ function RoadmapCreation(department_name,designation_name,designation_roadmap,ca
         }
         else
         {
+            // console.log(Object.values(JSON.parse(JSON.stringify(result))));
             if(Object.values(JSON.parse(JSON.stringify(result))).length)
             {
-                //department is present
+                
+                //department is present                
+                console.log("department Present");
+
                 //create designation
-                dbfunctions.InsertDataInTable("designation","id,designation_id,designation_name,roadmap,priority,clicks,updated_datetime,create_datetime","'','"+result[0].id+"','"+designation_name+"','"+designation_roadmap+"','"+dbfunctions.DateTime(0,0,0,0,0,0)+"','"+dbfunctions.DateTime(0,0,0,0,0,0)+"'",(error,result)=>{
+                var datetime = dbfunctions.DateTime(0,0,0,0,0,0);
+                var department_id = result[0].id; //department id
+
+                //check if designation under this department is already present or not
+                dbfunctions.AnyDbQuery("select designation_name from designation where department_id='"+department_id+"' and designation_name='"+designation_name+"'",(error,result)=>{
                     if(error)
                     {
                         callback(error,null);
                     }
                     else
                     {
-                        callback(null,result);
+                        if(!Object.values(JSON.parse(JSON.stringify(result))).length)
+                        {
+                            //if designation is not present then insert it into database 
+                            dbfunctions.InsertDataInTable("designation","id,department_id,designation_name,roadmap,priority,clicks,updated_datetime,create_datetime","'','"+department_id+"','"+designation_name+"','"+designation_roadmap+"','0','0','"+datetime+"','"+datetime+"'",(error,result)=>{
+                                if(error)
+                                {
+                                    console.log(error);
+                                }
+                                else
+                                {
+                                    if(result.affectedRows)
+                                    {                                        
+                                        console.log(designation_name+" saved! \n");
+                                    }
+                                    else
+                                    {                                        
+                                        console.log("unable to save "+designation_name+"\n");
+                                    }
+                                }
+                            });
+                        }
                     }
                 });
             }
             else
             {
+                //department is not present 
+                
                 //create the department
-                dbfunctions.InsertDataInTable("fields_departments","id,department_name,clicks,updated_datetime,create_datetime","'','"+department_name+"','0','"+dbfunctions.DateTime(0,0,0,0,0,0)+"','"+dbfunctions.DateTime(0,0,0,0,0,0)+"'",(error,result)=>{
+
+                console.log("creating department...");
+
+                var datetime = dbfunctions.DateTime(0,0,0,0,0,0);
+
+                dbfunctions.InsertDataInTable("fields_departments","id,department_name,clicks,updated_datetime,create_datetime","'','"+department_name+"','0','"+datetime+"','"+datetime+"'",(error,result)=>{
                     if(error)
                     {
-                        callback(error,null);
+                        // callback(error,null);
+                        console.log(error);
                     }
                     else
                     {
                         if(result.affectedRows)
                         {
-                            RoadmapCreation(department_name,designation_name,designation_roadmap);
+                            console.log('department Inserted');
+                            // console.log(result);
+                            //getting department id
+
+                            console.log("getting department id");
+                            var datetime = dbfunctions.DateTime(0,0,0,0,0,0);
+                            department_id = result.insertId;
+                            // console.log(department_id);
+                            //checking if designation under this department is already present or not
+                            dbfunctions.AnyDbQuery("select id from designation where department_id='"+department_id+"' and designation_name='"+designation_name+"'",(error,result)=>{
+                                if(error)
+                                {
+                                    console.log(error);
+                                }
+                                else
+                                {
+                                    if(!Object.values(JSON.parse(JSON.stringify(result))).length)
+                                    {
+                                        //if designation name is not present under this department then save it in database
+                                        dbfunctions.InsertDataInTable("designation","id,department_id,designation_name,roadmap,priority,clicks,updated_datetime,create_datetime","'','"+department_id+"','"+designation_name+"','"+designation_roadmap+"','0','0','"+datetime+"','"+datetime+"'",(error,result)=>{
+                                            if(error)
+                                            {
+                                                console.log(error);
+                                            }
+                                            else
+                                            {
+                                                if(result.affectedRows)
+                                                {
+                                                    console.log(designation_name+" saved! \n");
+                                                }
+                                                else
+                                                {
+                                                    console.log("unable to save "+designation_name+"\n");
+                                                }
+                                            }
+                                        });
+                                    }
+                                }
+                            });                              
                         }
                     }
                 });

@@ -71,15 +71,15 @@
                                 "branch":[
                                     {
                                         "name":"Methods, Dunder",
-                                        "branch":""
+                                        "branch":[{}]
                                     },
                                     {
                                         "name":"Classes",
-                                        "branch":""
+                                        "branch":[{}]
                                     },
                                     {
                                         "name":"Inheritance",
-                                        "branch":""
+                                        "branch":[{}]
                                     }
                                 ]
                             },
@@ -104,11 +104,11 @@
                                 "branch":[
                                     {
                                         "name":"Bultin",
-                                        "branch":""
+                                        "branch":[{}]
                                     },
                                     {
                                         "name":"Custom",
-                                        "branch":""
+                                        "branch":[{}]
                                     }
                                 ]
                             }

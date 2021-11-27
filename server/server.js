@@ -11,6 +11,7 @@ const SendEmail = require('./email.js');
 const cookie_parser = require('cookie-parser');
 const LearnRoadmap = require('./roadmaps_functions.js');
 const multer = require('multer');
+const e = require("express");
 var storage = multer.diskStorage({   
   destination: function(req, file, cb) { 
      cb(null, 'public/assets/uploaded_roadmaps');    
@@ -37,7 +38,7 @@ app.use('/images',express.static(path.join(__dirname,'../public/assets/images'))
 app.use('/favicon',express.static(path.join(__dirname,'../public/assets/favicon')));
 app.use('/views',express.static(path.join(__dirname,'../public/views')));
 
-app.get("/", (req, res) => {  
+app.get("*", (req, res) => {  
   let user_signed_cookie = req.signedCookies.user;
   if(user_signed_cookie)
   {    
@@ -147,20 +148,20 @@ app.post('/fetch-page',async (req,res)=>{
   
 });
 
-app.post('/roadmaps_api',upload.array("files",100),(req,res)=>{  
-  for(var i = 0; i < req.files.length; i++)
-  {
-    LearnRoadmap('../'+req.files[i]['destination']+'/'+req.files[i]['filename'],(error,result)=>{
-      if(error)
-      {
-        console.log(error);
-      }
-      else
-      {
-        console.log(result.affectedRows);
-      }
-    });
-  }
+app.post('/roadmaps_api',upload.single("files"),(req,res)=>{  
+  //giving directory name to the function to learn uploaded roadmaps.
+  //as soon as a roadmap is learned it will be moved to roadmaps folder
+  // console.log(req.file['destination']);
+  LearnRoadmap(req.file['destination']+'/',(error,result)=>{
+    if(error)
+    {
+      console.log(error);
+    }
+    else
+    {
+      console.log(result.affectedRows);
+    }
+  });
   res.send({"code":1,"description":"got it!!!"});
 });
 
@@ -476,6 +477,59 @@ app.post('/user',async (req,res)=>{
                 }
               }
             });                   
+        }
+      }
+    });
+  }
+});
+
+app.post('/roadmap',(req,res)=>{
+  //get the designation name and search for its roadmap
+  //if present then send that roadmap.
+  if(req.body.hasOwnProperty('designation'))
+  {
+   var designation = req.body.designation;
+    designation = designation.split('-');
+    var designation_name = "";
+    designation.forEach((word,index)=>{
+      designation_name += word[0].toUpperCase() + word.slice(1);
+      if(index < designation.length - 1)
+      {
+        designation_name += " "
+      }
+    });
+    console.log(designation_name);
+    dbfunctions.AnyDbQuery("select department_id,roadmap from designation where designation_name='"+designation_name+"'",(error,result)=>{
+      if(error)
+      {
+        console.log(error);
+      }
+      else
+      {
+        if(Object.values(JSON.parse(JSON.stringify(result))).length)
+        {
+          //if designation is present in database
+          // now get the department name using department id
+          var department_id = result[0].department_id;
+          var roadmap = result[0].roadmap;
+          dbfunctions.AnyDbQuery("select department_name from fields_departments where id='"+department_id+"'",(error,result)=>{
+            if(error)
+            {
+              console.log(error);
+            }
+            else
+            {
+                if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                {
+                  var department_name = result[0].department_name;
+                  res.send({"code":1,"department":department_name,"designation":designation_name,"roadmap":roadmap});
+                }
+            }
+          });
+        }
+        else
+        {
+          res.send({"code":0});
         }
       }
     });

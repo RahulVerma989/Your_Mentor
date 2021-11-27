@@ -1,0 +1,106 @@
+<div id='roadmap'>
+    
+    <h1></h1>
+    <ul class='path'>
+    </ul>
+
+</div>
+<script>
+$('#roadmap').on('click','.caret',function(){
+    $(this).parent('li').children('.nested').toggleClass('active');
+    $(this).toggleClass('caret-down');
+});
+
+var designation = window.location.pathname.split("/");
+if(designation.length < 2)
+{
+    window.location.href = "/";
+}
+else
+{
+    //get the designation name
+    designation = designation[2];
+    $.ajax({
+        type:"POST",
+        url:"/roadmap",
+        data:"designation="+designation,
+        cache:false,
+        beforeSend: function(){
+            $('#Page').prepend("<div id='Loading'><div id='loading-elements'><b></b></div></div>");
+        },
+        success:function(data){
+            $('#Loading').remove();
+            if(data)
+            {
+                //var json = JSON.parse(data);
+                //console.log(data);
+                switch(data.code)
+                {
+                    case 0:{
+                        window.location.href = "/forum";
+                    }break;
+                    case 1:{
+                        $('#roadmap h1').html("Roadmap for "+data.designation+"<span class='department'>"+data.department+"</span>");
+                        //console.log(data.department);
+                        var roadmap = JSON.parse(data.roadmap);      
+                        console.log(roadmap);
+                        $('#roadmap .path').append(CreateRoadmap(roadmap));                        
+                    }break;
+                }
+            }
+        },
+        error:function(request, status, error){
+            console.log(request.responseText);
+        }
+    });
+}
+
+function CreateRoadmap(roadmap){
+    var roadmap_string = "";
+    roadmap.forEach(step => {
+        console.log(typeof step);
+        if(typeof step === "array" || typeof step === "json" || typeof step === "object")
+        {
+            if(step.hasOwnProperty('name'))
+            {   
+                //first checked if this step has some name or not
+                roadmap_string += "<li>";
+                if(step.hasOwnProperty('branch'))
+                {
+                    if(step.branch.length)
+                    {
+                        //now checked if this step has further branches or not 
+                        if(step.branch[0].hasOwnProperty('name'))
+                        {
+                            //now checked if further branch has properity name or its an empty branch
+                            //if this step branch has sub steps
+                            roadmap_string += "<span class='caret'>"+step.name+"</span>";
+                            roadmap_string += "<ul class='nested'>"+CreateRoadmap(step.branch);
+                            roadmap_string += "</ul>";            
+                        }                
+                        else
+                        {
+                            //if further branch is present but it is an empty branch then create a simple list item
+                            roadmap_string += step.name;
+                        } 
+                    }
+                    else
+                    {
+                        //if there is not further branch then just create a simple list item
+                        roadmap_string += step.name;
+                    }                      
+                }
+                else
+                {
+                    //if there is not further branch then just create a simple list item
+                    roadmap_string += step.name;
+                } 
+                   
+
+                roadmap_string += "</li>";
+            }
+        }
+    });
+    return roadmap_string;
+}
+</script>

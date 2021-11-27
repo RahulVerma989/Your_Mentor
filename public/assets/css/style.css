@@ -1028,3 +1028,93 @@ button:hover, a:hover {
 .prefersvg {
   margin-top: 40px;
 }
+
+/* Roadmaps Start */
+#roadmap
+{
+  display:block;
+  position:relative;
+  width:inherit;
+  padding:5px;
+  text-align:center;
+}
+#roadmap h1 
+{
+  display:block;
+  position:relative;
+  padding:10px;
+  font-size:25px;
+  font-weight:400;
+  margin:20px auto;
+  transition:0.3s ease;
+}
+#roadmap h1 .department 
+{
+  display:inline-block;
+  position:absolute;
+  top:-5px;
+  left:20px;
+  transition:0.3s ease;
+  padding:5px;
+  border-radius:5px;
+  background-color:#F8C471;
+  font-size:10px;
+  font-weight:400;
+  letter-spacing: 1px;
+}
+#roadmap .path, 
+#roadmap ul
+{
+  display:block;
+  position:relative;
+  font-size:13px;
+  transition:0.3s ease;
+  list-style-type: none;
+}
+#roadmap ul li 
+{
+  display:block;
+  position:relative;
+  padding:5px;
+  margin:5px;
+  transition:0.3s ease;
+}
+#roadmap .path
+{
+  margin:0px;
+  padding:0px;
+}
+#roadmap .path .caret 
+{
+  display:inline-block;
+  position:relative;
+  background-color:#F7F9F9;
+  padding:5px;
+  margin:5px;
+  cursor: pointer;
+  user-select: none;
+}
+#roadmap .path .caret::before {
+  content: "\25B6";
+  color: #2ECC71;
+  display: inline-block;
+  margin-right: 6px;
+}
+#roadmap .path .caret-down::before 
+{
+  transform: rotate(90deg);
+}
+#roadmap .path .nested
+{
+  display:none;
+  position:relative;
+  margin:10px 0px 10px 50px;
+  text-align:right;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+#roadmap .path .active 
+{
+  display: block;
+}
+/* Roadmaps Ends  */

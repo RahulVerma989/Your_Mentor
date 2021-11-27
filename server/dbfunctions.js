@@ -24,7 +24,7 @@ const otpGenerate = async (bytes = 3) => {
     return crypto.randomBytes(bytes).toString('hex');
 }
 
-const DateTime = async (addyears=0,addmonths=0,adddays=0,addhours=0,addminuts=0,addseconds=0) => {
+function DateTime(addyears=0,addmonths=0,adddays=0,addhours=0,addminuts=0,addseconds=0){
 
     let date_ob = new Date();
 
@@ -47,7 +47,7 @@ const DateTime = async (addyears=0,addmonths=0,adddays=0,addhours=0,addminuts=0,
     // current seconds
     let seconds = date_ob.getSeconds() + addseconds;
 
-    return year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds;
+    return (year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds).toString();
 };
 
 const UpdateTable = async (table_name,key_value_pairs_in_json,target_row_query, callback) => {
@@ -70,7 +70,7 @@ const UpdateTable = async (table_name,key_value_pairs_in_json,target_row_query, 
     });
 };
 
-function InsertDataInTable(table_name,column_names,column_values, callback){
+const InsertDataInTable = async (table_name,column_names,column_values, callback)=>{
     const query = "insert into "+table_name+" ("+column_names+") values ("+column_values+")";
     
     db.query(query, (error,result) => {
@@ -84,7 +84,7 @@ function InsertDataInTable(table_name,column_names,column_values, callback){
     });
 };
 
-function AnyDbQuery(AnyQuery,callback){
+const AnyDbQuery = async (AnyQuery,callback)=>{
     db.query(AnyQuery, (error,result) => {
         if(error){ 
             callback(err,null);

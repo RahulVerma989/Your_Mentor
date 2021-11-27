@@ -1,8 +1,8 @@
 <div id='owner-account'>
 <h1>Owner account</h1>
     <form id='roadmaps' action="" method="POST" enctype="multipart/form-data">
-        <h3>Upload New Roadmaps</h3>
-        <input type='file' name='files' multiple='multiple' required/>
+        <h3>Upload A New Roadmap</h3>
+        <input type='file' name='files' required/>
         <p class='notification'></p>
         <input type='submit' value='Upload'>
     </form>
@@ -16,7 +16,6 @@ $('#owner-account').on('submit','#roadmaps',function(e){
     var notify = $('#roadmaps .notification');
     var formData = new FormData($('#roadmaps')[0]);
     var error = 0;
-    var filesArray = [];
     for(var i = 0; i < files.length; i++)
     {
         if(files[i]['type'].split("/")[1] != "json")
@@ -27,8 +26,9 @@ $('#owner-account').on('submit','#roadmaps',function(e){
         }
     }
 
+
     if(!error)
-    {         
+    { 
         $.ajax({
             type:"POST",
             url:"/roadmaps_api",
