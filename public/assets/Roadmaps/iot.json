@@ -1,0 +1,57 @@
+{
+    "add":{
+        "department":{
+            "name": "Electronics", 
+            "designation":{
+                "name":"Internet of things",
+                "roadmap":[
+                    {
+                        "name":"Introduction",
+                        "branch":[
+                            
+                        ]
+                    },
+                    {
+                        "name":"IoT Architecture",
+                        "branch":[
+                           
+                        ]
+                    },
+                    {
+                        "name":"Design and Development pf Iot System",
+                        "branch":
+                        [
+                           
+                        ]
+                    },
+                    {
+                        "name":"The Arduino Platform",
+                        "branch":
+                        [
+                           
+                        ]
+                    },
+                    {
+                        "name":"Arduino Interfacing"
+                    },
+                    {
+                        "name":"Taspberry Pi Interfacing"
+                    
+                    },
+                    {
+                        "name":"IoT Communication,Programming"
+                    },
+                    {
+                        "name":"Analytics"
+                    },
+                    {
+                        "name":"Iot Project"
+                    
+                    }
+                    
+
+                ]
+            }       
+        }      
+    }
+}

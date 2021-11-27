@@ -1,0 +1,67 @@
+{
+    "add":{
+        "department":{
+            "name": "IT", 
+            "designation":{
+                "name":"Web 3.0 developer",
+                "roadmap":[
+                    {
+                        "name":"Basic Webdev foundation",
+                        "branch":[
+                            {
+                                "name":"JavaScript"
+                            },
+                            {
+                                "name":"HTML,Css"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Blockcahin basics"
+                    },
+                    {
+                        "name":"Smart Contacts",
+                        "branch":[
+                            {
+                                "name":"Blockchain Nodes"
+                            },
+                            {
+                                "name":"Mastering solidity languages"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Web3 JS Libraries",
+                        "branch":[
+                            {
+                                "name":"web3.js"
+                            },
+                            {
+                                "name":"Ethers.js"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Master Solidity",
+                        "branch":[
+                            {
+                                "name":"Blockchain and Etherum concepts"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Build Projects",
+                        "branch":[
+                            {
+                                "name":"Build 2-3 projects"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Build Portoflio and Apply to jobs"
+                    }
+                ]
+            }       
+        }      
+    }
+}

@@ -9,14 +9,12 @@
                         "name":"Neet Exam",
                         "branch":[
                             {
-                                "name":"12th Paas Eligibility",
-                                "branch":[{}]
+                                "name":"12th Paas Eligibility"
                             }
                         ]
                     },
                     {
-                        "name":"MBBS Complete",
-                        "branch":[]
+                        "name":"MBBS Complete"
                     },
                     {
                         "name":"M.S. with Surgery and M.D( Masters of Medicine)",
@@ -25,32 +23,26 @@
                                 "name":"Choose surgeon course",
                                 "branch":[
                                     {
-                                        "name":"Plastic",
-                                        "branch":[]
+                                        "name":"Plastic"
                                     },
                                     {
-                                        "name":"Vascular",
-                                        "branch":[]
+                                        "name":"Vascular"
                                     },
                                     {
-                                        "name":"Urological",
-                                        "branch":[]
+                                        "name":"Urological"
                                     },
                                     {
-                                        "name":"Gastrointestinal",
-                                        "branch":[]
+                                        "name":"Gastrointestinal"
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "name":"Master of Chirugical (M.Ch)",
-                        "branch":[]
+                        "name":"Master of Chirugical (M.Ch)"
                     },
                     {
-                        "name":"Practice as a Surgeon",
-                        "branch":[{}]
+                        "name":"Practice as a Surgeon"
                     }
                 ]
             }       

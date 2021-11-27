@@ -9,8 +9,7 @@
                         "name":"Machine Learning",
                         "branch":[
                             {
-                                "name":"Deep Learning",
-                                "branch":[{}]
+                                "name":"Deep Learning"
                             }
                         ]
                     },
@@ -18,28 +17,22 @@
                         "name":"Algorithm",
                         "branch":[
                             {
-                                "name":"Natural Language Processing",
-                                "branch":[{}]
+                                "name":"Natural Language Processing"
                             },
                             {
-                                "name":"Text Generation",
-                                "branch":[{}]
+                                "name":"Text Generation"
                             },
                             {
-                                "name":"Question Answering",
-                                "branch":[{}]
+                                "name":"Question Answering"
                             },
                             {
-                                "name":"Context Extraction",
-                                "branch":[{}]
+                                "name":"Context Extraction"
                             },
                             {
-                                "name":"Classification",
-                                "branch":[{}]
+                                "name":"Classification"
                             },
                             {
-                                "name":"Machine Translation",
-                                "branch":[{}]
+                                "name":"Machine Translation"
                             }
                         ]
                     },
@@ -48,12 +41,10 @@
                         "branch":
                         [
                             {
-                                "name":"Speech to text",
-                                "branch":[{}]
+                                "name":"Speech to text"
                             },
                             {
-                                "name":"Text to Speech",
-                                "branch":[{}]
+                                "name":"Text to Speech"
                             }
                         ]
                     },
@@ -62,27 +53,22 @@
                         "branch":
                         [
                             {
-                                "name":"Machine Vision",
-                                "branch":[{}]
+                                "name":"Machine Vision"
                             },
                             {
-                                "name":"Image Recognition",
-                                "branch":[{}]
+                                "name":"Image Recognition"
                             }
                         ]
                     },
                     {
-                        "name":"Robotics",
-                        "branch":[{}]
+                        "name":"Robotics"
                     },
                     {
-                        "name":"Planning",
-                        "branch":[{}]
+                        "name":"Planning"
                     
                     },
                     {
-                        "name":"Testing Your App",
-                        "branch":[{}]
+                        "name":"Testing Your App"
                     }
                 ]
             }       

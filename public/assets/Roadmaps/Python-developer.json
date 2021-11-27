@@ -9,28 +9,22 @@
                         "name":"Learn the Python Basics",
                         "branch":[
                             {
-                                "name":"Basic syntax",
-                                "branch":[{}]
+                                "name":"Basic syntax"
                             },
                             {
-                                "name":"variables and data types",
-                                "branch":[{}]
+                                "name":"variables and data types"
                             },
                             {
-                                "name":"Conditional Statements",
-                                "branch":[{}]
+                                "name":"Conditional Statements"
                             },
                             {
-                                "name":"type Casting & Exceptions",
-                                "branch":[{}]
+                                "name":"type Casting & Exceptions"
                             },
                             {
-                                "name":"functions",
-                                "branch":[{}]
+                                "name":"functions"
                             },
                             {
-                                "name":"List, Tuples, Sets, Dictionaries",
-                                "branch":[{}]
+                                "name":"List, Tuples, Sets, Dictionaries"
                             }
                         ]
                     },
@@ -38,28 +32,22 @@
                         "name":"Data Structures and Algorithms",
                         "branch":[
                             {
-                                "name":"Array and Linked lists",
-                                "branch":[{}]
+                                "name":"Array and Linked lists"
                             },
                             {
-                                "name":"heap, stacks and Queues",
-                                "branch":[{}]
+                                "name":"heap, stacks and Queues"
                             },
                             {
-                                "name":"Hash Tables",
-                                "branch":[{}]
+                                "name":"Hash Tables"
                             },
                             {
-                                "name":"Binary search trees",
-                                "branch":[{}]
+                                "name":"Binary search trees"
                             },
                             {
-                                "name":"Recursion",
-                                "branch":[{}]
+                                "name":"Recursion"
                             },
                             {
-                                "name":"Sorting Algorithms",
-                                "branch":[{}]
+                                "name":"Sorting Algorithms"
                             }
                         ]
                     },
@@ -70,45 +58,36 @@
                                 "name":"OOPS",
                                 "branch":[
                                     {
-                                        "name":"Methods, Dunder",
-                                        "branch":[{}]
+                                        "name":"Methods, Dunder"
                                     },
                                     {
-                                        "name":"Classes",
-                                        "branch":[{}]
+                                        "name":"Classes"
                                     },
                                     {
-                                        "name":"Inheritance",
-                                        "branch":[{}]
+                                        "name":"Inheritance"
                                     }
                                 ]
                             },
                             {
-                                "name":"Regular Expressions",
-                                "branch":[{}]
+                                "name":"Regular Expressions"
                             },
                             {
-                                "name":"Decorators",
-                                "branch":[{}]
+                                "name":"Decorators"
                             },
                             {
-                                "name":"Lambdas",
-                                "branch":[{}]
+                                "name":"Lambdas"
                             },
                             {
-                                "name":"Iterators",
-                                "branch":[{}]
+                                "name":"Iterators"
                             },
                             {
                                 "name":"Modules",
                                 "branch":[
                                     {
-                                        "name":"Bultin",
-                                        "branch":[{}]
+                                        "name":"Bultin"
                                     },
                                     {
-                                        "name":"Custom",
-                                        "branch":[{}]
+                                        "name":"Custom"
                                     }
                                 ]
                             }
@@ -118,8 +97,7 @@
                         "name":"Version Control Systems",
                         "branch":[
                             {
-                                "name":"Basic Git usage",
-                                "branch":[{}]
+                                "name":"Basic Git usage"
                             }
                         ]
                     },
@@ -127,16 +105,13 @@
                         "name":"Repo Hosting Service",
                         "branch":[
                             {
-                                "name":"Github",
-                                "branch":[{}]
+                                "name":"Github"
                             },
                             {
-                                "name":"Gitlab",
-                                "branch":[{}]
+                                "name":"Gitlab"
                             },
                             {
-                                "name":"Bitbucket",
-                                "branch":[{}]
+                                "name":"Bitbucket"
                             }
                         ]
                     },
@@ -144,12 +119,10 @@
                         "name":"Package Managers",
                         "branch":[
                             {
-                                "name":"PypI",
-                                "branch":[{}]
+                                "name":"PypI"
                             },
                             {
-                                "name":"Pip",
-                                "branch":[{}]
+                                "name":"Pip"
                             }
                         ]
                     },
@@ -157,16 +130,13 @@
                         "name":"Learn a Framework",
                         "branch":[
                             {
-                                "name":"Django",
-                                "branch":[{}]
+                                "name":"Django"
                             },
                             {
-                                "name":"Flask",
-                                "branch":[{}]
+                                "name":"Flask"
                             },
                             {
-                                "name":"Pyramid",
-                                "branch":[{}]
+                                "name":"Pyramid"
                             }
                         ]
                     },
@@ -174,20 +144,16 @@
                         "name":"Testing Your Apps",
                         "branch":[
                             {
-                                "name":"Pytest",
-                                "branch":[{}]
+                                "name":"Pytest"
                             },
                             {
-                                "name":"pyUnit / unittest",
-                                "branch":[{}]
+                                "name":"pyUnit / unittest"
                             },
                             {
-                                "name":"nose",
-                                "branch":[{}]
+                                "name":"nose"
                             },
                             {
-                                "name":"doctest",
-                                "branch":[{}]
+                                "name":"doctest"
                             }
                         ]
                     }

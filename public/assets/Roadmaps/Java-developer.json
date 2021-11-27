@@ -9,28 +9,22 @@
                         "name":"Leran the Java fundamentals",
                         "branch":[
                             {
-                                "name":"Basic syntax",
-                                "branch":[{}]
+                                "name":"Basic syntax"
                             },
                             {
-                                "name":"Data types & variables",
-                                "branch":[{}]
+                                "name":"Data types & variables"
                             },
                             {
-                                "name":"Conditionals Statements",
-                                "branch":[{}]
+                                "name":"Conditionals Statements"
                             },
                             {
-                                "name":"Functions",
-                                "branch":[{}]
+                                "name":"Functions"
                             },
                             {
-                                "name":"Loops",
-                                "branch":[{}]
+                                "name":"Loops"
                             },
                             {
-                                "name":"Exception handling",
-                                "branch":[{}]
+                                "name":"Exception handling"
                             },
                             {
                                 "name":"Data Structures",
@@ -39,16 +33,13 @@
                                 }]
                             },
                             {
-                                "name":"OOPs, interfaces, Classes",
-                                "branch":[{}]
+                                "name":"OOPs, interfaces, Classes"
                             },
                             {
-                                "name":"Packages",
-                                "branch":[{}]
+                                "name":"Packages"
                             },
                             {
-                                "name":"Working with files and APIs",
-                                "branch":[{}]
+                                "name":"Working with files and APIs"
                             }
                         ]
                     },
@@ -56,40 +47,31 @@
                         "name":"Getting Deeper",
                         "branch":[
                             {
-                                "name":"Memory management",
-                                "branch":[{}]
+                                "name":"Memory management"
                             },
                             {
-                                "name":"Collection Frameworks",
-                                "branch":[{}]
+                                "name":"Collection Frameworks"
                             },
                             {
-                                "name":"Serialization",
-                                "branch":[{}]
+                                "name":"Serialization"
                             },
                             {
-                                "name":"Networking & sockets",
-                                "branch":[{}]
+                                "name":"Networking & sockets"
                             },
                             {
-                                "name":"Generics",
-                                "branch":[{}]
+                                "name":"Generics"
                             },
                             {
-                                "name":"Streams",
-                                "branch":[{}]
+                                "name":"Streams"
                             },
                             {
-                                "name":"How JVM works",
-                                "branch":[{}]
+                                "name":"How JVM works"
                             },
                             {
-                                "name":"Garbage collecton",
-                                "branch":[{}]
+                                "name":"Garbage collecton"
                             },
                             {
-                                "name":"Basic of threads",
-                                "branch":[{}]
+                                "name":"Basic of threads"
                             }
                         ]
                     },
@@ -98,16 +80,13 @@
                         "branch":
                         [
                             {
-                                "name":"Gradle",
-                                "branch":[{}]
+                                "name":"Gradle"
                             },
                             {
-                                "name":"Maven",
-                                "branch":[{}]
+                                "name":"Maven"
                             },
                             {
-                                "name":"ANT",
-                                "branch":[{}]
+                                "name":"ANT"
                             }
                         ]
                     },
@@ -116,20 +95,16 @@
                         "branch":
                         [
                             {
-                                "name":"Spring",
-                                "branch":[{}]
+                                "name":"Spring"
                             },
                             {
-                                "name":"Spring boot",
-                                "branch":[{}]
+                                "name":"Spring boot"
                             },
                             {
-                                "name":"Play framework",
-                                "branch":[{}]
+                                "name":"Play framework"
                             },
                             {
-                                "name":"Spark",
-                                "branch":[{}]
+                                "name":"Spark"
                             }
                         ]
                     },
@@ -138,20 +113,16 @@
                         "branch":
                         [
                             {
-                                "name":"JPA",
-                                "branch":[{}]
+                                "name":"JPA"
                             },
                             {
-                                "name":"Spring data JPA",
-                                "branch":[{}]
+                                "name":"Spring data JPA"
                             },
                             {
-                                "name":"Hibernate",
-                                "branch":[{}]
+                                "name":"Hibernate"
                             },
                             {
-                                "name":"Ebean",
-                                "branch":[{}]
+                                "name":"Ebean"
                             }
                         ]
                     },
@@ -160,12 +131,10 @@
                         "branch":
                         [
                             {
-                                "name":"JDBI3",
-                                "branch":[{}]
+                                "name":"JDBI3"
                             },
                             {
-                                "name":"JDBC Template",
-                                "branch":[{}]
+                                "name":"JDBC Template"
                             }
                         ]
                     },
@@ -177,12 +146,10 @@
                                 "name":"Unit Testiong",
                                 "branch":[
                                     {
-                                        "name":"JUnit",
-                                        "branch":[{}]
+                                        "name":"JUnit"
                                     },
                                     {
-                                        "name":"TestNG",
-                                        "branch":[{}]
+                                        "name":"TestNG"
                                     }
                                 ]
                             },
@@ -190,33 +157,27 @@
                                 "name":"Integration testing",
                                 "branch":[
                                     {
-                                        "name":"Rest Assured",
-                                        "branch":[{}]
+                                        "name":"Rest Assured"
                                     },
                                     {
-                                        "name":"JMeter",
-                                        "branch":[{}]
+                                        "name":"JMeter"
                                     }
                                 ]
                             },
                             {
-                                "name":"Mockito",
-                                "branch":[{}]
+                                "name":"Mockito"
                             },
                             {
                                 "name":"Behaviour testing",
                                 "branch":[
                                     {
-                                        "name":"Cucumber-JVM",
-                                        "branch":[{}]
+                                        "name":"Cucumber-JVM"
                                     },
                                     {
-                                        "name":"Cukes",
-                                        "branch":[{}]
+                                        "name":"Cukes"
                                     },
                                     {
-                                        "name":"JBehave",
-                                        "branch":[{}]
+                                        "name":"JBehave"
                                     }
                                 ]
                             }

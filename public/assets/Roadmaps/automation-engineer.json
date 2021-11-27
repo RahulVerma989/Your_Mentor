@@ -9,75 +9,60 @@
                         "name":"Basic High school Fundamntals",
                         "branch":[
                             {
-                                "name":"Physics, Chemistry, Calulus, Algebra, geometry",
-                                "branch":[{}]
+                                "name":"Physics, Chemistry, Calulus, Algebra, geometry"
                             }
                         ]
                     },
                     {
-                        "name":"Electrical Circuits",
-                        "branch":[
-                            {}
-                        ]
+                        "name":"Electrical Circuits"
                     },
                     {
                         "name":"Electrical Components study",
                         "branch":[
                             {
-                                "name":"Relays",
-                                "branch":[{}]
+                                "name":"Relays"
                             },
                             {
-                                "name":"Modern fuse",
-                                "branch":[{}]
+                                "name":"Modern fuse"
                             },
                             {
-                                "name":"etc",
-                                "branch":[{}]
+                                "name":"etc"
                             }
                         ]
                     },
                     {
-                        "name":"Projects using Electrical Components",
-                        "branch":[{}]
+                        "name":"Projects using Electrical Components"
                     },
                     {
                         "name":"Mechanical Engineering Simulators",
                         "branch":[
                             {
-                                "name":"PLC",
-                                "branch":[{}]
+                                "name":"PLC"
                             },
                             {
-                                "name":"SCADA",
-                                "branch":[{}]
+                                "name":"SCADA"
                             },
                             {
-                                "name":"testbed",
-                                "branch":[{}]
+                                "name":"testbed"
                             }
                         ]
                     },
                     {
-                        "name":"Inhouse Training programs or Cerifiations",
-                        "branch":[{}]
+                        "name":"Inhouse Training programs or Cerifiations"
                     },
                     {
                         "name":"Internship",
                         "branch":[
                             {
-                                "name":"PSU's Summer Internship",
-                                "branch":[{}]
+                                "name":"PSU's Summer Internship"
                             },
                             {
-                                "name":"Summer internship in MNC's",
-                                "branch":[{}]
+                                "name":"Summer internship in MNC's"
                             }
                         ]
                     },
                     {
-                        "name":"Private Sector Job",
-                        "branch":[{}]
+                        "name":"Private Sector Job"
                     }
                 ]
             }       

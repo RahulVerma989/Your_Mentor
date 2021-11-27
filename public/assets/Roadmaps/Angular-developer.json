@@ -9,32 +9,25 @@
                         "name":"Learn Typescript basics",
                         "branch":[
                             {
-                                "name":"What is TypeScript",
-                                "branch":[{}]
+                                "name":"What is TypeScript"
                             },
                             {
-                                "name":"Why use TypeScript",
-                                "branch":[{}]
+                                "name":"Why use TypeScript"
                             },
                             {
-                                "name":"Structural Typing",
-                                "branch":[{}]
+                                "name":"Structural Typing"
                             },
                             {
-                                "name":"Type Interface",
-                                "branch":[{}]
+                                "name":"Type Interface"
                             },
                             {
-                                "name":"Unit Types",
-                                "branch":[{}]
+                                "name":"Unit Types"
                             },
                             {
-                                "name":"Built-in types",
-                                "branch":[{}]
+                                "name":"Built-in types"
                             },
                             {
-                                "name":"Type Guards",
-                                "branch":[{}]
+                                "name":"Type Guards"
                             }
                         ]
                     },
@@ -42,24 +35,19 @@
                         "name":"Learn RxJS Basics",
                         "branch":[
                             {
-                                "name":"What is Observable pattern",
-                                "branch":[{}]
+                                "name":"What is Observable pattern"
                             },
                             {
-                                "name":"Observable Lifecycle",
-                                "branch":[{}]
+                                "name":"Observable Lifecycle"
                             },
                             {
-                                "name":"Marble Diagrams",
-                                "branch":[{}]
+                                "name":"Marble Diagrams"
                             },
                             {
-                                "name":"Operators",
-                                "branch":[{}]
+                                "name":"Operators"
                             },
                             {
-                                "name":"RxJS vs Promises",
-                                "branch":[{}]
+                                "name":"RxJS vs Promises"
                             }
                         ]
                     },
@@ -67,12 +55,10 @@
                         "name":"Angular Basics",
                         "branch":[
                             {
-                                "name":"Angular.js vs Angular",
-                                "branch":[{}]
+                                "name":"Angular.js vs Angular"
                             },
                             {
-                                "name":"Architectural Overview",
-                                "branch":[{}]
+                                "name":"Architectural Overview"
                             },
                             {
                                 "name":"Templates",
@@ -88,24 +74,19 @@
                                 ]
                             },
                             {
-                                "name":"Rendering Topics",
-                                "branch":[{}]
+                                "name":"Rendering Topics"
                             },
                             {
-                                "name":"Forms, Inputs, Validation",
-                                "branch":[{}]
+                                "name":"Forms, Inputs, Validation"
                             },
                             {
-                                "name":"Srvices and HTTP",
-                                "branch":[{}]
+                                "name":"Srvices and HTTP"
                             },
                             {
-                                "name":"Lifecycle Hooks",
-                                "branch":[{}]
+                                "name":"Lifecycle Hooks"
                             },
                             {
-                                "name":"Routing and Guards",
-                                "branch":[{}]
+                                "name":"Routing and Guards"
                             }
                         ]
                     },
@@ -113,12 +94,10 @@
                         "name":"State management",
                         "branch":[
                             {
-                                "name":"NGXS",
-                                "branch":[{}]
+                                "name":"NGXS"
                             },
                             {
-                                "name":"@ngrx",
-                                "branch":[{}]
+                                "name":"@ngrx"
                             }
                         ]
                     },
@@ -126,24 +105,19 @@
                         "name":"Advanced Topics",
                         "branch":[
                             {
-                                "name":"Creating Custom Directives",
-                                "branch":[{}]
+                                "name":"Creating Custom Directives"
                             },
                             {
-                                "name":"Creating custom Pipes",
-                                "branch":[{}]
+                                "name":"Creating custom Pipes"
                             },
                             {
-                                "name":"Reactive forms",
-                                "branch":[{}]
+                                "name":"Reactive forms"
                             },
                             {
-                                "name":"Modules and Lazy loading",
-                                "branch":[{}]
+                                "name":"Modules and Lazy loading"
                             },
                             {
-                                "name":"Dependency injection and Zones",
-                                "branch":[{}]
+                                "name":"Dependency injection and Zones"
                             }
                         ]
                     },
@@ -151,24 +125,19 @@
                         "name":"Testing Angular Apps",
                         "branch":[
                             {
-                                "name":"Testing Pipes",
-                                "branch":[{}]
+                                "name":"Testing Pipes"
                             },
                             {
-                                "name":"Services with Deps",
-                                "branch":[{}]
+                                "name":"Services with Deps"
                             },
                             {
-                                "name":"Component Bindings",
-                                "branch":[{}]
+                                "name":"Component Bindings"
                             },
                             {
-                                "name":"Testing Directives",
-                                "branch":[{}]
+                                "name":"Testing Directives"
                             },
                             {
-                                "name":"Component Templates",
-                                "branch":[{}]
+                                "name":"Component Templates"
                             }
                         ]
                     }

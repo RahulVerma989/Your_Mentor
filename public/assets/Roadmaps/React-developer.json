@@ -9,61 +9,49 @@
                         "name":"Fundamental topics",
                         "branch":[
                             {
-                                "name":"HTML & CSS",
-                                "branch":[{}]
+                                "name":"HTML & CSS"
                             },
                             {
-                                "name":"Create React App",
-                                "branch":[{}]
+                                "name":"Create React App"
                             },
                             {
-                                "name":"JSX",
-                                "branch":[{}]
+                                "name":"JSX"
                             },
                             {
                                 "name":"Components",
                                 "branch":
                                 [
                                     {
-                                        "name":"Functional Components",
-                                        "branch":[]
+                                        "name":"Functional Components"
                                     },
                                     {
-                                        "name":"Class Components",
-                                        "branch":[]
+                                        "name":"Class Components"
                                     }
                                 ]
                             },
                             {
-                                "name":"Props vs State",
-                                "branch":[{}]
+                                "name":"Props vs State"
                             },
                             {
-                                "name":"Conditional Rendering",
-                                "branch":[{}]
+                                "name":"Conditional Rendering"
                             },
                             {
-                                "name":"Component Life cycle",
-                                "branch":[{}]
+                                "name":"Component Life cycle"
                             },
                             {
-                                "name":"Lists and Keys",
-                                "branch":[{}]
+                                "name":"Lists and Keys"
                             },
                             {
-                                "name":"Coposition vs Inhertance",
-                                "branch":[{}]
+                                "name":"Coposition vs Inhertance"
                             },
                             {
                                 "name":"Basic Hooks",
                                 "branch":[
                                     {
-                                        "name":"useState",
-                                        "branch":[]
+                                        "name":"useState"
                                     },
                                     {
-                                        "name":"useEffect",
-                                        "branch":[]
+                                        "name":"useEffect"
                                     }
                                 ]
                             }
@@ -73,25 +61,162 @@
                         "name":"Advanced Topics",
                         "branch":[
                             {
-                                "name":"first-sub-skill-name",
-                                "branch":[{}]
+                                "name":"Writing your own hooks"
                             },
                             {
-                                "name":"second-sub-skill-name",
-                                "branch":[{}]
+                                "name":"common Hooks",
+                                "branch":[
+                                    {
+                                        "name":"useCallback"
+                                    },
+                                    {
+                                        "name":"useRef"
+                                    },
+                                    {
+                                        "name":"useMemo"
+                                    },
+                                    {
+                                        "name":"useReducer"
+                                    },
+                                    {
+                                        "name":"useContext"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Context"
+                            },
+                            {
+                                "name":"refs"
+                            },
+                            {
+                                "name":"High Order Components"
+                            },
+                            {
+                                "name":"Portals"
+                            },
+                            {
+                                "name":"Error Boundaries"
+                            },
+                            {
+                                "name":"Fibre Architecture"
                             }
                         ]
                     },
                     {
-                        "name":"second-main-skill-name",
+                        "name":"Ecosystem",
                         "branch":[
                             {
-                                "name":"first-sub-skill-name",
+                                "name":"Router",
+                                "branch":
+                                [
+                                    {
+                                        "name":"React Router"
+                                    },
+                                    {
+                                        "name":"Reach Router"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"NextJs",
                                 "branch":[{}]
                             },
                             {
-                                "name":"second-sub-skill-name",
+                                "name":"Gatsby",
                                 "branch":[{}]
+                            },
+                            {
+                                "name":"API calls",
+                                "branch":[
+                                    {
+                                        "name":"React Query"
+                                    },
+                                    {
+                                        "name":"use HTTP"
+                                    },
+                                    {
+                                        "name":"Apollo"
+                                    },
+                                    {
+                                        "name":"Relay Modem"
+                                    },
+                                    {
+                                        "name":"Axios"
+                                    },
+                                    {
+                                        "name":"Unfetch"
+                                    },
+                                    {
+                                        "name":"Superagent"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Mobile dev start with React Native",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Forms",
+                                "branch":[
+                                    {
+                                        "name":"React Hook form"
+                                    },
+                                    {
+                                        "name":"Formilk"
+                                    },
+                                    {
+                                        "name":"Final form"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Testing",
+                                "branch":[
+                                    {
+                                        "name":"JTest"
+                                    },
+                                    {
+                                        "name":"React testing library"
+                                    },
+                                    {
+                                        "name":"Cypress"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"State Management",
+                                "branch":[
+                                    {
+                                        "name":"Context / State"
+                                    },
+                                    {
+                                        "name":"Redux"
+                                    },
+                                    {
+                                        "name":"MobX"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Styling",
+                                "branch":[
+                                    {
+                                        "name":"Styled Componenets"
+                                    },
+                                    {
+                                        "name":"Emotion"
+                                    },
+                                    {
+                                        "name":"Chakra UI"
+                                    },
+                                    {
+                                        "name":"Material UI"
+                                    },
+                                    {
+                                        "name":"Ant Design"
+                                    }
+                                ]
                             }
                         ]
                     }

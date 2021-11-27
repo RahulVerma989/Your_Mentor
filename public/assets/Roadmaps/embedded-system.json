@@ -1,0 +1,60 @@
+{
+    "add":{
+        "department":{
+            "name": "Electronics", 
+            "designation":{
+                "name":"Embedded System",
+                "roadmap":[
+                    {
+                        "name":"Basic Learn",
+                        "branch":[
+                            {
+                                "name":"Sensors"
+                            },
+                            {
+                                "name":"microprocessors"
+                            },
+                            {
+                                "name":"microcontroller"
+                            },
+                            {
+                                "name":"Embedded software"
+                            }
+                            
+                        
+                        ]
+                    },
+                    {
+                        "name":"Knowledge Required",
+                        "branch":[
+                            {
+                                "name":"Software Knowledge Required"
+                            },
+                            {
+                                "name":"Hardware Electronics Knowledge"
+                            }
+                            
+                        ]
+                    },
+                    {
+                        "name":"Develop skills through",
+                        "branch":
+                        [
+                            {
+                                "name":"Learn C Programming"
+                            },
+                            {
+                                "name":"8-bit microcontroller"
+                            },
+                            {
+                                "name":"Learn interfacing and make your personal bread board circuit"
+                            }
+                        ]
+                    }
+                   
+                    
+                ]
+            }       
+        }      
+    }
+}

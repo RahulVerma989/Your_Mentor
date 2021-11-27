@@ -6,33 +6,24 @@
                 "name":"Robotics",
                 "roadmap":[
                     {
-                        "name":"Resources",
+                        "name":"Resources to follow",
                         "branch":[
                             {
-                                "name":"Blogs",
-                                "branch":[{}]
+                                "name":"Robotics Blogs"
                             },
                             {
-                                "name":"Forum",
-                                "branch":[{}]
-                            },
-                            {
-                                "name":"Twitter",
-                                "branch":[{}]
+                                "name":"Tech Forum"
                             }
-                            
                         ]
                     },
                     {
-                        "name":"Starter Kit",
+                        "name":"Buy a Starter Kit",
                         "branch":[
                             {
-                                "name":"Cretiles",
-                                "branch":[{}]
+                                "name":"Cretiles"
                             },
                             {
-                                "name":"Ready made",
-                                "branch":[{}]
+                                "name":"Ready made"
                             }
                             
                         ]
@@ -42,20 +33,16 @@
                         "branch":
                         [
                             {
-                                "name":"Components",
-                                "branch":[{}]
+                                "name":"Basic electronics Components"
                             },
                             {
-                                "name":"Microcontroller",
-                                "branch":[{}]
+                                "name":"Microcontroller"
                             },
                             {
-                                "name":"Introduction to arduino",
-                                "branch":[{}]
+                                "name":"Introduction to arduino"
                             },
                             {
-                                "name":"Arduino Examples",
-                                "branch":[{}]
+                                "name":"Arduino Examples"
                             }
                            
                             
@@ -66,16 +53,13 @@
                         "branch":
                         [
                             {
-                                "name":"Installation",
-                                "branch":[{}]
+                                "name":"Installation"
                             },
                             {
-                                "name":"Libraries",
-                                "branch":[{}]
+                                "name":"Libraries"
                             },
                             {
-                                "name":"Programming Language",
-                                "branch":[{}]
+                                "name":"Programming Language"
                             }
                            
                         ]
@@ -85,24 +69,19 @@
                         "branch":
                         [
                             {
-                                "name":"Ultrasonic",
-                                "branch":[{}]
+                                "name":"Ultrasonic"
                             },
                             {
-                                "name":"LiDAR",
-                                "branch":[{}]
+                                "name":"LiDAR"
                             },
                             {
-                                "name":"Infrared",
-                                "branch":[{}]
+                                "name":"Infrared"
                             },
                             {
-                                "name":"Motion",
-                                "branch":[{}]
+                                "name":"Motion"
                             },
                             {
-                                "name":"GPS",
-                                "branch":[{}]
+                                "name":"GPS"
                             }
                            
                         ]
@@ -112,12 +91,10 @@
                         "branch":
                         [
                             {
-                                "name":"Component",
-                                "branch":[{}]
+                                "name":"Component"
                             },
                             {
-                                "name":"Circuit Tracing",
-                                "branch":[{}]
+                                "name":"Circuit Tracing"
                             }
                             
                         ]
@@ -127,32 +104,25 @@
                         "name":"Tool",
                         "branch":[
                             {
-                                "name":"Arduino",
-                                "branch":[{}]
+                                "name":"Arduino"
                             },
                             {
-                                "name":"Autocad",
-                                "branch":[{}]
+                                "name":"Autocad"
                             },
                             {
-                                "name":"Sensor module",
-                                "branch":[{}]
+                                "name":"Sensor module"
                             },
                             {
-                                "name":"Raspberry pi",
-                                "branch":[{}]
+                                "name":"Raspberry pi"
                             },
                             {
-                                "name":"Online simulators",
-                                "branch":[{}]
+                                "name":"Online simulators"
                             },
                             {
-                                "name":"PCB Express",
-                                "branch":[{}]
+                                "name":"PCB Express"
                             },
                             {
-                                "name":"Microcontrollers and their IDE",
-                                "branch":[{}]
+                                "name":"Microcontrollers and their IDE"
                             }
                             
                         ]
@@ -161,20 +131,16 @@
                         "name":"Areas",
                         "branch":[
                             {
-                                "name":"IoT",
-                                "branch":[{}]
+                                "name":"IoT"
                             },
                             {
-                                "name":"Automobile",
-                                "branch":[{}]
+                                "name":"Automobile"
                             },
                             {
-                                "name":"Home Appliences",
-                                "branch":[{}]
+                                "name":"Home Appliences"
                             },
                             {
-                                "name":"Wearable",
-                                "branch":[{}]
+                                "name":"Wearable"
                             }
                             
                         ]
@@ -183,12 +149,10 @@
                         "name":"Unit Testiong",
                         "branch":[
                             {
-                                "name":"Quality Control Technique",
-                                "branch":[{}]
+                                "name":"Quality Control Technique"
                             },
                             {
-                                "name":"Hardware lifecycle",
-                                "branch":[{}]
+                                "name":"Hardware lifecycle"
                             }
                         ]
                     }
