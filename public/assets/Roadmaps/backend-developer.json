@@ -9,28 +9,22 @@
                         "name":"Internet basics",
                         "branch":[
                             {
-                                "name":"How does the internet works",
-                                "branch":[{}]
+                                "name":"How does the internet works"
                             },
                             {
-                                "name":"What is HTTP",
-                                "branch":[{}]
+                                "name":"What is HTTP"
                             },
                             {
-                                "name":"How browser works",
-                                "branch":[{}]
+                                "name":"How browser works"
                             },
                             {
-                                "name":"DNS",
-                                "branch":[{}]
+                                "name":"DNS"
                             },
                             {
-                                "name":"What is domain name",
-                                "branch":[{}]
+                                "name":"What is domain name"
                             },
                             {
-                                "name":"What is Hosting",
-                                "branch":[{}]
+                                "name":"What is Hosting"
                             }
                         ]
                     },
@@ -38,16 +32,13 @@
                         "name":"Basic frontend Knowledge",
                         "branch":[
                             {
-                                "name":"HTML",
-                                "branch":[{}]
+                                "name":"HTML"
                             },
                             {
-                                "name":"CSS",
-                                "branch":[{}]
+                                "name":"CSS"
                             },
                             {
-                                "name":"JavaScript",
-                                "branch":[{}]
+                                "name":"JavaScript"
                             }
                         ]
                     },
@@ -55,44 +46,34 @@
                         "name":"OS and General Knowledge",
                         "branch":[
                             {
-                                "name":"Terminal Usage",
-                                "branch":[{}]
+                                "name":"Terminal Usage"
                             },
                             {
-                                "name":"How os work in general",
-                                "branch":[{}]
+                                "name":"How os work in general"
                             },
                             {
-                                "name":"Process management",
-                                "branch":[{}]
+                                "name":"Process management"
                             },
                             {
-                                "name":"Threads and concurrency",
-                                "branch":[{}]
+                                "name":"Threads and concurrency"
                             },
                             {
-                                "name":"Basic terminal commands",
-                                "branch":[{}]
+                                "name":"Basic terminal commands"
                             },
                             {
-                                "name":"Memory management",
-                                "branch":[{}]
+                                "name":"Memory management"
                             },
                             {
-                                "name":"I/O Management",
-                                "branch":[{}]
+                                "name":"I/O Management"
                             },
                             {
-                                "name":"Interprocess communication",
-                                "branch":[{}]
+                                "name":"Interprocess communication"
                             },
                             {
-                                "name":"POSIX basics",
-                                "branch":[{}]
+                                "name":"POSIX basics"
                             },
                             {
-                                "name":"Basic Networking concepts",
-                                "branch":[{}]
+                                "name":"Basic Networking concepts"
                             }
                         ]
                     },
@@ -100,8 +81,7 @@
                         "name":"Learn a Language",
                         "branch":[
                             {
-                                "name":"Java/C#/Rust/PHP/JavaScript/Go/Ruby",
-                                "branch":[{}]
+                                "name":"Java/C#/Rust/PHP/JavaScript/Go/Ruby"
                             }
                         ]
                     },
@@ -109,12 +89,10 @@
                         "name":"Version Control systems",
                         "branch":[
                             {
-                                "name":"Basics of Git",
-                                "branch":[{}]
+                                "name":"Basics of Git"
                             },
                             {
-                                "name":"Github",
-                                "branch":[{}]
+                                "name":"Github"
                             }
                         ]
                     },
@@ -122,24 +100,19 @@
                         "name":"Learn a Relational Database",
                         "branch":[
                             {
-                                "name":"Postgre sql",
-                                "branch":[{}]
+                                "name":"Postgre sql"
                             },
                             {
-                                "name":"Mysql",
-                                "branch":[{}]
+                                "name":"Mysql"
                             },
                             {
-                                "name":"MariaDB",
-                                "branch":[{}]
+                                "name":"MariaDB"
                             },
                             {
-                                "name":"MS SQL",
-                                "branch":[{}]
+                                "name":"MS SQL"
                             },
                             {
-                                "name":"Oracle",
-                                "branch":[{}]
+                                "name":"Oracle"
                             }
                         ]
                     },
@@ -147,16 +120,13 @@
                         "name":"NoSql database",
                         "branch":[
                             {
-                                "name":"MongoDB",
-                                "branch":[{}]
+                                "name":"MongoDB"
                             },
                             {
-                                "name":"CouchDB",
-                                "branch":[{}]
+                                "name":"CouchDB"
                             },
                             {
-                                "name":"DynamoDB",
-                                "branch":[{}]
+                                "name":"DynamoDB"
                             }
                         ]
                     },
@@ -164,32 +134,25 @@
                         "name":"More about Database",
                         "branch":[
                             {
-                                "name":"ORMs",
-                                "branch":[{}]
+                                "name":"ORMs"
                             },
                             {
-                                "name":"ACID",
-                                "branch":[{}]
+                                "name":"ACID"
                             },
                             {
-                                "name":"Transactions",
-                                "branch":[{}]
+                                "name":"Transactions"
                             },
                             {
-                                "name":"N+1 Problem",
-                                "branch":[{}]
+                                "name":"N+1 Problem"
                             },
                             {
-                                "name":"data Replicant",
-                                "branch":[{}]
+                                "name":"data Replicant"
                             },
                             {
-                                "name":"Sharding startegies",
-                                "branch":[{}]
+                                "name":"Sharding startegies"
                             },
                             {
-                                "name":"CAP Theorem",
-                                "branch":[{}]
+                                "name":"CAP Theorem"
                             }
                         ]
                     },
@@ -197,12 +160,10 @@
                         "name":"Learn about APIs",
                         "branch":[
                             {
-                                "name":"REST",
-                                "branch":[{}]
+                                "name":"REST"
                             },
                             {
-                                "name":"Json",
-                                "branch":[{}]
+                                "name":"Json"
                             },
                             {
                                 "name":"Authentication",
@@ -222,16 +183,13 @@
                                 ]
                             },
                             {
-                                "name":"SOAP",
-                                "branch":[{}]
+                                "name":"SOAP"
                             },
                             {
-                                "name":"Open API Spec and swagger",
-                                "branch":[{}]
+                                "name":"Open API Spec and swagger"
                             },
                             {
-                                "name":"HATEOAS",
-                                "branch":[{}]
+                                "name":"HATEOAS"
                             }
                         ]
                     },
@@ -239,8 +197,7 @@
                         "name":"Coaching",
                         "branch":[
                             {
-                                "name":"CDN",
-                                "branch":[{}]
+                                "name":"CDN"
                             },
                             {
                                 "name":"Server side",
@@ -265,38 +222,30 @@
                                 "name":"HAshing Algos",
                                 "branch":[
                                     {
-                                        "name":"MD5 and why not to use it",
-                                        "branch":[{}]
+                                        "name":"MD5 and why not to use it"
                                     },
                                     {
-                                        "name":"SHA Family",
-                                        "branch":[{}]
+                                        "name":"SHA Family"
                                     },
                                     {
-                                        "name":"scrypt",
-                                        "branch":[{}]
+                                        "name":"scrypt"
                                     },
                                     {
-                                        "name":"bcrypt",
-                                        "branch":[{}]
+                                        "name":"bcrypt"
                                     }
                                 ]
                             },
                             {
-                                "name":"HTTPS",
-                                "branch":[{}]
+                                "name":"HTTPS"
                             },
                             {
-                                "name":"Content security Policy",
-                                "branch":[{}]
+                                "name":"Content security Policy"
                             },
                             {
-                                "name":"Cors",
-                                "branch":[{}]
+                                "name":"Cors"
                             },
                             {
-                                "name":"SSL/LTS",
-                                "branch":[{}]
+                                "name":"SSL/LTS"
                             },
                             {
                                 "name":"OASP Scurity risks"
@@ -307,16 +256,13 @@
                         "name":"Testing",
                         "branch":[
                             {
-                                "name":"Integration testing",
-                                "branch":[{}]
+                                "name":"Integration testing"
                             },
                             {
-                                "name":"Unit testing",
-                                "branch":[{}]
+                                "name":"Unit testing"
                             },
                             {
-                                "name":"Functional testing",
-                                "branch":[{}]
+                                "name":"Functional testing"
                             }
                         ]
                     },
@@ -327,20 +273,16 @@
                         "name":"Design and dev priciples",
                         "branch":[
                             {
-                                "name":"SOLID",
-                                "branch":[{}]
+                                "name":"SOLID"
                             },
                             {
-                                "name":"KISS",
-                                "branch":[{}]
+                                "name":"KISS"
                             },
                             {
-                                "name":"YAGNI",
-                                "branch":[{}]
+                                "name":"YAGNI"
                             },
                             {
-                                "name":"DRY",
-                                "branch":[{}]
+                                "name":"DRY"
                             }
                         ]
                     },
@@ -348,20 +290,16 @@
                         "name":"Architectural Patterns",
                         "branch":[
                             {
-                                "name":"Monolithic apps",
-                                "branch":[{}]
+                                "name":"Monolithic apps"
                             },
                             {
-                                "name":"Microservices",
-                                "branch":[{}]
+                                "name":"Microservices"
                             },
                             {
-                                "name":"SOA",
-                                "branch":[{}]
+                                "name":"SOA"
                             },
                             {
-                                "name":"Serverless",
-                                "branch":[{}]
+                                "name":"Serverless"
                             }
                         ]
                     },
@@ -369,12 +307,10 @@
                         "name":"Message Brokers",
                         "branch":[
                             {
-                                "name":"Kafka",
-                                "branch":[{}]
+                                "name":"Kafka"
                             },
                             {
-                                "name":"RabbitMQ",
-                                "branch":[{}]
+                                "name":"RabbitMQ"
                             }
                         ]
                     },
@@ -382,8 +318,7 @@
                         "name":"Containerization v Virtualization",
                         "branch":[
                             {
-                                "name":"Docker",
-                                "branch":[{}]
+                                "name":"Docker"
                             }
                         ]
                     },
@@ -391,12 +326,10 @@
                         "name":"GraphQl",
                         "branch":[
                             {
-                                "name":"Relay Modern",
-                                "branch":[{}]
+                                "name":"Relay Modern"
                             },
                             {
-                                "name":"Apollo",
-                                "branch":[{}]
+                                "name":"Apollo"
                             }
                         ]
                     },
@@ -404,12 +337,10 @@
                         "name":"Web Servers",
                         "branch":[
                             {
-                                "name":"Nginx",
-                                "branch":[{}]
+                                "name":"Nginx"
                             },
                             {
-                                "name":"Apache",
-                                "branch":[{}]
+                                "name":"Apache"
                             }
                         ]
                     },
@@ -417,16 +348,13 @@
                         "name":"Build for scale",
                         "branch":[
                             {
-                                "name":"Migration strategies",
-                                "branch":[{}]
+                                "name":"Migration strategies"
                             },
                             {
-                                "name":"Horizontal vs Vertical Scaling",
-                                "branch":[{}]
+                                "name":"Horizontal vs Vertical Scaling"
                             },
                             {
-                                "name":"Building a observability in mind",
-                                "branch":[{}]
+                                "name":"Building a observability in mind"
                             }
                         ]
                     },

@@ -9,8 +9,7 @@
                         "name":"Start with a strategy",
                         "branch":[
                             {
-                                "name":"Build a strategy for prdouct/Sevice",
-                                "branch":[{}]
+                                "name":"Build a strategy for prdouct/Sevice"
                             }
                         ]
                     },
