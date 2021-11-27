@@ -1118,3 +1118,115 @@ button:hover, a:hover {
   display: block;
 }
 /* Roadmaps Ends  */
+
+/* forum Start  */
+.search
+{
+  display:inline-block;
+  position:relative;
+  padding:0px;
+  margin:30px auto;
+  overflow:hidden;
+  min-width:250px;
+  transition:0.3s ease;
+  border:2px solid #F7F9F9;
+  border-radius: 100px;
+  left:50%;
+  transform:translateX(-50%);
+}
+.search select 
+{
+  display:inline-block;
+  position:relative;
+  border-radius:100px 0px 0px 100px;
+  padding:5px;
+  cursor:pointer;
+  outline:0px;
+  border:0px solid transparent;
+  border-right:1px solid #F7F9F9;
+}
+.search input 
+{
+  display:inline-block;
+  position:relative;
+  padding:5px;
+  letter-spacing:1px;
+  margin:0px;
+  outline:0px;
+  border:0px solid transparent;
+}
+.search b 
+{
+  display:inline-block;
+  position:relative;
+  padding:10px 20px;
+  border-radius:0px 100px 100px 0px;
+  cursor:pointer;
+  margin:0px;
+  transition:0.3s ease;
+}
+.search b:hover,
+.search b:focus 
+{
+  background-color:#F4F6F7;
+}
+.ask-question 
+{
+  display:block;
+  position:relative;
+  max-width:800px;
+  padding:20px;
+  transition:0.3s ease;
+  text-align:center;
+  margin:auto;
+}
+.ask-question span
+{
+  display:inline-block;
+  position:relative;
+  padding:10px;
+  border-radius:5px;
+  font-size:13px;
+  letter-spacing:1px;
+  background-color:#F7F9F9;
+  transition:0.3s ease;
+  cursor:pointer;
+  user-select:none;
+  margin:10px auto;
+}
+.ask-question span:hover,
+.ask-question span:focus
+{
+  background-color:#F0F3F4;
+}
+.ask-question span b 
+{
+  margin:0px 5px;
+}
+.ask-question form 
+{
+  display:none;
+  position:relative;
+  padding:10px;
+  margin:10px auto;
+  text-align:center;
+  transition:0.3s ease;
+}
+.ask-question form input,
+.ask-question form textarea
+{
+  display:block;
+  position:relative;
+  padding:10px;
+  border-radius:10px;
+  outline:0px;
+  border:2px solid #F7F9F9;
+  font-size:13px;
+  width:-webkit-fill-available;
+  max-width:800px;
+  letter-spacing:1px;
+  margin:10px auto;
+  transition:0.3s ease;
+  cursor:pointer;
+}
+/* forum Ends  */

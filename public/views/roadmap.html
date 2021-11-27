@@ -43,7 +43,7 @@ else
                         $('#roadmap h1').html("Roadmap for "+data.designation+"<span class='department'>"+data.department+"</span>");
                         //console.log(data.department);
                         var roadmap = JSON.parse(data.roadmap);      
-                        console.log(roadmap);
+                        //console.log(roadmap);
                         $('#roadmap .path').append(CreateRoadmap(roadmap));                        
                     }break;
                 }
@@ -58,7 +58,7 @@ else
 function CreateRoadmap(roadmap){
     var roadmap_string = "";
     roadmap.forEach(step => {
-        console.log(typeof step);
+        //console.log(typeof step);
         if(typeof step === "array" || typeof step === "json" || typeof step === "object")
         {
             if(step.hasOwnProperty('name'))
