@@ -1,0 +1,170 @@
+{
+    "add":{
+        "department":{
+            "name": "IT", 
+            "designation":{
+                "name":"Blockchain Developer",
+                "roadmap":[
+                    {
+                        "name":"Web Development",
+                        "branch":[
+                            {
+                                "name":"Learn Basic Web Development",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"HTML,CSS,JAVASCRIPT",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"General Development Skills",
+                                "branch":[{}]
+                            }
+                            
+                        ]
+                    },
+                    {
+                        "name":"Learn the Basics",
+                        "branch":[
+                            {
+                                "name":"Blockchain",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Learn Basics of Distributed Ledger",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Bitcoin Paper",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Elliptic Curve Cryptography",
+                                "branch":[{}]
+                            }
+                            
+                        ]
+                    },
+                    {
+                        "name":"Ethereum",
+                        "branch":
+                        [
+                            {
+                                "name":"EVMs",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Ethereum Networks",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Learn About Wallets,address,gas,private and public keys",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Ethereum Transcation",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Ethereum Clients/Nodes",
+                                "branch":[{}]
+                            }
+                           
+                            
+                        ]
+                    },
+                    {
+                        "name":"Build Tools",
+                        "branch":
+                        [
+                            {
+                                "name":"Solidity",
+                                "branch":[{}]
+                            }
+                           
+                           
+                        ]
+                    },
+                    {
+                        "name":"smart Contracts",
+                        "branch":
+                        [
+                            {
+                                "name":"Basics of smart contracts",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Ethereum high level languages",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Life cycle of smar contracts",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Compiling,Testing and deploying smart contracts",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Interacting with deployed smart contracts",
+                                "branch":[{}]
+                            }
+                           
+                        ]
+                    },
+                    {
+                        "name":"Package managers",
+                        "branch":
+                        [
+                            {
+                                "name":"NPM",
+                                "branch":[{}]
+                            }
+                            
+                        ]
+                    },
+                
+                    {   
+                        "name":"IDE's",
+                        "branch":[
+                            {
+                                "name":"Remix IDE",
+                                "branch":[{}]
+                            }
+                           
+                            
+                        ]
+                    },
+                    {   
+                        "name":"Frameworks",
+                        "branch":[
+                            {
+                                "name":"Truffle",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Solidity and Ganache",
+                                "branch":[{}]
+                            }
+                           
+                            
+                        ]
+                    },
+                    {   
+                        "name":"INFURA",
+                        "branch":[
+                            {
+                                "name":"MainNet",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Hardware lifecycle",
+                                "branch":[{}]
+                            }
+                        ]
+                    }
+                ]
+            }       
+        }      
+    }
+}

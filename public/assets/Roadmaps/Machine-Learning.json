@@ -1,0 +1,185 @@
+{
+    "add":{
+        "department":{
+            "name": "IT", 
+            "designation":{
+                "name":"Machine Learning",
+                "roadmap":[
+                    {
+                        "name":"Data",
+                        "branch":[
+                            {
+                                "name":"Sources",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Cleaning",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Scraping",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Visualising",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Simulate",
+                                "branch":[{}]
+                            }
+                            
+                        ]
+                    },
+                    {
+                        "name":"Algorithm",
+                        "branch":[
+                            {
+                                "name":"Perfomance score",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Correctless",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Imbalance",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Train",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Intuition",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Study Papers",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Perfomance with the bad daa",
+                                "branch":[{}]
+                            }
+                           
+                        ]
+                    },
+                    {
+                        "name":"Bug Reports",
+                        "branch":
+                        [
+                            {
+                                "name":"How to generate reports",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Record the Evidance",
+                                "branch":[{}]
+                            }
+                            
+                        ]
+                    },
+                    {
+                        "name":"Enviroment",
+                        "branch":
+                        [
+                            {
+                                "name":"Separate for QA",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Deploy Process",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Get Data",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Refresh Data",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Connect to data source",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Test",
+                        "branch":
+                        [
+                            {
+                                "name":"New",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Learning",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Statistical",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Static",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Document Test",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Extremes",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Regression",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Tools",
+                        "branch":
+                        [
+                            {
+                                "name":"Anaconda",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Scikit",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Tensorflow",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Testing Your App",
+                        "branch":
+                        [
+                            {
+                                "name":"Unit Testiong",
+                                "branch":[
+                                    {
+                                        "name":"JUnit",
+                                        "branch":[{}]
+                                    },
+                                    {
+                                        "name":"TestNG",
+                                        "branch":[{}]
+                                    }
+                                ]
+                            
+                            }
+                        ]
+                    }
+                ]
+            }       
+        }      
+    }
+}

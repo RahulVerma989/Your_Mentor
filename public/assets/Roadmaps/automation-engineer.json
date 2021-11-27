@@ -1,0 +1,86 @@
+{
+    "add":{
+        "department":{
+            "name": "Core Engineering", 
+            "designation":{
+                "name":"Automobile Engineer",
+                "roadmap":[
+                    {
+                        "name":"Basic High school Fundamntals",
+                        "branch":[
+                            {
+                                "name":"Physics, Chemistry, Calulus, Algebra, geometry",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Electrical Circuits",
+                        "branch":[
+                            {}
+                        ]
+                    },
+                    {
+                        "name":"Electrical Components study",
+                        "branch":[
+                            {
+                                "name":"Relays",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Modern fuse",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"etc",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Projects using Electrical Components",
+                        "branch":[{}]
+                    },
+                    {
+                        "name":"Mechanical Engineering Simulators",
+                        "branch":[
+                            {
+                                "name":"PLC",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"SCADA",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"testbed",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Inhouse Training programs or Cerifiations",
+                        "branch":[{}]
+                    },
+                    {
+                        "name":"Internship",
+                        "branch":[
+                            {
+                                "name":"PSU's Summer Internship",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Summer internship in MNC's",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Private Sector Job",
+                        "branch":[{}]
+                    }
+                ]
+            }       
+        }      
+    }
+}

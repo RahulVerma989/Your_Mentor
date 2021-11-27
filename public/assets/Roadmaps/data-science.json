@@ -1,0 +1,208 @@
+{
+    "add":{
+        "department":{
+            "name": "IT", 
+            "designation":
+            {
+                "name":"Data Science",
+                "roadmap":
+                [
+                    {
+                        "name":"Data Structure",
+                        "branch":
+                        [
+                            {
+                                "name":"SQL scripting",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Conditional,list comprehension",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"OOPS",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Working with external libraries",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Fundamental algorithm",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Advanced-Functional programming",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Data Extraction and Wrangling",
+                        "branch":[
+                            {
+                                "name":"Scripting- extracting data from websites,APIs,DBs",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Data formating",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Libraries - Pandas and NumPy",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Data transformation - joining,slicing,indexing",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Handling missing values",
+                                "branch":[{}]
+                            }
+                            
+                        ]
+                    },
+                    {
+                        "name":"EDA,Business acumen and storytelling",
+                        "branch":
+                        [
+                            {
+                                "name":"Defining business",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Studying data distribution",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Univariate and multivariate analysis",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Data Visualization",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Building dashboards",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Writing concise and insightful reports",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Business cumen",
+                                "branch":[{}]
+                            }
+                            
+                            
+                        ]
+                    },
+                    {
+                        "name":"Data Engineering",
+                        "branch":
+                        [
+                            {
+                                "name":"Strong programming skills",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Working with CLI",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Building ETL pipelines",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Cloud Services",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Algorithms",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Deploying ML models in production",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Statistics",
+                        "branch":
+                        [
+                            {
+                                "name":"Descriptive - mean,median,mode,std etc",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Inferential",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Experiment Design",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Probability",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"ANOVA,Chi-Square test",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Sampling,data distribution,t-tests",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Linear Algebra",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Single and multivariate calculus",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Machine Learning",
+                        "branch":
+                        [
+                            {
+                                "name":"Supervised",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Unsupervised",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Reinforcement learning",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Performance metrics",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Hyperparameter tuning",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Statistical ML",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Ensemble Models",
+                                "branch":[{}]
+                            }
+                        ]
+                    }
+                ]
+            }       
+        }      
+    }
+}

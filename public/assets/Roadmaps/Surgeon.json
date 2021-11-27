@@ -1,0 +1,59 @@
+{
+    "add":{
+        "department":{
+            "name": "Medical Science", 
+            "designation":{
+                "name":"Surgeon",
+                "roadmap":[
+                    {
+                        "name":"Neet Exam",
+                        "branch":[
+                            {
+                                "name":"12th Paas Eligibility",
+                                "branch":[{}]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"MBBS Complete",
+                        "branch":[]
+                    },
+                    {
+                        "name":"M.S. with Surgery and M.D( Masters of Medicine)",
+                        "branch":[
+                            {
+                                "name":"Choose surgeon course",
+                                "branch":[
+                                    {
+                                        "name":"Plastic",
+                                        "branch":[]
+                                    },
+                                    {
+                                        "name":"Vascular",
+                                        "branch":[]
+                                    },
+                                    {
+                                        "name":"Urological",
+                                        "branch":[]
+                                    },
+                                    {
+                                        "name":"Gastrointestinal",
+                                        "branch":[]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Master of Chirugical (M.Ch)",
+                        "branch":[]
+                    },
+                    {
+                        "name":"Practice as a Surgeon",
+                        "branch":[{}]
+                    }
+                ]
+            }       
+        }      
+    }
+}

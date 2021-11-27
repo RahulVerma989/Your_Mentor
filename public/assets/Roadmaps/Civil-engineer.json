@@ -1,0 +1,81 @@
+{
+    "add":{
+        "department":{
+            "name": "Core Engineering", 
+            "designation":{
+                "name":"Civil engineer",
+                "roadmap":[
+                    {
+                        "name":"Bachelors in Civil Engineering",
+                        "branch":[
+                            {
+                                "name":"PSU Exams",
+                                "branch":[
+                                    {
+                                        "name":"SSCJEE",
+                                        "branch":[]
+                                    },
+                                    {
+                                        "name":"ISRO Exam",
+                                        "branch":[]
+                                    },
+                                    {
+                                        "name":"BARC exam",
+                                        "branch":[]
+                                    },
+                                    {
+                                        "name":"DRDO exam",
+                                        "branch":[]
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Engineering Competitve exams",
+                                "branch":[
+                                    {
+                                        "name":"GATE exam",
+                                        "branch":[]
+                                    },
+                                    {
+                                        "name":"IES exam",
+                                        "branch":[]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"M.Tech in Civil engineering",
+                        "branch":[
+                            {
+                                "name":"Private sector Jobs",
+                                "branch":[
+                                    {
+                                        "name":"MNC's exam",
+                                        "branch":[
+                                            {
+                                                "name":"L&T's exam",
+                                                "branch":[]
+                                            },
+                                            {
+                                                "name":"DLF's exam",
+                                                "branch":[]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"PHD",
+                                "branch":[{
+                                    "name":"Become a Professor",
+                                    "branch":[]
+                                }]
+                            }
+                        ]
+                    }
+                ]
+            }       
+        }      
+    }
+}
