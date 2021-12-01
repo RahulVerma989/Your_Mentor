@@ -5,6 +5,11 @@
     </div>
     <input type="email" name="email" placeholder='Email' required/>
     <input type="text" name="username" placeholder='Username' required/>
+    <select name='user_choice_type' required>
+        <option value='student' selected>student</option>
+        <option value='mentor'>mentor</option>
+        <option value='employee'>employee</option>
+    </select>
     <input type="password" name="password" placeholder='password' required/>
     <input type="password" name="cpassword" placeholder='confirm password' required/>
     <p class='notification'></p>
@@ -41,8 +46,9 @@
                 const pass = passElement.val();
                 const usernameElement = $('form input[name=username]');
                 const username = usernameElement.val();
+                const user_choice_type = $('form select[name=user_choice_type] option:selected').val();
 
-                formdata =  "email="+email+"&username="+username+"&password="+pass;  
+                formdata =  "email="+email+"&username="+username+"&password="+pass+"&user_choice_type="+user_choice_type;  
 
                 $.ajax({
                     type:"POST",

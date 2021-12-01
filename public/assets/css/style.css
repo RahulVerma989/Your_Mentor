@@ -590,6 +590,19 @@ body {
 {
   outline:3px solid #FADBD8;
 }
+.login select
+{
+  display:block;
+  position:relative;
+  padding:5px;
+  margin:5px auto;
+  width:-webkit-fill-available;
+  outline:0px;
+  border:3px solid #F7F9F9;
+  border-radius: 5px;
+  transition:0.3s ease;
+  cursor:pointer;
+} 
 .login p 
 {
   display:block;
@@ -909,26 +922,13 @@ footer{
 
 
 /* --------- Cards Section ------------ */
-section {
-  margin: 25px;
-  padding: 35px;
-  /* display: flex; */
-}
 section h1 {
   text-align: center;
-  font-size: 5vw;
+  font-size: 40px;
+  padding:10px;
+  margin:20px auto;
 }
 /* ----------card  Section--------- */
-/* 
-.features {
-  /* background-color: #ffffff; */
-  /* background-color: #ade4b9; */
-/* } */
-section h2{
-  color: #db2269;
-  font-size: 40px;
-  text-align: center;
-}
 @media screen and (min-width:800px)
 {
   .card-section {
@@ -945,6 +945,8 @@ section h2{
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: auto;
+    width: fit-content;
+    margin:auto;
   }
 }
 .card {
@@ -1016,17 +1018,96 @@ button:hover, a:hover {
 }
 
 /* --------- Preferences ------------- */
-.preferences {
-  display:grid;
+.preferences .roadmaps button
+{
+  display:inline-block;
   position:relative;
-  margin-top: 40px;
-  justify-content:space-between;
+  padding:20px 40px;
+  color:black;
+  font-size:18px;
+  letter-spacing:1px;
+  font-weight:500;
+  background-color: #82E0AA;
+  border-radius: 5px;
+  outline:0px;
+  transition:0.3s ease;
+  border:0px solid transparent;
+  cursor:pointer;
 }
-.choicefrom {
-  padding-left: 60px;
+.preferences .roadmaps button:hover,
+.preferences .roadmaps button:focus 
+{
+  background-color:#28B463;
+}
+@media screen and (min-width:800px) {
+  .preferences 
+  {
+    display:grid;
+    position:relative;
+    grid-template-columns: auto auto;
+    margin-top: 40px;
+    text-align: center;
+  } 
+  .prefersvg
+  {    
+    grid-column: 2/3;
+    grid-row:1/2;
+  }
+  .preferences .roadmaps
+  {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  /* .preferences .roadmaps button
+  {
+    font-size:
+  } */
+}
+@media screen and (max-width:800px) {
+  .preferences 
+  {
+    display:grid;
+    position:relative;
+    grid-template-rows: auto auto;
+    margin-top: 40px;
+    text-align: center;
+  } 
+  .prefersvg
+  {    
+    grid-column: 1/2;
+    grid-row:1/2;
+  }
+  .preferences .roadmaps
+  {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+}
+.preferences .roadmaps 
+{
+  display:block;
+  position:relative;
+  margin:auto;
+  text-align:center;
+  padding:40px;
 }
 .prefersvg {
-  margin-top: 40px;
+  display:block;
+  position:relative;
+  overflow:hidden;
+  width:inherit;
+  padding:10px;
+}
+.prefersvg img 
+{
+  display:block;
+  position:relative;
+  max-width: 600px;
+  max-height: 400px;
+  min-width:300px;
+  width:-webkit-fill-available;
+  height:auto;
+  margin:auto;
 }
 
 /* Roadmaps Start */
@@ -1169,6 +1250,46 @@ button:hover, a:hover {
 .search b:focus 
 {
   background-color:#F4F6F7;
+}
+.searchResults 
+{
+  display:none;
+  position:absolute;
+  width:inherit;
+  max-width:500px;
+  max-height:200px;
+  left:50%;
+  transform:translate(-50%,-30px);
+  padding:5px;
+  border-radius:5px;
+  z-index:2;
+  transition:0.3s ease;
+  background-color:white;
+  overflow-y:scroll;
+  box-shadow: 0px 7px 9px -1px rgba(0,0,0,0.2);
+}
+.searchResults a 
+{
+  display:block;
+  position:relative;
+  padding:10px;
+  color:black;
+  font-size:12px;
+  border-radius:5px;
+  font-weight:500;
+  text-decoration:none;
+  cursor:pointer;
+  background-color:#FBFCFC;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  margin:5px;
+  transition:0.3s ease;
+}
+.searchResults a:hover,
+.searchResults a:focus 
+{
+  background-color:#F4F6F7;
+  color:black;
 }
 .ask-question 
 {

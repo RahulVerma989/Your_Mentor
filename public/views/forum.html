@@ -7,13 +7,18 @@
     <input type='text' placeholder='Type here...' required/>
     <b class='fas fa-search'></b>
 </div>
+<div class='searchResults'>
+    <a href='#'>Search result 1</a>
+    <a href='#'>Search result 2 is a very long search result which will occupy more than one line</a>
+    <a href='#'>Search result 3 is a very long search result which will occupy more than one line</a>
+</div>
 
 <div class='ask-question'>
     <span><b>Ask a question</b><b class='fas fa-plus'></b></span>
 
     <form action='' method='POST' enctype='multipart/form-data'>
-        <input type='text' placeholder='Type your Question...' required/>
-        <textarea placeholder='Please describe your question in detail...' maxlength="1000" required/></textarea>
+        <input type='text'name='question' placeholder='Type your Question...' required/>
+        <textarea name='description' placeholder='Please describe your question in detail...' maxlength="1000" required/></textarea>
         <input type='submit' value='submit'/>
     </form>
 
@@ -51,4 +56,81 @@
 $('.ask-question').on('click','span',function(){
     $(this).parent().children('form').toggle();
 });
+$('.ask-question form').on('submit',function(e){
+    e.preventDefault();
+    const form = $('.ask-question form');
+    var question = $('.ask-question form input[name=question]').val();
+    var description = $('.ask-question form textarea[name=description]').val();
+    const submit = $('.ask-question form input[type=submit]');
+    const submitValue = submit.val();
+    submit.attr('disabled','disabled');
+
+    $.ajax({
+        type:"POST",
+        url:'forum',
+        data:'question='+question+'&description='+description,
+        cache:false,
+        beforeSend:function(){
+            submit.val('Checking...');
+        },
+        success:function(data){
+            if(data)
+            {
+                submit.toggleClass('failure',data.code == 0);
+                submit.toggleClass('success',data.code);
+                submit.val(data.description);
+                setTimeout(function(){
+                    submit.removeClass();
+                    submit.val(submitValue);
+                },2000);                
+            }
+        },
+        error:function(request, status, error){
+            console.log(request.responseText);
+            submit.val("Error! try again after some time");
+            setTimeout(function(){             
+                submit.val(submitValue);   
+                submit.attr('disabled',false);
+            },5000);
+        }
+    });
+});
+
+function requestResults(){
+    var query = $('.search input[type=text]').val();
+    var search_for = $('.search select').val();
+
+    $.ajax({
+            type:"POST",
+            url:'/forum',
+            cache:false,
+            data:"search_for="+search_for+"&query="+query,
+            baforeSend:function(){  
+
+            },
+            success:function(data){
+                //callback(null,data);
+                console.log(data);
+            },
+            error:function(request, status, error){
+                console.log(request.responseText);
+                //callback(request.responseText,null);
+            }   
+        });
+}
+
+$('.search input[type=text]').on('keydown',function(){
+    if($(this).val().length >= 3)
+    {
+        requestResults();
+    }
+});
+$('.search b.fa-search').on('click',function(){
+    if($('.search input[type=text]').val().length > 3)
+    {        
+        requestResults();
+    }
+});
+
+
 </script>

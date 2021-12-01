@@ -1,6 +1,7 @@
 const db = require('./dbconnect.js');
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
+const moment = require('moment');
 
 const HashIt = async (password,saltRounds = 10) => {
     const hashed = await bcrypt.hash(password,saltRounds);
@@ -20,43 +21,79 @@ const compareIt = async (password,hashedPassword,callback) => {
     });
 }
 
-const otpGenerate = async (bytes = 3) => {
+function otpGenerate(bytes = 3){
     return crypto.randomBytes(bytes).toString('hex');
 }
 
-function DateTime(addyears=0,addmonths=0,adddays=0,addhours=0,addminuts=0,addseconds=0){
+function DateTime(addyears=0,addmonths=0,adddays=0,addhours=0,addminutes=0,addseconds=0){
 
-    let date_ob = new Date();
+    // let date_ob = new Date();
+    var date =  moment().format('YYYY-MM-DD hh:mm:ss');
 
-    // current date
-    // adjust 0 before single digit date
-    let date = ("0" + date_ob.getDate()+adddays).slice(-2);
+    if(addseconds > -1)
+    {        
+        date = moment(date,'YYYY-MM-DD hh:mm:ss').add(addseconds,'seconds').format('YYYY-MM-DD hh:mm:ss');
+    }
+    else
+    {
+        date = moment(date,'YYYY-MM-DD hh:mm:ss').subtract(addseconds,'seconds').format('YYYY-MM-DD hh:mm:ss');
+    }
 
-    // current month
-    let month = ("0" + (date_ob.getMonth() + 1 + addmonths)).slice(-2);
+    if(addminutes > -1)
+    {
+        date = moment(date,'YYYY-MM-DD hh:mm:ss').add(addminutes,'minutes').format('YYYY-MM-DD hh:mm:ss');
+    }
+    else
+    {
+        date = moment(date,'YYYY-MM-DD hh:mm:ss').subtract(addminutes,'minutes').format('YYYY-MM-DD hh:mm:ss');
+    }
 
-    // current year
-    let year = date_ob.getFullYear()+addyears;
+    if(addhours > -1)
+    {
+        date = moment(date,'YYYY-MM-DD hh:mm:ss').add(addhours,'hours').format('YYYY-MM-DD hh:mm:ss');
+    }
+    else
+    {
+        date = moment(date,'YYYY-MM-DD hh:mm:ss').subtract(addhours,'hours').format('YYYY-MM-DD hh:mm:ss');
+    }
 
-    // current hours
-    let hours = date_ob.getHours() + addhours;
+    if(adddays > -1)
+    {
+        date = moment(date,'YYYY-MM-DD hh:mm:ss').add(adddays,'days').format('YYYY-MM-DD hh:mm:ss');
+    }
+    else
+    {
+        date = moment(date,'YYYY-MM-DD hh:mm:ss').subtract(adddays,'days').format('YYYY-MM-DD hh:mm:ss');
+    }
 
-    // current minutes
-    let minutes = date_ob.getMinutes() + addminuts;
+    if(addmonths > -1)
+    {
+        date = moment(date,'YYYY-MM-DD hh:mm:ss').add(addmonths,'months').format('YYYY-MM-DD hh:mm:ss');
+    }
+    else
+    {
+        date = moment(date,'YYYY-MM-DD hh:mm:ss').subtract(addmonths,'months').format('YYYY-MM-DD hh:mm:ss');
+    }
 
-    // current seconds
-    let seconds = date_ob.getSeconds() + addseconds;
-
-    return (year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds).toString();
+    if(addyears > -1)
+    {
+        date = moment(date,'YYYY-MM-DD hh:mm:ss').add(addyears,'years').format('YYYY-MM-DD hh:mm:ss');
+    }
+    else
+    {
+        date = moment(date,'YYYY-MM-DD hh:mm:ss').subtract(addyears,'years').format('YYYY-MM-DD hh:mm:ss');
+    }
+    
+    return date;
 };
 
-const UpdateTable = async (table_name,key_value_pairs_in_json,target_row_query, callback) => {
+function UpdateTable(table_name,key_value_pairs_in_json,target_row_query, callback){
     var obj = JSON.parse(JSON.stringify(key_value_pairs_in_json));
     var keys = Object.keys(obj);
     var update = "";
-    for(var i =0; i < keys.length; i++){
-        if(i > 1) update += ", ";
-        update += keys[i]+' = '+obj[keys[i]];
+    for(var i = 0; i < keys.length; i++){
+        if(i >= 1) update += ", ";
+        update += keys[i]+" = '"+obj[keys[i]]+"'";
     }
     // console.log(update);
     
@@ -109,16 +146,16 @@ function LogEmail(to,from,subject,content,content_type,status, callback){
     });
 };
 
-const Register = async (email,username,password, callback) => {
+const Register = async (email,username,password,user_choice_type, callback) => {
     // console.log("inside register");
     password = await HashIt(password,10);
     const vkey = await HashIt(password+email,10);
     const accesskey = await HashIt(password+email+username+DateTime(),10);
-    const otp = await otpGenerate(3);
+    const otp = otpGenerate(3);
     const usertype = "student";
     const priority = "owner";
-    const datetime = await DateTime(0,0,0,0,0,0);
-    const otpexpiry = await DateTime(0,0,0,0,15,0);
+    const datetime = DateTime(0,0,0,0,0,0);
+    const otpexpiry = DateTime(0,0,0,0,15,0);
     // first check if user is already registered or not
     AnyDbQuery("select username from accounts where email='"+email+"'",(error,result)=>{
         // console.log("searching user...");
@@ -136,7 +173,7 @@ const Register = async (email,username,password, callback) => {
             }
             else
             {
-                InsertDataInTable("accounts","id,profile_photo,username,email,password,vkey,access_key,otp,user_type,priority,description,otp_expiry,updated_datetime,created_datetime","'','default.png','"+username+"','"+email+"','"+password+"','"+vkey+"','"+accesskey+"','"+otp+"','"+usertype+"','"+priority+"','','"+otpexpiry+"','"+datetime+"','"+datetime+"'",(error,result)=>{
+                InsertDataInTable("accounts","id,profile_photo,username,email,password,vkey,access_key,otp,user_type,user_choice_type,priority,description,otp_expiry,updated_datetime,created_datetime","'','default.png','"+username+"','"+email+"','"+password+"','"+vkey+"','"+accesskey+"','"+otp+"','"+usertype+"','"+user_choice_type+"','"+priority+"','','"+otpexpiry+"','"+datetime+"','"+datetime+"'",(error,result)=>{
                     if(error)
                     {
                         callback(error,null);

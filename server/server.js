@@ -7,11 +7,11 @@ require('dotenv').config({ path: '../../private/config.env'});
 // require('./dbcreate.js');
 const dbfunctions = require('./dbfunctions');
 const SendEmail = require('./email.js');
-// const session = require('express-session');
 const cookie_parser = require('cookie-parser');
 const LearnRoadmap = require('./roadmaps_functions.js');
 const multer = require('multer');
-const e = require("express");
+const moment = require('moment');
+
 var storage = multer.diskStorage({   
   destination: function(req, file, cb) { 
      cb(null, 'public/assets/uploaded_roadmaps');    
@@ -168,14 +168,15 @@ app.post('/roadmaps_api',upload.single("files"),(req,res)=>{
 app.post('/user',async (req,res)=>{
   // console.log(JSON.stringify(req.body));
 
-  if(req.body.hasOwnProperty('email')&&req.body.hasOwnProperty('username')&&req.body.hasOwnProperty('password'))
+  if(req.body.hasOwnProperty('email')&&req.body.hasOwnProperty('username')&&req.body.hasOwnProperty('password')&&req.body.hasOwnProperty('user_choice_type'))
   {
     const email = req.body.email;
     const username = req.body.username;
     const password = req.body.password;
+    const user_choice_type = req.body.user_choice_type;
     var json = {};
 
-    dbfunctions.Register(email,username,password,(error,result)=>{
+    dbfunctions.Register(email,username,password,user_choice_type,(error,result)=>{
       if(error)
       {
         console.log(error);
@@ -242,8 +243,9 @@ app.post('/user',async (req,res)=>{
     const otp = req.body.otpVerify;
     const email = req.body.email;
     var json = {};
+    var datetime = dbfunctions.DateTime();
 
-    dbfunctions.AnyDbQuery("select otp from accounts where email='"+email+"'",(error,result)=>{
+    dbfunctions.AnyDbQuery("select otp from accounts where email='"+email+"' AND otp_expiry >= '"+datetime+"' ",(error,result)=>{
       if(error)
       {
         console.log(error);
@@ -303,11 +305,12 @@ app.post('/user',async (req,res)=>{
     const request = req.body.post-request;
     const email = req.body.email;
     var json = {};
+    var datetime = dbfunctions.DateTime();
 
     switch(request)
     {
       case 'new-otp':{
-        dbfunctions.AnyDbQuery("select otp,otp-expire from accounts where email='"+email+"'",(error,result)=>{
+        dbfunctions.AnyDbQuery("select otp,otp-expire from accounts where email='"+email+"' and otp_expiry >= '"+datetime+"'",(error,result)=>{
           if(error)
           {
             console.log(error);
@@ -341,10 +344,10 @@ app.post('/user',async (req,res)=>{
             }
             else
             {
-              const otp = dbfunctions.otpGenerate(6);
+              const otp = dbfunctions.otpGenerate(3);
               const expiry = dbfunctions.DateTime(0,0,0,0,15,0);
     
-              dbfunctions.UpdateTable("accounts",{'otp':otp,'otp-expiry':expiry},"email='"+email+"'",(error,result)=>{
+              dbfunctions.UpdateTable("accounts",{'otp':otp,'otp_expiry':expiry},"email='"+email+"'",(error,result)=>{
                 if(error)
                 {
                   console.log(error);  
@@ -408,8 +411,9 @@ app.post('/user',async (req,res)=>{
           const id = row.id;
           const verified = row.verified;
           const hashedPass = row.password;
-          const otp = row.otp;
-          const otp_expiry = row.otp_expiry;
+          var otp = row.otp;
+          var otp_expiry = row.otp_expiry;
+          var datetime = dbfunctions.DateTime();
 
             dbfunctions.compareIt(password,hashedPass,(error,result)=>{
               if(error)
@@ -445,21 +449,67 @@ app.post('/user',async (req,res)=>{
                   {
                     //account is not verified
                     //send verification otp email
-                    SendEmail(email,"Your Mentor Account Verification OTP is "+otp,"html","Thankyou! for registering with Your Mentor.<br/> Your OTP(One Time Password) for account verification is <b>"+otp+"</b> and is <b>valid only till "+otp_expiry+"</b>",(error,result)=>{
-                      if(error)
-                      {
-                         json = {"code":0,"description":"Unable to send email OTP"};
-                      }
-                      else
-                      if(result.affectedRows)
-                      {
-                        console.log("email log inserted in db");
-                        json = {"code":2,"description":"Please enter the OTP send on your email id"};
-                      }
+                    if(moment(otp_expiry).isAfter(datetime))
+                    {
+                      //if otp if not expired yet then send the email with expiry time
+                      SendEmail(email,"Your Mentor Account Verification OTP is "+otp,"html","Thankyou! for registering with Your Mentor.<br/> Your OTP(One Time Password) for account verification is <b>"+otp+"</b> and is <b>valid only till "+otp_expiry+"</b>",(error,result)=>{
+                        if(error)
+                        {
+                           json = {"code":0,"description":"Unable to send email OTP"};
+                        }
+                        else
+                        if(result.affectedRows)
+                        {
+                          console.log("email log inserted in db");
+                          json = {"code":2,"description":"Please enter the OTP send on your email id"};
+                        }
+  
+                        // console.log(json);
+                        res.send(json);
+                      });
+                    }
+                    else
+                    {
+                        otp = dbfunctions.otpGenerate(3);
+                        otp_expiry = dbfunctions.DateTime(0,0,0,0,15,0);
 
-                      // console.log(json);
-                      res.send(json);
-                    });
+                        dbfunctions.UpdateTable("accounts",{'otp':otp,'otp_expiry':otp_expiry},"email='"+email+"'",(error,result)=>{
+                          if(error)
+                          {
+                            console.log(error);  
+                          }
+                          else
+                          {
+                            if(result.affectedRows)
+                            {
+                              SendEmail(email,otp+" is your OTP | Your Mentor","html",otp+" is your OTP for your account and is valid till "+otp_expiry,(error,result)=>{
+                                if(error)
+                                {
+                                  json = {"code":0,"description":"Unable to send email OTP"};
+                                }
+                                else
+                                {
+                                  if(result.affectedRows)
+                                  {
+                                    json = {"code":2,"description":"Please enter the OTP send on your email id"};
+                                    
+                                  }
+                                  else
+                                  {
+                                    json = {"code":0,"description":"Unable to send otp"};
+                                  }
+                                }
+                                res.send(json);
+                              });
+                            }
+                            else
+                            {
+                              json = {"code":0,"description":"unable to generate new otp, please try again after some time"};
+                              res.send(json);
+                            }
+                          }
+                        });
+                    }                    
                   }                  
                 }
                 else
@@ -536,6 +586,78 @@ app.post('/roadmap',(req,res)=>{
   }
 });
 
+app.post('/forum',(req,res)=>{  
+  if(req.body.hasOwnProperty('question')&&req.body.hasOwnProperty('description'))
+  {
+    if(req.signedCookies.user)
+    {
+      var email = req.signedCookies.user;
+      dbfunctions.AnyDbQuery("select id from accounts where email='"+email+"'",(error,result)=>{
+        if(error)
+        {
+          throw error;
+        }
+        else
+        {
+          if(Object.values(JSON.parse(JSON.stringify(result))).length)
+          {
+            // user is logged in
+            //then store its post
+            //get user id
+            const user_id = result[0].id;
+            const title = req.body.question;
+            const description = req.body.description;
+            const datetime = dbfunctions.DateTime();
+
+            console.log(title+' | '+description+' | '+datetime);
+            dbfunctions.InsertDataInTable("threads","id,user_id,title,description,status,posts_count,updated_datetime,created_datetime","'','"+user_id+"','"+title+"','"+description+"','open','1','"+datetime+"','"+datetime+"'",(error,result)=>{
+              if(error)
+              {
+                throw error;
+              }
+              else
+              {
+                if(result.affectedRows)
+                {
+                  res.send({"code":1,"description":"Posted!"});
+                }
+                else
+                {
+                  res.send({"code":0,"description":"unable to post, try again after some time."}); 
+                }
+              }
+            });       
+          }
+          else
+          {
+            //either user is not logged in or cookie is tampered
+            res.send({"code":0,"description":"Please login first"});
+          }
+        }
+      });
+    }
+    else
+    {
+      //user is not logged in
+      res.send({"code":0,"description":"Please login first"});
+    }
+  }
+  else
+  if(req.body.hasOwnProperty('query')&&req.body.hasOwnProperty('search_for'))
+  {
+    const query = req.body.query;
+    const search_for = req.body.search_for;
+    switch(search_for)
+    {
+      case 'threads':{
+        dbfunctions.AnyDbQuery("select title,description,status,posts_count,created_datetime where title LIKE '"+query+"' OR description LIKE '"+query+"'");
+      }break;
+      case 'posts':{}break;
+      case 'keywords':{}break;
+    }
+  }
+});
+
 app.listen(3001, () => {
   console.log("app listening on port 3001")
-})
+});
