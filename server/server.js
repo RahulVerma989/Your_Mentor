@@ -584,6 +584,51 @@ app.post('/roadmap',(req,res)=>{
       }
     });
   }
+  else
+  if(req.body.hasOwnProperty('goal'))
+  {
+    dbfunctions.AnyDbQuery("select id,department_name from fields_departments",(error,result)=>{
+      if(error)
+      {
+        console.log(error);
+      }
+      else
+      {
+        if(Object.values(JSON.parse(JSON.stringify(result))).length)
+        {
+            const departments =  JSON.parse(JSON.stringify(result));
+
+            dbfunctions.AnyDbQuery("select department_id,designation_name from designation",(error,result)=>{
+              if(error)
+              {
+                console.log(error);
+              }
+              else
+              {
+                if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                {
+                  const designations = JSON.parse(JSON.stringify(result));
+                  // console.log(designations);
+                  var json = {};
+                  departments.map((department)=>{
+                    var designations_array = [];
+                    designations.map((designation)=>{
+                      if(department.id == designation.department_id)
+                      {                        
+                        designations_array.push(designation.designation_name);
+                      }
+                    });
+                    json[department.department_name] = designations_array;
+                  });
+
+                  res.send(json);
+                }
+              }
+            });
+        }
+      }
+    });
+  }
 });
 
 app.post('/forum',(req,res)=>{  

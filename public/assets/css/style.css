@@ -991,7 +991,8 @@ section h1 {
   background-color: #db2269;
   text-align: center;
   cursor: pointer;
-  width: 100px;
+  width: fit-content;
+  max-width: inherti;
   font-size: 15px;
 }
 .card .cardbtn a{

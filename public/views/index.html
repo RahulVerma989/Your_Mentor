@@ -16,17 +16,17 @@
     <div class="card">
         <img src="images/undraw_teacher_-35-j2.svg" alt="Mentoring">
         <p class="title">Mentoring</p>
-        <p><div class="cardbtn"><a href="#">Join here</a></div></p>
+        <p><div class="cardbtn"><a class='fetch-page' fetch-page='/account'>Become a Mentor</a></div></p>
     </div>
     <div class="card">
         <img src="images/undraw_navigator_a479.svg">
         <p class="title">Career Roadmaps</p>
-        <p><div class="cardbtn"><a href="#">Join here</a></div></p>
+        <p><div class="cardbtn"><a href="#goal">Your destination</a></div></p>
     </div>
     <div class="card">
         <img src="images/undraw_online_discussion_-5-wgl.svg">
         <p class="title">Community forums</p>
-        <p><div class="cardbtn"><a href="#">Join here</a></div></p>
+        <p><div class="cardbtn"><a class='fetch-page' fetch-page='/forum'>Ask for help</a></div></p>
     </div>
     </div>
 </section>
@@ -58,125 +58,6 @@
                         <h4>A</h4>
                         <hr/>
                         <div class='fields-selection'>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class='department-fields-container'>
-                    <div class='alphabet-field-section'>
-                        <h4>A</h4>
-                        <hr/>
-                        <div class='fields-selection'>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class='field-departments'>
-
-                <div class='field-department-name'>
-                    <p>IT</p>
-                    <b class='fas fa-caret-down'></b>
-                </div>
-                <div class='department-fields-container'>
-                    <div class='alphabet-field-section'>
-                        <h4>A</h4>
-                        <hr/>
-                        <div class='fields-selection'>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class='department-fields-container'>
-                    <div class='alphabet-field-section'>
-                        <h4>A</h4>
-                        <hr/>
-                        <div class='fields-selection'>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
-                            <span>
-                                <input type='radio' name='options' value='android-developer'>
-                                <label for='android-developer'>Android Developer</label>
-                            </span>
                             <span>
                                 <input type='radio' name='options' value='android-developer'>
                                 <label for='android-developer'>Android Developer</label>
@@ -235,6 +116,44 @@ $('#aim-popup').on('click','.fa-times',function(){
 
 $('.preferences').on('click','.roadmaps button',function(){
     $('#aim-popup').toggle();
+    const fields = $('#aim-popup #fields');
+    var string = "";
+    var departments = [];
+    var designations = [];
+
+    $.ajax({
+        type:"POST",
+        url:"/roadmap",
+        data:"goal=all",
+        cache:false,
+        success:function(data){
+            if(data)
+            {                
+                fields.empty();
+                departments = Object.keys(data);
+
+                departments.map((department)=>{                    
+                    designations = data[department];
+                    string += "<div class='field-departments'><div class='field-department-name'><p>";
+                    string += department+"</p><b class='fas fa-caret-down'></b></div>";
+                    string += "<div class='department-fields-container'>";
+                    var alphabet = designations[0][0].toUpperCase();
+
+                    designations.map((designation)=>{
+                        if(alphabet.charCodeAt(0) > designation[0].toUpperCase().charCodeAt(0))
+                        {
+                            alphabet = designation[0].toUpperCase();
+                        }
+                    });
+                    
+                    fields.append(string);
+                });
+            }
+        },
+        error:function(request,status,error){
+            console.log(request.responseText);
+        }
+    });
 });
 
 </script>
