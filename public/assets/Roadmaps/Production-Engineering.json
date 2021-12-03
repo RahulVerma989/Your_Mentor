@@ -12,7 +12,7 @@
                         "name":"Field Study",
                         "branch":[
                             {
-                                "name":"Study about production field"
+                                "name":"Study about Production Field"
                             }
                         ]
                     },
@@ -32,7 +32,7 @@
                         "branch":[
                             {
                                 "name":"Basic Projects on Designing"
-                            },
+                            },  
                             {
                                 "name":"Projects on Mechanical Simulations"
                             }
@@ -42,7 +42,7 @@
                         "name":"Apply for Internships"
                     },
                     {
-                        "name":"ready for job Now"
+                        "name":"Ready for Job Now"
                     }
                 ]
             }       

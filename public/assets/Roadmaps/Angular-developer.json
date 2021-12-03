@@ -35,7 +35,7 @@
                         "name":"Learn RxJS Basics",
                         "branch":[
                             {
-                                "name":"What is Observable pattern"
+                                "name":"What is Observable Pattern"
                             },
                             {
                                 "name":"Observable Lifecycle"
@@ -108,16 +108,16 @@
                                 "name":"Creating Custom Directives"
                             },
                             {
-                                "name":"Creating custom Pipes"
+                                "name":"Creating Custom Pipes"
                             },
                             {
-                                "name":"Reactive forms"
+                                "name":"Reactive Forms"
                             },
                             {
-                                "name":"Modules and Lazy loading"
+                                "name":"Modules and Lazy Loading"
                             },
                             {
-                                "name":"Dependency injection and Zones"
+                                "name":"Dependency Injection and Zones"
                             }
                         ]
                     },

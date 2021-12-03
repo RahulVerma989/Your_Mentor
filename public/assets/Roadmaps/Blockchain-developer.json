@@ -48,7 +48,7 @@
                                 "name":"Ethereum Networks"
                             },
                             {
-                                "name":"Learn About Wallets,address,gas,private and public keys"
+                                "name":"Learn About Wallets,Address,Gas,Private and Public keys"
                             },
                             {
                                 "name":"Ethereum Transcation"
@@ -70,7 +70,7 @@
                         ]
                     },
                     {
-                        "name":"smart Contracts",
+                        "name":"Smart Contracts",
                         "branch":
                         [
                             {
@@ -80,18 +80,18 @@
                                 "name":"Ethereum high level languages"
                             },
                             {
-                                "name":"Life cycle of smar contracts"
+                                "name":"Life Cycle of Smart Contracts"
                             },
                             {
-                                "name":"Compiling,Testing and deploying smart contracts"
+                                "name":"Compiling,Testing and Deploying Smart Contracts"
                             },
                             {
-                                "name":"Interacting with deployed smart contracts"
+                                "name":"Interacting with deployed Smart Contracts"
                             }
                         ]
                     },
                     {
-                        "name":"Package managers",
+                        "name":"Package Managers",
                         "branch":
                         [
                             {
@@ -102,7 +102,7 @@
                     },
                 
                     {   
-                        "name":"IDE's",
+                        "name":"IDEs",
                         "branch":[
                             {
                                 "name":"Remix IDE"
@@ -127,7 +127,7 @@
                                 "name":"MainNet"
                             },
                             {
-                                "name":"Hardware lifecycle"
+                                "name":"Hardware Lifecycle"
                             }
                         ]
                     }

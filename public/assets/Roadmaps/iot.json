@@ -6,30 +6,16 @@
                 "name":"Internet of things",
                 "roadmap":[
                     {
-                        "name":"Introduction",
-                        "branch":[
-                            
-                        ]
+                        "name":"Introduction"
                     },
                     {
-                        "name":"IoT Architecture",
-                        "branch":[
-                           
-                        ]
+                        "name":"IoT Architecture"
                     },
                     {
-                        "name":"Design and Development pf Iot System",
-                        "branch":
-                        [
-                           
-                        ]
+                        "name":"Design and Development pf Iot System"
                     },
                     {
-                        "name":"The Arduino Platform",
-                        "branch":
-                        [
-                           
-                        ]
+                        "name":"The Arduino Platform"
                     },
                     {
                         "name":"Arduino Interfacing"

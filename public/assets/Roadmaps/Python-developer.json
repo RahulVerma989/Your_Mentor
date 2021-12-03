@@ -12,16 +12,16 @@
                                 "name":"Basic syntax"
                             },
                             {
-                                "name":"variables and data types"
+                                "name":"Variables and Data types"
                             },
                             {
                                 "name":"Conditional Statements"
                             },
                             {
-                                "name":"type Casting & Exceptions"
+                                "name":"Type Casting & Exceptions"
                             },
                             {
-                                "name":"functions"
+                                "name":"Functions"
                             },
                             {
                                 "name":"List, Tuples, Sets, Dictionaries"
@@ -147,13 +147,13 @@
                                 "name":"Pytest"
                             },
                             {
-                                "name":"pyUnit / unittest"
+                                "name":"PyUnit / Unittest"
                             },
                             {
-                                "name":"nose"
+                                "name":"Nose"
                             },
                             {
-                                "name":"doctest"
+                                "name":"Doctest"
                             }
                         ]
                     }

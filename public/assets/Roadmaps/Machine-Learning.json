@@ -6,189 +6,224 @@
                 "name":"Machine Learning",
                 "roadmap":[
                     {
-                        "name":"Machine Learning Problem",
+                        "name":"Data",
                         "branch":[
                             {
-                                "name":"Categaries"
+                                "name":"Sources"
                             },
                             {
-                                "name":"Classification"
+                                "name":"Cleaning"
                             },
                             {
-                                "name":"Sequence to sequence"
+                                "name":"Scraping"
                             },
                             {
-                                "name":"Clustering"
+                                "name":"Visualising"
                             },
                             {
-                                "name":"Dimension Reductuction"
+                                "name":"Simulate"
                             }
-                            
+
                         ]
                     },
                     {
-                        "name":"Machine learning Resources",
-                        "branch":[
-                            {
-                                "name":"Language"
-                            },
-                            {
-                                "name":"Mathematics",
-                                "branch":
-                                [
-                                    {
-                                        "name":"Linear algebra"
-                                    },
-                                    {
-                                        "name":"Neural Networks"
-                                    },
-                                    {
-                                        "name":"Matrix Manipulation"
-                                    },
-                                    {
-                                        "name":"Probablity and Statistic etc"
-                                    }
-                                    
-                                ]
-                            },
-                            {
-                                "name":"Books",
-                                "branch":
-                                [
-                                    {
-                                        "name":"Introduction to machie learning by Andreas C. Muller"
-                                    },
-                                    {
-                                        "name":"Mechanics of Machine Learning by Terrence Parr etc"
-                                    }
-                                    
-                                ]
-                            },
-                            {
-                                "name":"Cloud Services",
-                                "branch":
-                                [
-                                    {
-                                        "name":"A cloud Guru"
-                                    },
-                                    {
-                                        "name":"Google Cloud Training Resources"
-                                    },
-                                    {
-                                        "name":"AWS Training resources"
-                                    },
-                                    {
-                                        "name":"Microsoft Azure Training resources"
-                                    }
-                                    
-                                ]
-                            },
-                            {
-                                "name":"Rules and tidbits"
-                            },
-                            {
-                                "name":"Bookmarks",
-                                "branch":
-                                [
-                                    {
-                                        "name":"Paper with code"
-                                    },
-                                    {
-                                        "name":"Google dataset Serch"
-                                    },
-                                    {
-                                        "name":"Awesomr data labeling"
-                                    },
-                                    {
-                                        "name":"Curated list of free dataset by dataquest etc"
-                                    }
-                                    
-                                ]
-                            },
-                            {
-                                "name":"Datasets",
-                                "branch":
-                                [
-                                   
-                                    {
-                                        "name":"Google dataset Serch"
-                                    },
-                                    {
-                                        "name":"Awesomr data labeling"
-                                    },
-                                    {
-                                        "name":"Curated list of free dataset by dataquest etc"
-                                    }
-                                    
-                                ]
-                            }
-                           
-                        ]
-                    },
-                    {
-                        "name":"Data collection",
+                        "name":"Mathematics",
                         "branch":
                         [
                             {
-                                "name":"Data preperation"
+                                "name":"Linear algebra"
                             },
                             {
-                                "name":"Train model on data"
+                                "name":"Neural Networks"
                             },
                             {
-                                "name":"Analysis/evaluation"
+                                "name":"Matrix Manipulation"
                             },
                             {
-                                "name":"Serve model"
-                            },
-                           
-                            {
-                                "name":"Retrain model"
+                                "name":"Probablity and Statistic etc"
                             }
-                            
-                            
                             
                         ]
                     },
                     {
-                        "name":"Machine learning Tools",
+                        "name":"Books",
                         "branch":
                         [
                             {
-                                "name":"libraries",
-                                "branch":
-                                [
-                                    {
-                                        "name":"Scikit-learn"
-                                    },
-                                    {
-                                        "name":"Pytorch"
-                                    },
-                                    {
-                                        "name":"Tensorflow"
-                                    },
-                                    {
-                                        "name":"ONXX"
-                                    }
-                                   
-                                    
-                                    
-                                ]
-                                
-                                
+                                "name":"Introduction to machie learning by Andreas C. Muller"
                             },
                             {
-                                "name":"Toolbox"
-                                
-                                
-                                
+                                "name":"Mechanics of Machine Learning by Terrence Parr etc"
                             }
                             
+                        ]
+                    },
+                    {
+                        "name":"ALgorithms",
+                        "branch":[
+                            {
+                                "name":"Linear Regression"
+                            },
+                            {
+                                "name":"Logistic Regression"
+                            },
+                            {
+                                "name":"Decision Tree"
+                            },
+                            {
+                                "name":"SVM"
+                            },
+                            {
+                                "name":"kNN"
+                            },
+                            {
+                                "name":"K-Means"
+                            },
+                            {
+                                "name":"Random Forest"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Algorithm Improvement Measures",
+                        "branch":[
+                            {
+                                "name":"Perfomance score"
+                            },
+                            {
+                                "name":"Correctless"
+                            },
+                            {
+                                "name":"Imbalance"
+                            },
+                            {
+                                "name":"Train"
+                            },
+                            {
+                                "name":"Intuition"
+                            },
+                            {
+                                "name":"Study Papers"
+                            },
+                            {
+                                "name":"Perfomance with the bad data"
+                            }
+
+                        ]
+                    },
+                    {
+                        "name":"Cloud Services Resources",
+                        "branch":
+                        [
+                            {
+                                "name":"A cloud Guru"
+                            },
+                            {
+                                "name":"Google Cloud Training Resources"
+                            },
+                            {
+                                "name":"AWS Training resources"
+                            },
+                            {
+                                "name":"Microsoft Azure Training resources"
+                            }
+                            
+                        ]
+                    },
+                    {
+                        "name":"Bug Reports",
+                        "branch":
+                        [
+                            {
+                                "name":"How to generate reports"
+                            },
+                            {
+                                "name":"Record the Evidance"
+                            }
+
+                        ]
+                    },
+                    {
+                        "name":"Enviroment",
+                        "branch":
+                        [
+                            {
+                                "name":"Separate for QA"
+                            },
+                            {
+                                "name":"Deploy Process"
+                            },
+                            {
+                                "name":"Get Data"
+                            },
+                            {
+                                "name":"Refresh Data"
+                            },
+                            {
+                                "name":"Connect to data source"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Test",
+                        "branch":
+                        [
+                            {
+                                "name":"New"
+                            },
+                            {
+                                "name":"Learning"
+                            },
+                            {
+                                "name":"Statistical"
+                            },
+                            {
+                                "name":"Static"
+                            },
+                            {
+                                "name":"Document Test"
+                            },
+                            {
+                                "name":"Extremes"
+                            },
+                            {
+                                "name":"Regression"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Tools",
+                        "branch":
+                        [
+                            {
+                                "name":"Anaconda"
+                            },
+                            {
+                                "name":"Scikit"
+                            },
+                            {
+                                "name":"Tensorflow"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Testing Your App",
+                        "branch":
+                        [
+                            {
+                                "name":"Unit Testiong",
+                                "branch":[
+                                    {
+                                        "name":"JUnit"
+                                    },
+                                    {
+                                        "name":"TestNG"
+                                    }
+                                ]
+
+                            }
                         ]
                     }
-                   
-                   
-                   
                 ]
             }       
         }      

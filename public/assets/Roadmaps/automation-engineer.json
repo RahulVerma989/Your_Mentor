@@ -17,7 +17,7 @@
                         "name":"Electrical Circuits"
                     },
                     {
-                        "name":"Electrical Components study",
+                        "name":"Electrical Components Study",
                         "branch":[
                             {
                                 "name":"Relays"
@@ -43,7 +43,7 @@
                                 "name":"SCADA"
                             },
                             {
-                                "name":"testbed"
+                                "name":"Testbed"
                             }
                         ]
                     },
@@ -57,7 +57,7 @@
                                 "name":"PSU's Summer Internship"
                             },
                             {
-                                "name":"Summer internship in MNC's"
+                                "name":"Summer Internship in MNC's"
                             }
                         ]
                     },

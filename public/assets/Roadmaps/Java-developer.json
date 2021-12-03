@@ -9,10 +9,10 @@
                         "name":"Leran the Java fundamentals",
                         "branch":[
                             {
-                                "name":"Basic syntax"
+                                "name":"Basic Syntax"
                             },
                             {
-                                "name":"Data types & variables"
+                                "name":"Data Types & Variables"
                             },
                             {
                                 "name":"Conditionals Statements"
@@ -24,22 +24,39 @@
                                 "name":"Loops"
                             },
                             {
-                                "name":"Exception handling"
+                                "name":"Exception Handling"
                             },
                             {
                                 "name":"Data Structures",
-                                "branch":[{
-                                    "name":"Array, Strings, stack, queue, linked list, trees, graphs etc."
-                                }]
+                                "branch":[
+                                    {
+                                        "name":"Strings"
+                                    },
+                                    {
+                                        "name":"Stack"
+                                    },
+                                    {
+                                        "name":"Queue"
+                                    },
+                                    {
+                                        "name":"Linked list"
+                                    },
+                                    {
+                                        "name":"Trees"
+                                    },
+                                    {
+                                        "name":"Graphs"
+                                    }
+                                ]
                             },
                             {
-                                "name":"OOPs, interfaces, Classes"
+                                "name":"OOPs, Interfaces, Classes"
                             },
                             {
                                 "name":"Packages"
                             },
                             {
-                                "name":"Working with files and APIs"
+                                "name":"Working with Files and APIs"
                             }
                         ]
                     },
@@ -47,7 +64,7 @@
                         "name":"Getting Deeper",
                         "branch":[
                             {
-                                "name":"Memory management"
+                                "name":"Memory Management"
                             },
                             {
                                 "name":"Collection Frameworks"
@@ -56,7 +73,7 @@
                                 "name":"Serialization"
                             },
                             {
-                                "name":"Networking & sockets"
+                                "name":"Networking & Sockets"
                             },
                             {
                                 "name":"Generics"
@@ -65,18 +82,18 @@
                                 "name":"Streams"
                             },
                             {
-                                "name":"How JVM works"
+                                "name":"How JVM Works"
                             },
                             {
-                                "name":"Garbage collecton"
+                                "name":"Garbage Collecton"
                             },
                             {
-                                "name":"Basic of threads"
+                                "name":"Basic of Threads"
                             }
                         ]
                     },
                     {
-                        "name":"Build tools",
+                        "name":"Build Tools",
                         "branch":
                         [
                             {

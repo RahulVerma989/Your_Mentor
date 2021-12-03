@@ -6,15 +6,15 @@
                 "name":"Digital Marketing",
                 "roadmap":[
                     {
-                        "name":"Start with a strategy",
+                        "name":"Start with a Strategy",
                         "branch":[
                             {
-                                "name":"Build a strategy for prdouct/Sevice"
+                                "name":"Build a Strategy for Prdouct/Sevice"
                             }
                         ]
                     },
                     {
-                        "name":"Determine Max traffic cost"
+                        "name":"Determine Max Traffic Cost"
                     },
                     {
                         "name":"SEO"
@@ -38,7 +38,7 @@
                         "name":"Build Interest on Product"
                     },
                     {
-                        "name":"Create desire through ads"
+                        "name":"Create Desire Through Ads"
                     },
                     {
                         "name":"Get Actions"

@@ -1,0 +1,83 @@
+{
+    "add":{
+        "department":{
+            "name": "IT", 
+            "designation":{
+                "name":"NodeJs",
+                "roadmap":[
+                    {
+                        "name":"Package Manager",
+                        "branch":[
+                            {
+                                "name":"npm",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Yarn",
+                                "branch":[{}]
+                            }
+
+                        ]
+                    },
+                    {
+                        "name":"Framework",
+                        "branch":[
+                            {
+                                "name":"Express",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Hapi",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Koa",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Sails.js",
+                                "branch":[{}]
+                            }
+
+
+                        ]
+                    },
+                    {
+                        "name":"Testing",
+                        "branch":
+                        [
+                            {
+                                "name":"jest",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Mocha",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Jasmine",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Chai",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"should.js",
+                                "branch":[{}]
+                            }
+
+
+
+                        ]
+                    }
+
+
+
+
+
+                ]
+            }       
+        }      
+    }
+}

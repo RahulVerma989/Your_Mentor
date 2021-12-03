@@ -18,40 +18,40 @@
                                         "name":"ISRO Exam"
                                     },
                                     {
-                                        "name":"BARC exam"
+                                        "name":"BARC Exam"
                                     },
                                     {
-                                        "name":"DRDO exam"
+                                        "name":"DRDO Exam"
                                     }
                                 ]
                             },
                             {
-                                "name":"Engineering Competitve exams",
+                                "name":"Engineering Competitve Exams",
                                 "branch":[
                                     {
-                                        "name":"GATE exam"
+                                        "name":"GATE Exam"
                                     },
                                     {
-                                        "name":"IES exam"
+                                        "name":"IES Exam"
                                     }
                                 ]
                             }
                         ]
                     },
                     {
-                        "name":"M.Tech in Civil engineering",
+                        "name":"M.Tech in Civil Engineering",
                         "branch":[
                             {
-                                "name":"Private sector Jobs",
+                                "name":"Private Sector Jobs",
                                 "branch":[
                                     {
-                                        "name":"MNCs exam",
+                                        "name":"MNCs Exam",
                                         "branch":[
                                             {
-                                                "name":"L&Ts exam"
+                                                "name":"L&Ts Exam"
                                             },
                                             {
-                                                "name":"DLFs exam"
+                                                "name":"DLFs Exam"
                                             }
                                         ]
                                     }

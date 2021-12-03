@@ -6,22 +6,20 @@
                 "name":"Embedded System",
                 "roadmap":[
                     {
-                        "name":"Basic Learn",
+                        "name":"Basic Learning",
                         "branch":[
                             {
                                 "name":"Sensors"
                             },
                             {
-                                "name":"microprocessors"
+                                "name":"Microprocessors"
                             },
                             {
-                                "name":"microcontroller"
+                                "name":"Microcontroller"
                             },
                             {
                                 "name":"Embedded software"
                             }
-                            
-                        
                         ]
                     },
                     {
@@ -33,26 +31,61 @@
                             {
                                 "name":"Hardware Electronics Knowledge"
                             }
-                            
                         ]
                     },
                     {
-                        "name":"Develop skills through",
+                        "name":"Develop Skills Through",
                         "branch":
                         [
                             {
                                 "name":"Learn C Programming"
                             },
                             {
-                                "name":"8-bit microcontroller"
+                                "name":"study 8-bit microcontroller"
                             },
                             {
-                                "name":"Learn interfacing and make your personal bread board circuit"
+                                "name":"Learn Interfacing"
+                            },
+                            {
+                                "name":"Work on 8-bit microcontroller"
+                            },
+                            {
+                                "name":"Make Your Personal Breadboard Circuit"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"tools for Embedded Engineers",
+                        "branch":[
+                            {
+                                "name":"Proteus"
+                            },
+                            {
+                                "name":"Qt Creater"
+                            },
+                            {
+                                "name":"MPLAB X"
+                            },
+                            {
+                                "name":"Visual Studio"
+                            },
+                            {
+                                "name":"Eclipse"
+                            },
+                            {
+                                "name":"NetBeans"
+                            },
+                            {
+                                "name":"MATLAB"
+                            },
+                            {
+                                "name":"Arduino"
+                            },
+                            {
+                                "name":"ARM Keil"
                             }
                         ]
                     }
-                   
-                    
                 ]
             }       
         }      

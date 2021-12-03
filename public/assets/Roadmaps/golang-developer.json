@@ -12,10 +12,10 @@
                                 "name":"Basic Syntax"
                             },
                             {
-                                "name":"Variables and declaration"
+                                "name":"Variables & Declaration"
                             },
                             {
-                                "name":"Data types"
+                                "name":"Data Types"
                             },
                             {
                                 "name":"Loops"
@@ -27,7 +27,7 @@
                                 "name":"Functions"
                             },
                             {
-                                "name":"Package import & Exports"
+                                "name":"Package Import & Exports"
                             },
                             {
                                 "name":"Array"
@@ -70,7 +70,7 @@
                                 "name":"Cobra"
                             },
                             {
-                                "name":"urfave/cli"
+                                "name":"Urfave/Cli"
                             }
                         ]
                     },
@@ -106,7 +106,7 @@
                         ]
                     },
                     {
-                        "name":"Real time communication",
+                        "name":"Real Time communication",
                         "branch":[
                             {
                                 "name":"Melody"
@@ -137,11 +137,11 @@
                                 "name":"GraphQL",
                                 "branch":[
                                     {
-                                        "name":"graphql-go",
+                                        "name":"Graphql-go",
                                         "branch":[]
                                     },
                                     {
-                                        "name":"gqlgen",
+                                        "name":"Gqlgen",
                                         "branch":[]
                                     }
                                 ]
@@ -149,7 +149,7 @@
                         ]
                     },
                     {
-                        "name":"Testing your Apps",
+                        "name":"Testing Your Apps",
                         "branch":[]
                     },
                     {
@@ -162,7 +162,7 @@
                                 "name":"Protocol Buffers"
                             },
                             {
-                                "name":"rpcx etc."
+                                "name":"RPCX etc."
                             }
                         ]
                     }
