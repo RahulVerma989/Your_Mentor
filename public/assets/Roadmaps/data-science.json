@@ -15,19 +15,19 @@
                                 "name":"SQL scripting"
                             },
                             {
-                                "name":"Conditional,list comprehension"
+                                "name":"Conditional,List Comprehension"
                             },
                             {
                                 "name":"OOPS"
                             },
                             {
-                                "name":"Working with external libraries"
+                                "name":"Working with External Libraries"
                             },
                             {
-                                "name":"Fundamental algorithm"
+                                "name":"Fundamental Algorithm"
                             },
                             {
-                                "name":"Advanced-Functional programming"
+                                "name":"Advanced-Functional Programming"
                             }
                         ]
                     },
@@ -35,16 +35,16 @@
                         "name":"Data Extraction and Wrangling",
                         "branch":[
                             {
-                                "name":"Scripting- extracting data from websites,APIs,DBs"
+                                "name":"Scripting- Extracting Data from Websites,APIs,DBs"
                             },
                             {
-                                "name":"Data formating"
+                                "name":"Data Formating"
                             },
                             {
                                 "name":"Libraries - Pandas and NumPy"
                             },
                             {
-                                "name":"Data transformation - joining,slicing,indexing"
+                                "name":"Data Transformation - Joining,Slicing,Indexing"
                             },
                             {
                                 "name":"Handling missing values"
