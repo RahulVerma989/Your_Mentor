@@ -318,10 +318,11 @@ body {
   width:inherit;
   padding:5px;
   border-radius:5px;
+  text-align: left;
 }
 #aim-popup #fields-container #fields .field-departments .department-fields-container .alphabet-field-section .fields-selection span 
 {
-  display:block;
+  display:inline-block;
   position:relative;
   padding:2px;
   margin:5px;
@@ -330,7 +331,6 @@ body {
   cursor:pointer;
   font-size:12px;
   font-weight:400;
-  float:left;
 }
 #aim-popup #fields-container #fields .field-departments .department-fields-container .alphabet-field-section .fields-selection span input 
 {

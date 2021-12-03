@@ -3,7 +3,7 @@
         "department":{
             "name": "Core Engineering", 
             "designation":{
-                "name":"Civil engineer",
+                "name":"Civil Engineer",
                 "roadmap":[
                     {
                         "name":"Bachelors in Civil Engineering",
@@ -45,13 +45,13 @@
                                 "name":"Private sector Jobs",
                                 "branch":[
                                     {
-                                        "name":"MNC's exam",
+                                        "name":"MNCs exam",
                                         "branch":[
                                             {
-                                                "name":"L&T's exam"
+                                                "name":"L&Ts exam"
                                             },
                                             {
-                                                "name":"DLF's exam"
+                                                "name":"DLFs exam"
                                             }
                                         ]
                                     }

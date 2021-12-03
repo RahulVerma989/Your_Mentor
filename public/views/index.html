@@ -48,7 +48,7 @@
     <div id='fields-container'>
         <h3>Tell us what do you want to become</h3>
         <div id='fields'>            
-            <div class='field-departments'>
+            <!--<div class='field-departments'>
                 <div class='field-department-name'>
                     <p>IT</p>
                     <b class='fas fa-caret-down'></b>
@@ -69,14 +69,14 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </div>
 
 <script>
 
-$('#fields .field-departments .department-fields-container .alphabet-field-section .fields-selection span input[type=radio]').on('change',function(){
+$('#fields').on('click','.fields-selection span input[type=radio]',function(){
     var value = $(this).val();
     var newname = value.split('-'); //array
     var finalname = "";
@@ -89,7 +89,7 @@ $('#fields .field-departments .department-fields-container .alphabet-field-secti
         }        
     }
     $('#fields-container h3').html(`You want to become an "`+finalname+`"`);
-    $('#fields-container h3').append(`<a href='/road-map/`+value+`'>Road Map <b>😄</b></a>`);
+    $('#fields-container h3').append(`<a class='fetch-page' fetch-page='/roadmap/`+value+`'>Road Map <b>😄</b></a>`);
 });
 
 $('#fields').on('click','.field-departments',function(){
@@ -129,25 +129,49 @@ $('.preferences').on('click','.roadmaps button',function(){
         success:function(data){
             if(data)
             {                
+                //console.log(data);
+
                 fields.empty();
                 departments = Object.keys(data);
 
                 departments.map((department)=>{                    
                     designations = data[department];
+                    //console.log(designations);
                     string += "<div class='field-departments'><div class='field-department-name'><p>";
                     string += department+"</p><b class='fas fa-caret-down'></b></div>";
                     string += "<div class='department-fields-container'>";
+                    designations.sort();
+                    //console.log(designations[0]);
                     var alphabet = designations[0][0].toUpperCase();
-
-                    designations.map((designation)=>{
-                        if(alphabet.charCodeAt(0) > designation[0].toUpperCase().charCodeAt(0))
+                    string += "<div class='alphabet-field-section'><h4>";
+                    string += alphabet+"</h4><hr/>";
+                    string += "<div class='fields-selection'>";
+                    designations.map((designation,index)=>{
+                        if(alphabet != designation[0].toUpperCase())
                         {
+                            string += "</div></div>";
                             alphabet = designation[0].toUpperCase();
+                            string += "<div class='alphabet-field-section'><h4>";
+                            string += alphabet+"</h4><hr/>";
+                            string += "<div class='fields-selection'>";
                         }
-                    });
-                    
-                    fields.append(string);
+
+                        var url_designation = designation.split(" ");
+                        url_designation.map((word,index)=>{
+                            url_designation[index] = word[0].toLowerCase() + word.slice(1);
+                        });
+                        url_designation = url_designation.join("-");
+                        string += "<span><input type='radio' name='options' value='"+url_designation+"'><label for='"+url_designation+"'>"+designation+"</label></span>";
+
+                        if(index == designations.length-1)
+                        {
+                            string += "</div></div>";
+                        }                
+                    });         
+                    string += "</div></div>";    
                 });
+                string += "</div>";
+                fields.append(string);
             }
         },
         error:function(request,status,error){
