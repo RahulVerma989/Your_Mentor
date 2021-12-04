@@ -6,7 +6,7 @@
                 "name":"Robotics",
                 "roadmap":[
                     {
-                        "name":"Resources to follow",
+                        "name":"Resources To Follow",
                         "branch":[
                             {
                                 "name":"Robotics Blogs"
@@ -39,7 +39,7 @@
                                 "name":"Microcontroller"
                             },
                             {
-                                "name":"Introduction to arduino"
+                                "name":"Introduction to Arduino"
                             },
                             {
                                 "name":"Arduino Examples"
@@ -59,7 +59,7 @@
                                 "name":"Libraries"
                             },
                             {
-                                "name":"Programming Language"
+                                "name":"C Programming Language"
                             }
                            
                         ]
@@ -87,7 +87,7 @@
                         ]
                     },
                     {
-                        "name":"Debug process",
+                        "name":"Debug Process",
                         "branch":
                         [
                             {
@@ -110,13 +110,13 @@
                                 "name":"Autocad"
                             },
                             {
-                                "name":"Sensor module"
+                                "name":"Sensor Modules"
                             },
                             {
-                                "name":"Raspberry pi"
+                                "name":"RaspberryPi"
                             },
                             {
-                                "name":"Online simulators"
+                                "name":"Online Simulators"
                             },
                             {
                                 "name":"PCB Express"
@@ -152,7 +152,7 @@
                                 "name":"Quality Control Technique"
                             },
                             {
-                                "name":"Hardware lifecycle"
+                                "name":"Hardware Lifecycle"
                             }
                         ]
                     }

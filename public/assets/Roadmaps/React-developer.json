@@ -3,10 +3,10 @@
         "department":{
             "name": "IT", 
             "designation":{
-                "name":"React Frontend developer",
+                "name":"React Frontend Developer",
                 "roadmap":[
                     {
-                        "name":"Fundamental topics",
+                        "name":"Fundamental Topics",
                         "branch":[
                             {
                                 "name":"HTML & CSS"
@@ -36,7 +36,7 @@
                                 "name":"Conditional Rendering"
                             },
                             {
-                                "name":"Component Life cycle"
+                                "name":"Component Lifecycles"
                             },
                             {
                                 "name":"Lists and Keys"
@@ -61,10 +61,10 @@
                         "name":"Advanced Topics",
                         "branch":[
                             {
-                                "name":"Writing your own hooks"
+                                "name":"Writing your own Hooks"
                             },
                             {
-                                "name":"common Hooks",
+                                "name":"Common Hooks",
                                 "branch":[
                                     {
                                         "name":"useCallback"
@@ -87,7 +87,7 @@
                                 "name":"Context"
                             },
                             {
-                                "name":"refs"
+                                "name":"Refs"
                             },
                             {
                                 "name":"High Order Components"
@@ -133,7 +133,7 @@
                                         "name":"React Query"
                                     },
                                     {
-                                        "name":"use HTTP"
+                                        "name":"Use HTTP"
                                     },
                                     {
                                         "name":"Apollo"
@@ -153,7 +153,7 @@
                                 ]
                             },
                             {
-                                "name":"Mobile dev start with React Native",
+                                "name":"Mobile Dev Start with React Native",
                                 "branch":[{}]
                             },
                             {
