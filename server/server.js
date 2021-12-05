@@ -105,7 +105,7 @@ app.post('/fetch-page',async (req,res)=>{
             }
             else
             { 
-              if(Object.values(JSON.parse(JSON.stringify(result))))
+              if(Object.values(JSON.parse(JSON.stringify(result))).length)
               {
                   row = result[0];
                   const priority = row.priority;
@@ -716,6 +716,891 @@ app.post('/forum',async (req,res)=>{
         res.send(result);
       }
     });
+  }
+  else
+  if(req.body.hasOwnProperty('Thread')&&req.body.hasOwnProperty('ParentType')&&req.body.hasOwnProperty('Id')&&req.body.hasOwnProperty('action')&&req.body.hasOwnProperty('actionValue'))
+  {
+    if(req.signedCookies.user)
+    {
+      var email = req.signedCookies.user;
+      dbfunctions.AnyDbQuery("select id from accounts where email='"+email+"'",(error,user_result)=>{
+        if(error)
+        {
+          throw error;
+        }
+        else
+        {
+          if(Object.values(JSON.parse(JSON.stringify(user_result))).length)
+          {
+            const userId = user_result[0].id;
+            const rowId = parseInt(req.body.Id);
+            const action = req.body.action.toLowerCase();
+            const actionValue = parseInt(req.body.actionValue);
+            const thread = req.body.Thread.split("-").join(" ").toLowerCase();
+            //like, dislike and share actions
+            switch(ParentType.toLowerCase())
+            {
+              case 'post':{
+                dbfunctions.AnyDbQuery("select id,likes,dislikes,share from threads where LOWER('title')='"+thread+"' ",(error,thread_result)=>{
+                  if(error)
+                  {
+                    console.log(error);
+                  }
+                  else
+                  if(Object.values(JSON.parse(JSON.stringify(thread_result))).length)
+                  {
+                    if(rowId == thread_result[0].id)
+                    {
+                      //if it was the thread post
+                      if(actionValue)
+                      {
+                        //something needs to add
+                        if(action == 'likes')
+                        {
+                          //first check if there is dislike or not if present then delete it 
+                          dbfunctions.AnyDbQuery("select id from threads_dislikes where user_id='"+userId+"' and thread_id='"+rowId+"'",(error,result)=>{
+                            if(error)
+                            {
+                              console.log(error);
+                            }
+                            else
+                            if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                            {
+                              //there is a dislike of this thread form this user. delete it
+                              dbfunctions.AnyDbQuery("DELETE from threads_dislikes where id='"+result[0].id+"'",(error,result)=>{
+                                if(error)
+                                {
+                                  console.log(error);
+                                }
+                                else
+                                if(result.affectedRows)
+                                {
+                                    //now insert like in the threads_likes table
+                                    dbfunctions.InsertDataInTable("threads_likes","id,user_id,thread_id,created_datetime","'','"+userId+"','"+rowId+"','"+dbfunctions.DateTime()+"'",(error,result)=>{
+                                        if(error)
+                                        {
+                                          console.log(error);
+                                        }
+                                        else
+                                        {
+                                          res.send({"code":1,"description":"thread like stored"})
+                                        }
+                                    });
+                                }
+                                else
+                                {
+                                  res.send({"code":0,"description":"unable to delete your dislike on this thread"});
+                                }
+                              }); 
+                            }
+                          });                    
+                        }
+                        else
+                        if(action == 'dislikes')
+                        {
+                          //first check if there is like or not if present then delete it 
+                          dbfunctions.AnyDbQuery("select id from threads_likes where user_id='"+userId+"' and thread_id='"+rowId+"'",(error,result)=>{
+                            if(error)
+                            {
+                              console.log(error);
+                            }
+                            else
+                            if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                            {
+                              //there is a like of this thread form this user. delete it
+                              dbfunctions.AnyDbQuery("DELETE from threads_likes where id='"+result[0].id+"'",(error,result)=>{
+                                if(error)
+                                {
+                                  console.log(error);
+                                }
+                                else
+                                if(result.affectedRows)
+                                {
+                                    //now insert dislike in the threads_dislikes table
+                                    dbfunctions.InsertDataInTable("threads_dislikes","id,user_id,thread_id,created_datetime","'','"+userId+"','"+rowId+"','"+dbfunctions.DateTime()+"'",(error,result)=>{
+                                        if(error)
+                                        {
+                                          console.log(error);
+                                        }
+                                        else
+                                        if(result.affectedRows)
+                                        {
+                                          res.send({"code":1,"description":"thread like stored"});
+                                        }
+                                        else
+                                        {
+                                          res.send({"code":0,"description":"unable to dislike this thread"});
+                                        }
+                                    });
+                                }
+                                else
+                                {
+                                  res.send({"code":0,"description":"unable to delete your like on this thread"});
+                                }
+                              }); 
+                            }
+                          });      
+                        }
+                        else
+                        if(action == 'share')
+                        {
+                          dbfunctions.UpdateTable("threads",{[action]:thread_result[0].share + actionValue},"id='"+rowId+"'",(error,result)=>{
+                            if(error)
+                            {
+                              console.log(error);
+                            }
+                            else
+                            if(result.affectedRows)
+                            {
+                              res.send({"code":1,"description":"sharing action logged"});
+                            }
+                            else
+                            {
+                              res.send({"code":1,"description":"unable to log sharing action"});
+                            }
+                          });
+                        }
+                      }
+                      else
+                      {
+                        // something need to remove
+                        if(action == 'likes')
+                        {
+                          //first check if there is like or not if present then delete it 
+                          dbfunctions.AnyDbQuery("select id from threads_likes where user_id='"+userId+"' and thread_id='"+rowId+"'",(error,result)=>{
+                            if(error)
+                            {
+                              console.log(error);
+                            }
+                            else
+                            if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                            {
+                              //there is a dislike of this thread form this user. delete it
+                              dbfunctions.AnyDbQuery("DELETE from threads_likes where id='"+result[0].id+"'",(error,result)=>{
+                                if(error)
+                                {
+                                  console.log(error);
+                                }
+                                else
+                                if(result.affectedRows)
+                                {
+                                    res.send({"code":1,"description":"like has been deleted for this thread"});
+                                }
+                                else
+                                {
+                                  res.send({"code":0,"description":"unable to delete your like on this thread"});
+                                }
+                              }); 
+                            }
+                          });                    
+                        }
+                        else
+                        if(action == 'dislikes')
+                        {
+                          //first check if there is dislike or not if present then delete it 
+                          dbfunctions.AnyDbQuery("select id from threads_dislikes where user_id='"+userId+"' and thread_id='"+rowId+"'",(error,result)=>{
+                            if(error)
+                            {
+                              console.log(error);
+                            }
+                            else
+                            if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                            {
+                              //there is a dislike of this thread form this user. delete it
+                              dbfunctions.AnyDbQuery("DELETE from threads_dislikes where id='"+result[0].id+"'",(error,result)=>{
+                                if(error)
+                                {
+                                  console.log(error);
+                                }
+                                else
+                                if(result.affectedRows)
+                                {
+                                    res.send({"code":1,"description":"your dislike for this thread has been deleted"});
+                                }
+                                else
+                                {
+                                  res.send({"code":0,"description":"unable to delete your like on this thread"});
+                                }
+                              }); 
+                            }
+                          });      
+                        }
+                      }
+                    }
+                    else
+                    {
+                      //it was not the thread it may be a reply post of this thread. 
+                      //select id,likes,dislikes,share from posts where id='"+rowId+"' and thread_id='"+thread_result[0].id+"'"
+                      dbfunctions.AnyDbQuery("select id,likes,dislikes,share from posts where id='"+rowId+"' and thread_id='"+thread_result[0].id+"'",(error,posts_result)=>{
+                        if(error)
+                        {
+                          console.log(error);
+                        }
+                        else
+                        if(Object.values(JSON.parse(JSON.stringify(posts_result))).length)
+                        {
+                            if(actionValue)
+                            {
+                              //something needs to add
+                              if(action == 'likes')
+                              {
+                                //first check if there is dislike or not if present then delete it 
+                                dbfunctions.AnyDbQuery("select id from posts_dislikes where user_id='"+userId+"' and post_id='"+rowId+"'",(error,result)=>{
+                                  if(error)
+                                  {
+                                    console.log(error);
+                                  }
+                                  else
+                                  if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                                  {
+                                    //there is a dislike of this post form this user. delete it
+                                    dbfunctions.AnyDbQuery("DELETE from posts_dislikes where id='"+result[0].id+"'",(error,result)=>{
+                                      if(error)
+                                      {
+                                        console.log(error);
+                                      }
+                                      else
+                                      if(result.affectedRows)
+                                      {
+                                          //now insert like in the posts_likes table
+                                          dbfunctions.InsertDataInTable("posts_likes","id,user_id,post_id,created_datetime","'','"+userId+"','"+rowId+"','"+dbfunctions.DateTime()+"'",(error,result)=>{
+                                              if(error)
+                                              {
+                                                console.log(error);
+                                              }
+                                              else
+                                              if(result.affectedRows)
+                                              {
+                                                res.send({"code":1,"description":"post like stored"});
+                                              }
+                                              else
+                                              {
+                                                res.send({"code":0,"description":"unable to store post like"});
+                                              }
+                                          });
+                                      }
+                                      else
+                                      {
+                                        res.send({"code":0,"description":"unable to delete your dislike on this post"});
+                                      }
+                                    }); 
+                                  }
+                                  else
+                                  {
+                                    //check if like is already present
+                                    dbfunctions.AnyDbQuery("select id from posts_likes where user_id='"+userId+"' and post_id='"+rowId+"'",(error,result)=>{
+                                      if(error)
+                                      {
+                                        console.log(error);
+                                      }
+                                      else
+                                      if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                                      {
+                                        res.send({"code":0,"description":"like is already present"});
+                                      }
+                                      else
+                                      {
+                                        //now insert like in the posts_likes table
+                                        dbfunctions.InsertDataInTable("posts_likes","id,user_id,post_id,created_datetime","'','"+userId+"','"+rowId+"','"+dbfunctions.DateTime()+"'",(error,result)=>{
+                                            if(error)
+                                            {
+                                              console.log(error);
+                                            }
+                                            else
+                                            if(result.affectedRows)
+                                            {
+                                              res.send({"code":1,"description":"post like stored"});
+                                            }
+                                            else
+                                            {
+                                              res.send({"code":0,"description":"unable to store post like"});
+                                            }
+                                        });
+                                      }
+                                    });
+                                  }
+                                });                    
+                              }
+                              else
+                              if(action == 'dislikes')
+                              {
+                                //first check if there is like or not if present then delete it 
+                                dbfunctions.AnyDbQuery("select id from posts_likes where user_id='"+userId+"' and post_id='"+rowId+"'",(error,result)=>{
+                                  if(error)
+                                  {
+                                    console.log(error);
+                                  }
+                                  else
+                                  if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                                  {
+                                    //there is a like of this post form this user. delete it
+                                    dbfunctions.AnyDbQuery("DELETE from posts_likes where id='"+result[0].id+"'",(error,result)=>{
+                                      if(error)
+                                      {
+                                        console.log(error);
+                                      }
+                                      else
+                                      if(result.affectedRows)
+                                      {
+                                          //now insert dislike in the posts_dislikes table
+                                          dbfunctions.InsertDataInTable("posts_dislikes","id,user_id,thread_id,created_datetime","'','"+userId+"','"+rowId+"','"+dbfunctions.DateTime()+"'",(error,result)=>{
+                                              if(error)
+                                              {
+                                                console.log(error);
+                                              }
+                                              else
+                                              if(result.affectedRows)
+                                              {
+                                                res.send({"code":1,"description":"post like stored"});
+                                              }
+                                              else
+                                              {
+                                                res.send({"code":0,"description":"unable to dislike this post"});
+                                              }
+                                          });
+                                      }
+                                      else
+                                      {
+                                        res.send({"code":0,"description":"unable to delete your like on this post"});
+                                      }
+                                    }); 
+                                  }
+                                  else
+                                  {
+                                    //like is not present
+                                    //check if dislike is present or not
+                                    dbfunctions.AnyDbQuery("select id from posts_likes where user_id='"+userId+"' and post_id='"+rowId+"'",(error,result)=>{
+                                      if(error)
+                                      {
+                                        console.log(error);
+                                      }
+                                      else
+                                      if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                                      {
+                                        //if present then do nothing
+                                        res.send({"code":0,"description":"already disliked"});
+                                      }
+                                      else
+                                      {
+                                          //now insert dislike in the posts_dislikes table
+                                          dbfunctions.InsertDataInTable("posts_dislikes","id,user_id,thread_id,created_datetime","'','"+userId+"','"+rowId+"','"+dbfunctions.DateTime()+"'",(error,result)=>{
+                                            if(error)
+                                            {
+                                              console.log(error);
+                                            }
+                                            else
+                                            if(result.affectedRows)
+                                            {
+                                              res.send({"code":1,"description":"post like stored"});
+                                            }
+                                            else
+                                            {
+                                              res.send({"code":0,"description":"unable to dislike this post"});
+                                            }
+                                          });
+                                        }
+                                    });                                     
+                                  }
+                                });      
+                              }
+                              else
+                              if(action == 'share')
+                              {
+                                dbfunctions.UpdateTable("posts",{[action]:posts_result[0].share + actionValue},"id='"+rowId+"'",(error,result)=>{
+                                  if(error)
+                                  {
+                                    console.log(error);
+                                  }
+                                  else
+                                  if(result.affectedRows)
+                                  {
+                                    res.send({"code":1,"description":"sharing action logged"});
+                                  }
+                                  else
+                                  {
+                                    res.send({"code":1,"description":"unable to log sharing action"});
+                                  }
+                                });
+                              }
+                            }
+                            else
+                            {
+                              // something need to remove
+                              if(action == 'likes')
+                              {
+                                //first check if there is like or not if present then delete it 
+                                dbfunctions.AnyDbQuery("select id from posts_likes where user_id='"+userId+"' and post_id='"+rowId+"'",(error,result)=>{
+                                  if(error)
+                                  {
+                                    console.log(error);
+                                  }
+                                  else
+                                  if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                                  {
+                                    //there is a like of this post form this user. delete it
+                                    dbfunctions.AnyDbQuery("DELETE from posts_likes where id='"+result[0].id+"'",(error,result)=>{
+                                      if(error)
+                                      {
+                                        console.log(error);
+                                      }
+                                      else
+                                      if(result.affectedRows)
+                                      {
+                                          res.send({"code":1,"description":"like has been deleted for this post"});
+                                      }
+                                      else
+                                      {
+                                        res.send({"code":0,"description":"unable to delete your like on this post"});
+                                      }
+                                    }); 
+                                  }
+                                  else
+                                  {
+                                    res.send({"code":0,"description":"like not present"});
+                                  }
+                                });                    
+                              }
+                              else
+                              if(action == 'dislikes')
+                              {
+                                //first check if there is dislike or not if present then delete it 
+                                dbfunctions.AnyDbQuery("select id from posts_dislikes where user_id='"+userId+"' and thread_id='"+rowId+"'",(error,result)=>{
+                                  if(error)
+                                  {
+                                    console.log(error);
+                                  }
+                                  else
+                                  if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                                  {
+                                    //there is a dislike of this post form this user. delete it
+                                    dbfunctions.AnyDbQuery("DELETE from posts_dislikes where id='"+result[0].id+"'",(error,result)=>{
+                                      if(error)
+                                      {
+                                        console.log(error);
+                                      }
+                                      else
+                                      if(result.affectedRows)
+                                      {
+                                          res.send({"code":1,"description":"your dislike for this post has been deleted"});
+                                      }
+                                      else
+                                      {
+                                        res.send({"code":0,"description":"unable to delete your like on this post"});
+                                      }
+                                    }); 
+                                  }
+                                  else
+                                  {
+                                    res.send({"code":0,"description":"no dislike present"});
+                                  }
+                                });      
+                              }
+                            }   
+                        }
+                      });
+                    }
+                  }
+                });
+              }break;
+              case 'comment':{
+                dbfunctions.AnyDbQuery("select id,likes,dislikes,share from threads where LOWER('title')='"+thread+"' ",(error,thread_result)=>{
+                  if(error)
+                  {
+                    console.log(error);
+                  }
+                  else
+                  if(Object.values(JSON.parse(JSON.stringify(thread_result))).length)
+                  {
+                    if(rowId == thread_result[0].id)
+                    {
+                      //thread is present and user is commenting in a thread
+                      res.send({"code":0,"description":"comments are not allowed on threads"});
+                    }
+                    else
+                    {
+                      //it is not a thread id it may be a post but thread is present
+                      dbfunctions.AnyDbQuery("select id,likes,dislikes,share from posts where id='"+rowId+"' and thread_id='"+thread_result[0].id+"'",(error,posts_result)=>{
+                        if(error)
+                        {
+                          console.log(error);
+                        }
+                        else
+                        if(Object.values(JSON.parse(JSON.stringify(posts_result))).length)
+                        {
+                          //it is a post
+                          dbfunctions.AnyDbQuery("select id,likes,dislikes,share from posts_comments where id='"+rowId+"' and post_id='"+posts_result[0].id+"'",(error,posts_comments_result)=>{
+                            if(error)
+                            {
+                              console.log(error);
+                            }
+                            else
+                            if(Object.values(JSON.parse(JSON.stringify(posts_comments_result))).length)
+                            {
+                              if(actionValue)
+                              {
+                                //something needs to add
+                                if(action == 'likes')
+                                {
+                                  //first check if there is dislike or not if present then delete it 
+                                  dbfunctions.AnyDbQuery("select id from posts_comments_dislikes where user_id='"+userId+"' and posts_comment_id='"+rowId+"'",(error,result)=>{
+                                    if(error)
+                                    {
+                                      console.log(error);
+                                    }
+                                    else
+                                    if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                                    {
+                                      //there is a dislike of this post comment form this user. delete it
+                                      dbfunctions.AnyDbQuery("DELETE from posts_comments_dislikes where id='"+result[0].id+"'",(error,result)=>{
+                                        if(error)
+                                        {
+                                          console.log(error);
+                                        }
+                                        else
+                                        if(result.affectedRows)
+                                        {
+                                            //now insert like in the posts_likes table
+                                            dbfunctions.InsertDataInTable("posts_comments_likes","id,user_id,posts_comment_id,created_datetime","'','"+userId+"','"+rowId+"','"+dbfunctions.DateTime()+"'",(error,result)=>{
+                                                if(error)
+                                                {
+                                                  console.log(error);
+                                                }
+                                                else
+                                                if(result.affectedRows)
+                                                {
+                                                  res.send({"code":1,"description":"comment like stored"});
+                                                }
+                                                else
+                                                {
+                                                  res.send({"code":0,"description":"unable to store comment like"});
+                                                }
+                                            });
+                                        }
+                                        else
+                                        {
+                                          res.send({"code":0,"description":"unable to delete your dislike on this post"});
+                                        }
+                                      }); 
+                                    }
+                                    else
+                                    {
+                                      //check if like is already present
+                                      dbfunctions.AnyDbQuery("select id from posts_comments_likes where user_id='"+userId+"' and posts_comment_id='"+rowId+"'",(error,result)=>{
+                                        if(error)
+                                        {
+                                          console.log(error);
+                                        }
+                                        else
+                                        if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                                        {
+                                          res.send({"code":0,"description":"like is already present"});
+                                        }
+                                        else
+                                        {
+                                          //now insert like in the posts_likes table
+                                          dbfunctions.InsertDataInTable("posts_comments_likes","id,user_id,posts_comment_id,created_datetime","'','"+userId+"','"+rowId+"','"+dbfunctions.DateTime()+"'",(error,result)=>{
+                                              if(error)
+                                              {
+                                                console.log(error);
+                                              }
+                                              else
+                                              if(result.affectedRows)
+                                              {
+                                                res.send({"code":1,"description":"post like stored"});
+                                              }
+                                              else
+                                              {
+                                                res.send({"code":0,"description":"unable to store post like"});
+                                              }
+                                          });
+                                        }
+                                      });
+                                    }
+                                  });                    
+                                }
+                                else
+                                if(action == 'dislikes')
+                                {
+                                  //first check if there is like or not if present then delete it 
+                                  dbfunctions.AnyDbQuery("select id from posts_comments_likes where user_id='"+userId+"' and posts_comment_id='"+rowId+"'",(error,result)=>{
+                                    if(error)
+                                    {
+                                      console.log(error);
+                                    }
+                                    else
+                                    if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                                    {
+                                      //there is a like of this post form this user. delete it
+                                      dbfunctions.AnyDbQuery("DELETE from posts_comments_likes where id='"+result[0].id+"'",(error,result)=>{
+                                        if(error)
+                                        {
+                                          console.log(error);
+                                        }
+                                        else
+                                        if(result.affectedRows)
+                                        {
+                                            //now insert dislike in the posts_dislikes table
+                                            dbfunctions.InsertDataInTable("posts_comments_dislikes","id,user_id,posts_comment_id,created_datetime","'','"+userId+"','"+rowId+"','"+dbfunctions.DateTime()+"'",(error,result)=>{
+                                                if(error)
+                                                {
+                                                  console.log(error);
+                                                }
+                                                else
+                                                if(result.affectedRows)
+                                                {
+                                                  res.send({"code":1,"description":"comment dislike stored"});
+                                                }
+                                                else
+                                                {
+                                                  res.send({"code":0,"description":"unable to dislike this comment"});
+                                                }
+                                            });
+                                        }
+                                        else
+                                        {
+                                          res.send({"code":0,"description":"unable to delete your like on this comment"});
+                                        }
+                                      }); 
+                                    }
+                                    else
+                                    {
+                                      //like is not present
+                                      //check if dislike is present or not
+                                      dbfunctions.AnyDbQuery("select id from posts_comments_likes where user_id='"+userId+"' and posts_comment_id='"+rowId+"'",(error,result)=>{
+                                        if(error)
+                                        {
+                                          console.log(error);
+                                        }
+                                        else
+                                        if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                                        {
+                                          //if present then do nothing
+                                          res.send({"code":0,"description":"already disliked"});
+                                        }
+                                        else
+                                        {
+                                            //now insert dislike in the posts_dislikes table
+                                            dbfunctions.InsertDataInTable("posts_comments_dislikes","id,user_id,posts_comment_id,created_datetime","'','"+userId+"','"+rowId+"','"+dbfunctions.DateTime()+"'",(error,result)=>{
+                                              if(error)
+                                              {
+                                                console.log(error);
+                                              }
+                                              else
+                                              if(result.affectedRows)
+                                              {
+                                                res.send({"code":1,"description":"comment like stored"});
+                                              }
+                                              else
+                                              {
+                                                res.send({"code":0,"description":"unable to dislike this comment"});
+                                              }
+                                            });
+                                          }
+                                      });                                     
+                                    }
+                                  });      
+                                }
+                                else
+                                if(action == 'share')
+                                {
+                                  dbfunctions.UpdateTable("posts_comments",{[action]:posts_result[0].share + actionValue},"id='"+rowId+"'",(error,result)=>{
+                                    if(error)
+                                    {
+                                      console.log(error);
+                                    }
+                                    else
+                                    if(result.affectedRows)
+                                    {
+                                      res.send({"code":1,"description":"sharing action logged"});
+                                    }
+                                    else
+                                    {
+                                      res.send({"code":1,"description":"unable to log sharing action"});
+                                    }
+                                  });
+                                }
+                              }
+                              else
+                              {
+                                // something need to remove
+                                if(action == 'likes')
+                                {
+                                  //first check if there is like or not if present then delete it 
+                                  dbfunctions.AnyDbQuery("select id from posts_comments_likes where user_id='"+userId+"' and posts_comment_id='"+rowId+"'",(error,result)=>{
+                                    if(error)
+                                    {
+                                      console.log(error);
+                                    }
+                                    else
+                                    if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                                    {
+                                      //there is a like of this post form this user. delete it
+                                      dbfunctions.AnyDbQuery("DELETE from posts_comments_likes where id='"+result[0].id+"'",(error,result)=>{
+                                        if(error)
+                                        {
+                                          console.log(error);
+                                        }
+                                        else
+                                        if(result.affectedRows)
+                                        {
+                                            res.send({"code":1,"description":"like has been deleted for this comment"});
+                                        }
+                                        else
+                                        {
+                                          res.send({"code":0,"description":"unable to delete your like on this comment"});
+                                        }
+                                      }); 
+                                    }
+                                    else
+                                    {
+                                      res.send({"code":0,"description":"like not present"});
+                                    }
+                                  });                    
+                                }
+                                else
+                                if(action == 'dislikes')
+                                {
+                                  //first check if there is dislike or not if present then delete it 
+                                  dbfunctions.AnyDbQuery("select id from posts_comments_dislikes where user_id='"+userId+"' and posts_comment_id='"+rowId+"'",(error,result)=>{
+                                    if(error)
+                                    {
+                                      console.log(error);
+                                    }
+                                    else
+                                    if(Object.values(JSON.parse(JSON.stringify(result))).length)
+                                    {
+                                      //there is a dislike of this post form this user. delete it
+                                      dbfunctions.AnyDbQuery("DELETE from posts_comments_dislikes where id='"+result[0].id+"'",(error,result)=>{
+                                        if(error)
+                                        {
+                                          console.log(error);
+                                        }
+                                        else
+                                        if(result.affectedRows)
+                                        {
+                                            res.send({"code":1,"description":"your dislike for this comment has been deleted"});
+                                        }
+                                        else
+                                        {
+                                          res.send({"code":0,"description":"unable to delete your like on this comment"});
+                                        }
+                                      }); 
+                                    }
+                                    else
+                                    {
+                                      res.send({"code":0,"description":"no dislike present"});
+                                    }
+                                  });      
+                                }
+                              }   
+                            }
+                          });
+                        }
+                        else
+                        {
+                          res.send({"code":0,"description":"invalid post id"});
+                        }
+                      });                      
+                    }
+                  }
+                });
+              }break;
+            }
+          }
+        }
+      });
+    }
+    else
+    {
+      res.send({"code":0,"description":"please login first!"});
+    }
+  }
+  else
+  if(req.body.hasOwnProperty('type')&&req.body.hasOwnProperty('id')&&req.body.hasOwnProperty('description'))
+  {
+    if(req.signedCookies.user)
+    {
+      var email = req.signedCookies.user;
+      dbfunctions.AnyDbQuery("select id from accounts where email='"+email+"'",(error,user_result)=>{
+        if(error)
+        {
+          throw error;
+        }
+        else
+        {
+          if(Object.values(JSON.parse(JSON.stringify(user_result))).length)
+          {
+            const userId = user_result[0].id;
+            const id = parseInt(req.body.id); 
+            const description = parseInt(req.body.description); 
+            var datetime = dbfunctions.DateTime();
+            switch(type)
+            {
+              case 'post':{
+                      dbfunctions.AnyDbQuery("select id,thread_id from posts where id='"+id+"'",(error,post_result)=>{
+                        if(error)
+                        {
+                          console.log(error);
+                        }
+                        else
+                        if(Object.values(JSON.parse(JSON.stringify(post_result))).length)
+                        {
+                          //post is present
+                          dbfunctions.InsertDataInTable("posts_comments","id,user_id,post_id,parent_comment,description,shares,likes,dislikes,updated_datetime,created_datetime","'','"+userId+"','"+id+"','0','"+description+"','','','','"+datetime+"','"+datetime+"'",(error,result)=>{
+                            if(error)
+                            {
+                              console.log(error);
+                            }
+                            else
+                            if(result.affectedRows)
+                            {
+                              res.send({"code":1,"description":"Posted!"});
+                            }
+                          });
+                        }
+                        else
+                        {
+                          res.send({"code":1,"description":"invalid post id"});
+                        }
+                      });                
+              }break;
+              case 'comment':{
+                  dbfunctions.AnyDbQuery("select id,thread_id from posts where id='"+id+"'",(error,post_result)=>{
+                    if(error)
+                    {
+                      console.log(error);
+                    }
+                    else
+                    if(Object.values(JSON.parse(JSON.stringify(post_result))).length)
+                    {
+                      //post is present
+                      dbfunctions.InsertDataInTable("posts_comments","id,user_id,post_id,parent_comment,description,shares,likes,dislikes,updated_datetime,created_datetime","'','"+userId+"','"+post_result[0].id+"','"+id+"','"+description+"','','','','"+datetime+"','"+datetime+"'",(error,result)=>{
+                        if(error)
+                        {
+                          console.log(error);
+                        }
+                        else
+                        if(result.affectedRows)
+                        {
+                          res.send({"code":1,"description":"Commented!"});
+                        }
+                      });
+                    }
+                    else
+                    {
+                      res.send({"code":1,"description":"invalid comment id"});
+                    }
+                  });    
+              }break;
+            }
+          }
+        }
+      });
+    }
+    else
+    {
+      res.send({"code":0,"description":"please login first"});
+    }
   }
 });
 
