@@ -36,4 +36,4 @@ Discussion Community Forum helps everyone in their journey towards following the
 * Live Metnor Sessions
 * Open Opportunity for all Mentors (From Youtube, dev.to, etc.) to guide students and other students on Your Mentor by their community tags.
 
-An Open Source initiative by HDR Team, from a Juspay hackathon to bring to reality for Students for free.
+An Open Source initiative by HDR Team, from a Juspay hackathon to bring a career Guiding Solution for Students for free.
