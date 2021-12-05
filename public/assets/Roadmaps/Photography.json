@@ -1,0 +1,432 @@
+{
+    "add":{
+        "department":{
+            "name": "Photography", 
+            "designation":{
+                "name":"Photographer",
+                "roadmap":[
+                    {
+                        "name":"Image Capture",
+                        "branch":[
+                            {
+                                "name":"Camera",
+                                "branch":
+                                [
+                                    {
+                                        "name":"Apertur, shutter seed & ISO"
+                                    },
+                                    {
+                                        "name":"Sensor sizes"
+                                    },
+                                    {
+                                        "name":"Focus Modes"
+                                    },
+                                    {
+                                        "name":"Timer Modes"
+                                    },
+                                    {
+                                        "name":"Bracketing Modes"
+                                    },
+                                    {
+                                        "name":"All the other menu optons"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Lightning",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Composition",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Color Theory",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Advaced Effects",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Pick a focus",
+                                "branch":
+                                [
+                                    {
+                                        "name":"Portraits",
+                                        "branch":[
+                                            {
+                                                "name":"Lightning for Potraits"
+                                            },
+                                            {
+                                                "name":"Scouting locations"
+                                            },
+                                            {
+                                                "name":"Getting Clients"
+                                            },
+                                            {
+                                                "name":"Relaxing Your Model"
+                                            },
+                                            {
+                                                "name":"Clothing"
+                                            },
+                                            {
+                                                "name":"Makeup"
+                                            },
+                                            {
+                                                "name":"Finding Models"
+                                            },
+                                            {
+                                                "name":"Clothing"
+                                            },
+                                            {
+                                                "name":"Props"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name":"Landscapes",
+                                        "branch":[
+                                            {
+                                                "name":"Lighting 4 Landscapes"
+                                            },
+                                            {
+                                                "name":"Scouting locations"
+                                            },
+                                            {
+                                                "name":"finding Buyers"
+                                            },
+                                            {
+                                                "name":"Human for scale"
+                                            },
+                                            {
+                                                "name":"Focus stcaking"
+                                            },
+                                            {
+                                                "name":"Shooting Panoramas"
+                                            },
+                                            {
+                                                "name":"Capturing Stars"
+                                            },
+                                            {
+                                                "name":"Slow Expositions"
+                                            },
+                                            {
+                                                "name":"Using Weather"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name":"Products",
+                                        "branch":[
+                                            {
+                                                "name":"Lightning for Portaraits"
+                                            },
+                                            {
+                                                "name":"Scouting locations"
+                                            },
+                                            {
+                                                "name":"Getting Clients"
+                                            },
+                                            {
+                                                "name":"Make model Comfortable"
+                                            },
+                                            {
+                                                "name":"Clothing"
+                                            },
+                                            {
+                                                "name":"Makeup"
+                                            },
+                                            {
+                                                "name":"Finding Models"
+                                            },
+                                            {
+                                                "name":"Clothing"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name":"Etc",
+                                        "branch":[
+                                            {
+                                                "name":"Car Photography"
+                                            },
+                                            {
+                                                "name":"Macro Photography"
+                                            },
+                                            {
+                                                "name":"Street Photography"
+                                            },
+                                            {
+                                                "name":"Pet Photography"
+                                            },
+                                            {
+                                                "name":"Weddings Photography"
+                                            },
+                                            {
+                                                "name":"Photo Journalism"
+                                            },
+                                            {
+                                                "name":"Drones"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Image Production",
+                        "branch":[
+                            {
+                                "name":"Color Graphs",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Libraray management",
+                                "branch":[
+                                    {
+                                        "name":"stars Rating"
+                                    },
+                                    {
+                                        "name":"Filtes"
+                                    },
+                                    {
+                                        "name":"Meta tags"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Basic Tools",
+                                "branch":[
+                                    {
+                                        "name":"Exposure"
+                                    },
+                                    {
+                                        "name":"Contrast"
+                                    },
+                                    {
+                                        "name":"Saturation"
+                                    },
+                                    {
+                                        "name":"White Balance"
+                                    },
+                                    {
+                                        "name":"Sharpness"
+                                    },
+                                    {
+                                        "name":"Crops"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Using Presets",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Ansel Adams zoom system",
+                                "branch":[{}]
+                            },
+                            {
+                                "name":"Additional tools",
+                                "branch":[
+                                    {
+                                        "name":"Levels"
+                                    },
+                                    {
+                                        "name":"Curves"
+                                    },
+                                    {
+                                        "name":"Black and White Conversion"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Zone Specific Adjustments",
+                                "branch":[
+                                    {
+                                        "name":"Layers"
+                                    },
+                                    {
+                                        "name":"Dodging"
+                                    },
+                                    {
+                                        "name":"Masks"
+                                    },
+                                    {
+                                        "name":"Spot Heaing"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"Complementary Skills",
+                        "branch":[
+                            {
+                                "name":"Videography",
+                                "branch":[
+                                    {
+                                        "name":"Transitions"
+                                    },
+                                    {
+                                        "name":"Camera Movement"
+                                    },
+                                    {
+                                        "name":"Color Theory"
+                                    },
+                                    {
+                                        "name":"Audio"
+                                    },
+                                    {
+                                        "name":"Editing"
+                                    },
+                                    {
+                                        "name":"Potential Users"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Creativity",
+                                "branch":[
+                                    {
+                                        "name":"Create Your scene"
+                                    },
+                                    {
+                                        "name":"Picking a theme"
+                                    },
+                                    {
+                                        "name":"Choosing Acessories"
+                                    },
+                                    {
+                                        "name":"Knowing Your Intent"
+                                    },
+                                    {
+                                        "name":"Making a background"
+                                    },
+                                    {
+                                        "name":"Apply color theory to the scene"
+                                    },
+                                    {
+                                        "name":"Representing an emotion"
+                                    },
+                                    {
+                                        "name":"Using the Elements"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Models",
+                                "branch":[
+                                    {
+                                        "name":"Approaching"
+                                    },
+                                    {
+                                        "name":"Contratsts"
+                                    },
+                                    {
+                                        "name":"Saturation"
+                                    },
+                                    {
+                                        "name":"Guiding places"
+                                    },
+                                    {
+                                        "name":"Clothes and fashion"
+                                    },
+                                    {
+                                        "name":"Generating Emotions"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Community",
+                                "branch":
+                                [
+                                    {
+                                        "name":"Local BUsinesses"
+                                    },
+                                    {
+                                        "name":"Local Events"
+                                    },
+                                    {
+                                        "name":"Offering Services"
+                                    },
+                                    {
+                                        "name":"Local Charity"
+                                    },
+                                    {
+                                        "name":"Build a Network"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Business",
+                                "branch":
+                                [
+                                    {
+                                        "name":"Knowing Your Piece"
+                                    },
+                                    {
+                                        "name":"Finding Clients"
+                                    },
+                                    {
+                                        "name":"Approaching Clients"
+                                    },
+                                    {
+                                        "name":"Making a Business Plan"
+                                    },
+                                    {
+                                        "name":"Selling Stock Images"
+                                    },
+                                    {
+                                        "name":"Making a Brand"
+                                    },
+                                    {
+                                        "name":"Managing Taxes"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Social Media",
+                                "branch":[
+                                    {
+                                        "name":"Live Streaming"
+                                    },
+                                    {
+                                        "name":"Networking"
+                                    },
+                                    {
+                                        "name":"Social Media Apps"
+                                    },
+                                    {
+                                        "name":"Adopting to the format"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Websites(optional)",
+                                "branch":[
+                                    {
+                                        "name":"Building a website"
+                                    },
+                                    {
+                                        "name":"Make a website"
+                                    },
+                                    {
+                                        "name":"Selling Prints Online"
+                                    },
+                                    {
+                                        "name":"Web design"
+                                    },
+                                    {
+                                        "name":"Taking Images for a Website"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }       
+        }      
+    }
+}
