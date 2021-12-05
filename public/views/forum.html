@@ -1,9 +1,9 @@
 <div class='search'>
-    <select class='search-for' required>
+    <!--<select class='search-for' required>
         <option value='posts'>Posts</option>
         <option value='threads' selected>Threads</option>
         <option value='keyword'>Keywords</option>
-    </select>
+    </select>-->
     <input type='text' placeholder='Type here...' required/>
     <b class='fas fa-search'></b>
 </div>
@@ -32,7 +32,7 @@
             <h1>Threads</h1>
         </div>
         
-        <div class="subforum-row">
+        <!--<div class="subforum-row">
             <div class="subforum-icon subforum-column center">
                 <i class="fas fa-hashtag"></i>
             </div>
@@ -47,12 +47,19 @@
                 <b><a href="">Last post</a></b> by <a href="">JustAUser</a> 
                 <br>on <small>12 Dec 2020</small>
             </div>
-        </div>
+        </div>-->
 
     </div>
 </div>
 
 <script>
+
+var autoloadpage = window.location.pathname.split("/");
+if(autoloadpage.length > 2)
+{
+    fetchPage("/post");    
+}
+
 $('.ask-question').on('click','span',function(){
     $(this).parent().children('form').toggle();
 });
@@ -82,6 +89,7 @@ $('.ask-question form').on('submit',function(e){
                 setTimeout(function(){
                     submit.removeClass();
                     submit.val(submitValue);
+                    submit.attr('disabled',false);
                 },2000);                
             }
         },
@@ -96,21 +104,41 @@ $('.ask-question form').on('submit',function(e){
     });
 });
 
-function requestResults(){
-    var query = $('.search input[type=text]').val();
-    var search_for = $('.search select').val();
-
+function requestResults(query){
     $.ajax({
             type:"POST",
             url:'/forum',
             cache:false,
-            data:"search_for="+search_for+"&query="+query,
+            data:"query="+query,
             baforeSend:function(){  
-
+                $('.searchResults').empty();
+                $('.searchResults').show();
             },
             success:function(data){
-                //callback(null,data);
-                console.log(data);
+                if(data)
+                {   
+                    if($('.subforum .subforum-row'))
+                    {                        
+                        $('.subforum .subforum-row').remove();
+                    }
+                    
+                    var string = "";
+                    //console.log(data);
+
+                    data.map((result)=>{
+                        var url_title = toUrlString(result.title);
+                        var url_lastPost = toUrlString(result.LastPost);
+
+                        string += "<div class='subforum-row'><div class='subforum-icon subforum-column center'><i class='fas fa-hashtag'></i></div>";
+                        string += "<div class='subforum-description subforum-column'><h4>";
+                        string += "<a class='fetch-page' fetch-page='forum/"+url_title+"'>"+result.title+"</a></h4><p>";
+                        string += result.description+"</p></div><div class='subforum-stats subforum-column center'><span>";
+                        string += result.posts_count+" Posts</span></div><div class='subforum-info subforum-column'><b>";
+                        string += "<a class='fetch-page' fetch-page='forum/"+url_title+"#"+url_lastPost+"'>Last post</a></b> by <a class='fetch-page' fetch-page='/user/"+result.LastUser+"'>"+result.LastUser+"</a>";
+                        string += "<br>on <small>"+result.LastUpdated_datetime+"</small></div></div>";
+                    });                
+                    $('.subforum').append(string);
+                }
             },
             error:function(request, status, error){
                 console.log(request.responseText);
@@ -118,11 +146,17 @@ function requestResults(){
             }   
         });
 }
+if($('.search input[type=text]').val() == "")
+{
+    requestResults($('.search input[type=text]').val());
+}
 
 $('.search input[type=text]').on('keydown',function(){
+    var query = $(this).val();
+
     if($(this).val().length >= 3)
     {
-        requestResults();
+        requestResults(query);
     }
 });
 $('.search b.fa-search').on('click',function(){
@@ -132,5 +166,13 @@ $('.search b.fa-search').on('click',function(){
     }
 });
 
+function toUrlString(string){
+    string = string.split(" ");
+    string.map((word,index)=>{
+        string[index] = word[0].toLowerCase() + word.slice(1);
+    });
+    string = string.join("-");
+    return string;
+}
 
 </script>

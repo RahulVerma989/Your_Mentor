@@ -124,7 +124,7 @@ const InsertDataInTable = async (table_name,column_names,column_values, callback
 const AnyDbQuery = async (AnyQuery,callback)=>{
     db.query(AnyQuery, (error,result) => {
         if(error){ 
-            callback(err,null);
+            callback(error,null);
         }
         else
         {               

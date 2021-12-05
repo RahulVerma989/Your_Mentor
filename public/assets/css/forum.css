@@ -8,7 +8,7 @@
 html{
     font-size: 14px;
     font-family: 'Titillium Web', sans-serif;
-    background-color:rgb(0,0,0);
+    /* background-color:rgb(0,0,0); */
 }
 
 a{
@@ -28,14 +28,14 @@ h1{
 /* ########################################### */
 .container{
     margin: 20px;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 .subforum{
     margin-top:20px;
 }
 
-.subforum a {
+.subforum a{
     color: #000000;
 }
 
@@ -85,7 +85,7 @@ h1{
 @media screen and (max-width: 460px) {
     .container{
         margin: 10px;
-        padding: 10px;
+        /* padding: 10px; */
     }
 
     .subforum-row{
@@ -109,7 +109,7 @@ h1{
 @media screen and (min-width: 460px) and (max-width: 1024px) {
     .container{
         margin: 15px;
-        padding: 15px;
+        /* padding: 15px; */
     }
 
     .subforum-row{

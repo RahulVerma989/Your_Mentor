@@ -54,7 +54,7 @@ app.get("/:page", (req, res) => {
   let user_signed_cookie = req.signedCookies.user;
   if(user_signed_cookie)
   {    
-
+    // console.log(req.params.page.toLowerCase());
     switch(req.params.page.toLowerCase())
     {
         case 'logout':{
@@ -631,7 +631,7 @@ app.post('/roadmap',(req,res)=>{
   }
 });
 
-app.post('/forum',(req,res)=>{  
+app.post('/forum',async (req,res)=>{ 
   if(req.body.hasOwnProperty('question')&&req.body.hasOwnProperty('description'))
   {
     if(req.signedCookies.user)
@@ -654,7 +654,7 @@ app.post('/forum',(req,res)=>{
             const description = req.body.description;
             const datetime = dbfunctions.DateTime();
 
-            console.log(title+' | '+description+' | '+datetime);
+            // console.log(title+' | '+description+' | '+datetime);
             dbfunctions.InsertDataInTable("threads","id,user_id,title,description,status,posts_count,updated_datetime,created_datetime","'','"+user_id+"','"+title+"','"+description+"','open','1','"+datetime+"','"+datetime+"'",(error,result)=>{
               if(error)
               {
@@ -664,7 +664,21 @@ app.post('/forum',(req,res)=>{
               {
                 if(result.affectedRows)
                 {
-                  res.send({"code":1,"description":"Posted!"});
+                  dbfunctions.InsertDataInTable("posts","id,user_id,thread_id,thread_answer,title,tags,description,views,likes,unlikes,shares,updated_datetime,created_datetime","'','"+user_id+"','"+result.insertId+"','','"+title+"','','"+description+"','','','','','"+datetime+"','"+datetime+"'",(error,posts_result)=>{
+                    if(error)
+                    {
+                      throw error;
+                    }
+                    else
+                    if(posts_result.affectedRows)
+                    {
+                      res.send({"code":1,"description":"Posted!"}); 
+                    }
+                    else
+                    {
+                      res.send({"code":0,"description":"unable to post, try again after some time."}); 
+                    }
+                  });                 
                 }
                 else
                 {
@@ -688,20 +702,83 @@ app.post('/forum',(req,res)=>{
     }
   }
   else
-  if(req.body.hasOwnProperty('query')&&req.body.hasOwnProperty('search_for'))
+  if(req.body.hasOwnProperty('query'))
   {
     const query = req.body.query;
-    const search_for = req.body.search_for;
-    switch(search_for)
-    {
-      case 'threads':{
-        dbfunctions.AnyDbQuery("select title,description,status,posts_count,created_datetime where title LIKE '"+query+"' OR description LIKE '"+query+"'");
-      }break;
-      case 'posts':{}break;
-      case 'keywords':{}break;
-    }
+
+    GetSearchResults(query,(error,result)=>{
+      if(error)
+      {
+        console.log(error);
+      }
+      else
+      {
+        res.send(result);
+      }
+    });
   }
 });
+
+const GetSearchResults = (query,callback)=>{
+  var json = [];
+  var search_query = "";
+
+  if(query)
+  {
+    search_query = "select id,title,description,status,posts_count,created_datetime from threads where title LIKE '%"+query+"%' ORDER BY LOCATE('"+query+"',title)";
+  }
+  else
+  {
+    search_query = "select id,title,description,status,posts_count,created_datetime from threads order by updated_datetime desc";
+  }
+  dbfunctions.AnyDbQuery(search_query,(error,result)=>{
+    if(error)
+    {
+      callback(error,null);
+    }
+    else
+    {
+      if(Object.values(JSON.parse(JSON.stringify(result))).length)
+      {
+        JSON.parse(JSON.stringify(result)).forEach((row)=>{
+          //get the last post info
+          // console.log(row.id);
+          dbfunctions.AnyDbQuery("select user_id,title,created_datetime from posts where thread_id='"+row.id+"' order by created_datetime DESC limit 1",(error,post_result)=>{
+            if(error)
+            {
+              callback(error,null);
+            }
+            else
+            {
+              if(Object.values(JSON.parse(JSON.stringify(post_result))).length)
+              {
+                // console.log(JSON.parse(JSON.stringify(post_result)));
+                dbfunctions.AnyDbQuery("select username from accounts where id='"+post_result[0].user_id+"'",(error,user_result)=>{
+                  if(error)
+                  {
+                    callback(error,null);
+                  }
+                  else
+                  if(Object.values(JSON.parse(JSON.stringify(user_result))).length)
+                  {
+                    json.push({"title":row.title,"description":row.description,"status":row.status,"posts_count":row.posts_count,"LastUpdated_datetime":moment(post_result[0].created_datetime).format("DD MMM YYYY"),"LastPost":post_result[0].title,"LastUser":user_result[0].username});
+                    // console.log(json);
+                    if(json.length == Object.values(JSON.parse(JSON.stringify(result))).length)
+                    {                            
+                      // console.log(json);
+                      callback(null,json);
+                    }
+                  }
+                });                    
+              }
+            }
+          });  
+        });                          
+      }   
+    }
+  });
+      
+};
 
 app.listen(3001, () => {
   console.log("app listening on port 3001")
