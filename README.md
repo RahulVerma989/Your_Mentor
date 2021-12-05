@@ -2,13 +2,13 @@
 Your Mentor is a web application developed for students to help them choose there best career option according to their skills and by incorporation present world situations.
 
 ### Steps to setup Your_Mentor: ###
-1. Install Xampp and start mysql
-2. Go to the htdocs folder in xampp file folder
-3. Make a private folder there
-4. Put the config.env and dbtables.sql files there
-5. Now Extract the Your_Mentor zip from github to htdocs folder
-6. Now go to Your_Mentor folder and run npm install
-7. Now run npm start
+1. Install Xampp and start mysql.
+2. Go to the htdocs folder in xampp file folder.
+3. Now Extract the Your_Mentor zip from github to htdocs folder.
+4. Put the private folder there.
+5. check config.env and dbtables.sql files should be in private folder.
+6. Now go to Your_Mentor folder and run npm install.
+7. Now run npm start.
 8. Open the browser and open localhost:3001 to explore the website.
 
 ### Your Mentor web application contains: ###
