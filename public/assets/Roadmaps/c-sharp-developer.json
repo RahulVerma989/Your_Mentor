@@ -1,0 +1,111 @@
+{
+    "add":{
+        "department":{
+            "name": "IT", 
+            "designation":{
+                "name":"C# Developer",
+                "roadmap":[
+                    {
+                        "name":"Basics",
+                        "branch":[
+                            {
+                                "name":"TFS"
+                            },
+                            {
+                                "name":"Design Patterns"
+                            },
+                            {
+                                "name":"TDD"
+                            },
+                            {
+                                "name":"Unit C#"
+                            },
+                            {
+                                "name":"WCF"
+                            },
+                            {
+                                "name":"Entity Framework 6"
+                            },
+                            {
+                                "name":"C# professional"
+                            },
+                            {
+                                "name":"Unit C#"
+                            },
+                            {
+                                "name":"C# Essential"
+                            },
+                            {
+                                "name":"VS Tips and Tricks"
+                            },
+                            {
+                                "name":"C# Starter"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"ASP.NET Core Backend Developer",
+                        "branch":[
+                            {
+                                "name":"ASP.NET MVC Core"
+                            },
+                            {
+                                "name":"ASP.NET Core"
+                            },
+                            {
+                                "name":"Entity Framework Core 2.0"
+                            }
+                            
+  
+                        ]
+                    },
+                    {
+                        "name":"UI Developer",
+                        "branch":
+                        [
+                            {
+                                "name":"Google Material Design"
+                            },
+                            {
+                                "name":"WPF Advanced"
+                            },
+                            {
+                                "name":"WPF Essential"
+                            }
+                           
+                            
+                        ]
+                    },
+                    {
+                        "name":"UWP Developer",
+                        "branch":
+                        [
+                            {
+                                "name":"UWP Community Toolkit"
+                            },
+                            {
+                                "name":"UWP"
+                            }
+                            
+                        ]
+                    },
+                    {
+                        "name":"Game Developer",
+                        "branch":
+                        [
+                            {
+                                "name":"Unity Advanced"
+                            },
+                            {
+                                "name":"Unity Essential"
+                            },
+                            {
+                                "name":"Unity Starter"
+                            }
+                        ]
+                    }
+                ]
+            }       
+        }      
+    }
+}

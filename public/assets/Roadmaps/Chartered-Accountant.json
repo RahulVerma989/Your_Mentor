@@ -1,0 +1,138 @@
+{
+    "add":{
+        "department":{
+            "name": "Commerece", 
+            "designation":{
+                "name":"CA",
+                "roadmap":[
+                    {
+                        "name":"CA Foundation Exam/ CA-CPT",
+                        "branch":[
+                            {
+                                "name":"Principles & Practice of Accounting"
+                            },
+                            {
+                                "name":"Business Laws & Business Correspondence & Reporting"
+                            },
+                            {
+                                "name":"Business Mathematics, Logical Reasoning & Stats"
+                            },
+                            {
+                                "name":"Business Economic & Business Commercial Knowledge"
+                            }
+                        ]
+                    },
+                    {
+                        "name":"40% maks needed and 50% aggregate in 4 exams"
+                    },
+                    {
+                        "name":"CA Intermediate",
+                        "branch":
+                        [
+                            {
+                                "name":"Group 1 Exams",
+                                "branch":[
+                                    {
+                                        "name":"Accounting"
+                                    },
+                                    {
+                                        "name":"Business Laws & Ethics"
+                                    },
+                                    {
+                                        "name":"Cost Accounting and Financial"
+                                    },
+                                    {
+                                        "name":"Taxation"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Group2 Exams",
+                                "branch":[
+                                    {
+                                        "name":"Advance Accouting"
+                                    },
+                                    {
+                                        "name":"Auditing & Assurance"
+                                    },
+                                    {
+                                        "name":"IT and Strategic management"
+                                    },
+                                    {
+                                        "name":"Financial Management"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name":"CA Final",
+                        "branch":
+                        [
+                            {
+                                "name":"Group 1 Exams",
+                                "branch":
+                                [
+                                    {
+                                        "name":"Financial Reporting"
+                                    },
+                                    {
+                                        "name":"Strategic Fiancial Management"
+                                    },
+                                    {
+                                        "name":"Advance Auditing & Professional Ethics"
+                                    },
+                                    {
+                                        "name":"Corporate & Economic Laws"
+                                    },
+                                    {
+                                        "name":"Strategic Cost management,Performance Evaluation"
+                                    },
+                                    {
+                                        "name":"Financial Reporting"
+                                    }
+                                ]
+                            },
+                            {
+                                "name":"Group 2 Exams",
+                                "branch":
+                                [
+                                    {
+                                        "name":"Optional Subject",
+                                        "branch":
+                                        [
+                                            {
+                                                "name":"Risk Management"
+                                            },
+                                            {
+                                                "name":"Economic Law"
+                                            },
+                                            {
+                                                "name":"Finacial Service & Capital Market"
+                                            },
+                                            {
+                                                "name":"International Taxation"
+                                            },
+                                            {
+                                                "name":"Global Financial Reposting Standards"
+                                            },
+                                            {
+                                                "name":"Multidisciplinary Case Study"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name":"Dierect Tax Laws & International Taxation"
+                                    },
+                                    {
+                                        "name":"Indierect Tax Laws"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }       
+        }      
+    }
+}
