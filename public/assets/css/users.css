@@ -101,9 +101,22 @@ body{
 	display: flex;
 	flex-direction: column;
 }
-.profile_wrap .profile_discription p {
+.profile_wrap .profile_discription .description p {
+	font-size: 15px;
+	color: #34495E;
+	text-align: center;
+}
+
+.profile_wrap .profile_discription .description {
+	background-color: #ECF0F1;
+	margin: 15px;
+	height: 100px;
+}
+
+.profile_wrap .profile_discription h4 {
 	font-size: 15px;
 	text-align: center;
+	margin: 15px;
 }
 textarea {
 	width: 250px;
